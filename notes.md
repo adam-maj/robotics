@@ -1065,9 +1065,7 @@ In other words, the starting state comes from the distribution of starting state
 
 Then the value function gives the expected value of a given state for a policy (summing over all the possible actions in that state):
 
-$$
-V_\pi(s_t) = \mathbb{E}_{a_t,s_{t+1},...}\left[  \sum_{t=0}^\infty \gamma^lr(s_{t+l}) \right]
-$$
+$$V_\pi(s_t) = \mathbb{E}_{a_t,s_{t+1},...}\left[  \sum_{t=0}^\infty \gamma^lr(s_{t+l}) \right]$$
 
 Meanwhile, the action value function (Q-function) specifies the expected reward of taking a specific action in a given state:
 
