@@ -950,7 +950,7 @@ $$
 \textrm{d}^{(k+1)} = \Delta \textrm{d}^{(k)} + \textrm{d}^{(k)}
 $$
 
-This should eventually converge to a fixed point representing the true construction $\{ \textrm{G}^{(k)}\} \rarr \textrm{G}^*, \{ \textrm{d}^{(k)} \} \rarr \textrm{d}^*$.
+This should eventually converge to a fixed point representing the true construction $\{ \textrm{G}^{(k)}\} \rightarrow \textrm{G}^*, \{ \textrm{d}^{(k)} \} \rightarrow \textrm{d}^*$.
 
 At the start of each iteration, we use the current poses and depths to estimate correspondence with the current image. This gives a map of where the pixels in prior images are predicted to be.
 
@@ -1047,7 +1047,7 @@ TRPO is practically effective.
 
 ### Preliminaries
 
-Given an MDP defined by $(\mathcal{S}, \mathcal{A}, \mathcal{P}, r, \rho_0, \gamma)$ defining the finite set of states $\mathcal{S}$, the finite set of actions $\mathcal{A}$, the transition probability distribution $P: \mathcal{S} \times \mathcal{A} \times \mathcal{S} \rarr \mathbb{R}$, the reward function $r: \mathcal{S} \rarr \mathbb{R}$, the distribution of the initial state $s_0$ given by $\rho_0: \mathcal{S} \rarr \mathbb{R}$, and the discount factor $\gamma \in (0,1)$.
+Given an MDP defined by $(\mathcal{S}, \mathcal{A}, \mathcal{P}, r, \rho_0, \gamma)$ defining the finite set of states $\mathcal{S}$, the finite set of actions $\mathcal{A}$, the transition probability distribution $P: \mathcal{S} \times \mathcal{A} \times \mathcal{S} \rightarrow \mathbb{R}$, the reward function $r: \mathcal{S} \rightarrow \mathbb{R}$, the distribution of the initial state $s_0$ given by $\rho_0: \mathcal{S} \rightarrow \mathbb{R}$, and the discount factor $\gamma \in (0,1)$.
 
 We can represent the expected discounted reward of a policy $\pi$ as:
 
@@ -1600,7 +1600,7 @@ IRL instead deals with scenarios where the reward function is intractable becaus
 
 We define MDP\R to be an MDP with no explicit reward function of the form $(S, A, T, \gamma, D)$.
 
-We assume there some vector of features $\phi: S \rarr [0, 1]^k$ being factored into a “true” reward function $R^*(s) = w^* \cdot \phi(s)$, with $w^*$ representing the relative weighting of importance of the different features in $\phi$.
+We assume there some vector of features $\phi: S \rightarrow [0, 1]^k$ being factored into a “true” reward function $R^*(s) = w^* \cdot \phi(s)$, with $w^*$ representing the relative weighting of importance of the different features in $\phi$.
 
 This represents the assumption that the true reward function represents a linear combination of some of the features learnable from $s$.
 
@@ -1740,9 +1740,9 @@ Their goal is to find an imitation learning algorithm that doesn’t need the IR
 
 Using expressive cost functions is important to make IRL work properly (cost function needs to be able to express all the necessary information). Neural networks are often a choice here.
 
-They consider the most brought possible set of learned cost function $\mathcal{C}: \mathcal{S} \times \mathcal{A} \rarr \mathbb{R}$.
+They consider the most brought possible set of learned cost function $\mathcal{C}: \mathcal{S} \times \mathcal{A} \rightarrow \mathbb{R}$.
 
-Given how large this space is, they need a regularizer $\psi: \mathbb{R}^{\mathcal{S} \times \mathcal{A}} \rarr \overline{\mathbb{R}}$ that can regularize the cost:
+Given how large this space is, they need a regularizer $\psi: \mathbb{R}^{\mathcal{S} \times \mathcal{A}} \rightarrow \overline{\mathbb{R}}$ that can regularize the cost:
 
 $$
 \textrm{IRL}_\psi(\pi_E) = \underset{c \in \mathbb{R}^{\mathcal{S}\times\mathcal{A}}}{\arg \max} -\psi(c) + \left( \underset{\pi\in\Pi}{\min} -H(\pi) + \mathbb{E}_\pi[c(s,a)]  \right) - \mathbb{E}_{\pi_E}[c(s, a)]
@@ -1750,7 +1750,7 @@ $$
 
 Then we can look at the characteristics of the specific output policy given by the RL algorithm.
 
-For any policy $\pi \in \Pi$, it’s occupancy measure $\rho_\pi: \mathcal{S} \times \mathcal{A} \rarr \mathbb{R}$ is defined by $\rho_\pi(s, a) = \pi(a|s) \sum_{t=0}^\infty \gamma^t P(s_t = s|\pi)$.
+For any policy $\pi \in \Pi$, it’s occupancy measure $\rho_\pi: \mathcal{S} \times \mathcal{A} \rightarrow \mathbb{R}$ is defined by $\rho_\pi(s, a) = \pi(a|s) \sum_{t=0}^\infty \gamma^t P(s_t = s|\pi)$.
 
 This gives the distribution of state-action pairs that an agent would encounter when using policy $\pi$ to navigate the environment over infinite trajectories.
 
@@ -1820,7 +1820,7 @@ $$
 \mathbb{E}_\pi[\log(D(s, a))] + \mathbb{E}[\log(1-D(s,a))] - \lambda H(\pi)
 $$
 
-They use a parameterized policy $\pi_\theta$ and a discriminator network $D_w: \mathcal{S} \times \mathcal{A} \rarr (0,1)$. Then they alternate between an Adam optimized gradient step on $w$ and a TRPO step on $\theta$ to improve the policy until the model converges.
+They use a parameterized policy $\pi_\theta$ and a discriminator network $D_w: \mathcal{S} \times \mathcal{A} \rightarrow (0,1)$. Then they alternate between an Adam optimized gradient step on $w$ and a TRPO step on $\theta$ to improve the policy until the model converges.
 
 ![Screenshot 2024-11-06 at 6.43.00 PM.png](../images/Screenshot_2024-11-06_at_6.43.00_PM.png)
 
@@ -1982,7 +1982,7 @@ We need a way to map variable inputs to variable outputs. To accomplish this, ea
 We have the following output of each attention head as:
 
 $$
-\textrm{output}_i \larr \textrm{Linear}(\textrm{concat}(h_i^{in}, \textrm{result}_i, (x_i, y_i, z_i), s_\textrm{robot}))
+\textrm{output}_i \leftarrow \textrm{Linear}(\textrm{concat}(h_i^{in}, \textrm{result}_i, (x_i, y_i, z_i), s_\textrm{robot}))
 $$
 
 **2. Context Network**
@@ -2961,11 +2961,11 @@ Demonstrations are often collected from teleoperation data and use methods like 
 
 The goal is to train a conditional policy that can take RGB images $s \in \mathcal{S}$ with task command $w \in \mathcal{W}$ in the form of a language instruction or video and accomplish the intended objective.
 
-The policy can be written as $\mu : \mathcal{S} \times \mathcal{W} \rarr \mathcal{A}$ where $\mathcal{A}$ corresponds with the action space consisting of the 6-DoF pose of the end effector as well as the 7th degree of freedom for continuous control of the parallel jaw gripper.
+The policy can be written as $\mu : \mathcal{S} \times \mathcal{W} \rightarrow \mathcal{A}$ where $\mathcal{A}$ corresponds with the action space consisting of the 6-DoF pose of the end effector as well as the 7th degree of freedom for continuous control of the parallel jaw gripper.
 
 The policy is trained with data collected with VR-based teleoperation using demonstration and human-in-the-loop shared autonomy, resembling HG-DAgger.
 
-The model architecture has an encoder $q(z|w)$ that predicts an embededding $z$ from the instruction $w$ and a control layer $\pi : \mathcal{S} \times \mathcal{Z} \rarr \mathcal{A}$ that predicts an action $a$ from $w$ and the image $s$.
+The model architecture has an encoder $q(z|w)$ that predicts an embededding $z$ from the instruction $w$ and a control layer $\pi : \mathcal{S} \times \mathcal{Z} \rightarrow \mathcal{A}$ that predicts an action $a$ from $w$ and the image $s$.
 
 ### Learning Algorithm
 
