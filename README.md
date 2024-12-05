@@ -1,4 +1,4 @@
-# robotics
+# robotics [WIP]
 
 A deep-dive on the entire history of robotics and what it tells us about the future of general purpose humanoids.
 
