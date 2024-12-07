@@ -18,6 +18,8 @@ We will cover each of the above concerns in depth and focus on the constraints t
 
 Finally, we will explore how our development of humanoid robotics gives us grounds to appreciate the engineering of the human body and brain, and how these carbon vs. silicon intelligence stacks compare to each other.
 
+<br />
+
 > [!IMPORTANT]
 >
 > **This project is designed so everyone can get most of the value by just reading my overview on the rest of this page.**
