@@ -1,8 +1,6 @@
 # robotics [WIP]
 
-A deep-dive on the entire history of robotics and what it tells us about the future of general purpose humanoids.
-
-For each key milestone, I've included the critical papers in this repository, along with my notes and high-level explanations where relevant.
+A deep-dive on the entire history of robotics and what it tells us about the future of general purpose humanoids. For each key milestone, I've included the critical papers in this repository, along with my notes and high-level explanations where relevant.
 
 The rest of this page is my breakdown of everything we can learn from this history. We will see that:
 
