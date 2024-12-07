@@ -12,6 +12,8 @@ The rest of this page is my breakdown of everything we can learn from this histo
 2. All humanoid robotics startups must design their strategy around this constraint
 3. The inherent difficulty of this challenge may imply drastically longer timelines than the public expects today
 
+<br />
+
 We will cover each of the above concerns in depth and focus on the constraints to understand **exactly what we must accomplish** to create general purpose humanoids, and **how long it may take** to accomplish this.
 
 Finally, we will explore how our development of humanoid robotics gives us grounds to appreciate the engineering of the human body and brain, and how these carbon vs. silicon intelligence stacks compare to each other.
