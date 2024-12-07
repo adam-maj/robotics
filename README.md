@@ -2,6 +2,28 @@
 
 A deep-dive on the entire history of robotics and what it tells us about the future of general purpose humanoids.
 
+For each key milestone, I've included the critical papers in this repository, along with my notes and high-level explanations where relevant.
+
+The rest of this page is my breakdown of everything we can learn from this history.
+
+We will see that:
+
+1. Progress in the robotics is now primarily constrained by data
+2. All humanoid robotics startups must design their strategy around this constraint
+3. The inherent difficulty of this challenge may imply drastically longer timelines than the public expects today
+
+Finally, we will explore how our development of advanced robotics has given us more grounds for appreciating the human brain, and we will see the relative abilities of the carbon vs. silicon intelligence stack.
+
+> [!IMPORTANT]
+>
+> **This project is designed so everyone can get most of the value by just reading my overview on the rest of this page.**
+>
+> Then, people curious to learn about the technical details of each innovation can explore the rest of the repository via the links in the [resources](#resources) section.
+
+> [!NOTE]
+>
+> For more context, checkout the [original twitter thread](https://x.com/majmudaradam)
+
 ### Table of Contents
 
 # Overview
@@ -61,3 +83,5 @@ A deep-dive on the entire history of robotics and what it tells us about the fut
 - We are approaching embodied intelligent systems built with silicon semiconductors instead of carbon-based organic molecules.
 - These systems are far superior in compute capacity, energy usage (direct and simple), scale, life span.
 - We are currently superior in energy efficiency, out of distribution generalization. It's unlikely that we will stay ahead for long. Everything is moving toward silicon intelligence surpassing the capabilities of carbon based intelligence. Neuralink is the only hope at mitigating this.
+
+# Resources
