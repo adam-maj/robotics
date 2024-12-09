@@ -4,7 +4,9 @@ A deep-dive on the entire history of robotics, highlighting the series of innova
 
 For each key milestone, I've included the critical papers in this repository, along with my notes and high-level explanations where relevant.
 
-The rest of this page is my breakdown of everything we can learn from this history about the future of robotics and how the humanoid arms race will play out. We will see that fully autonomous humanoids may be much farther away than expected.
+The rest of this page is my breakdown of everything we can learn from this history about the future of robotics and how the humanoid arms race will play out.
+
+We will see that fully autonomous humanoids may be much farther away than expected.
 
 <br />
 
