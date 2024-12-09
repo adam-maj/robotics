@@ -20,6 +20,7 @@ We will see that fully autonomous humanoids may be much farther away than expect
 
 ## Table of Contents
 
+- [Overview](#overview)
 - [1. Fundamentals](#1-fundamentals)
 - [2. History](#2-history)
   - [2.1. Classical Control](#21-classical-control)
@@ -40,3 +41,7 @@ We will see that fully autonomous humanoids may be much farther away than expect
   - [6.1. Nature's Engineering](#61-natures-engineering)
   - [6.2. Carbon vs. Silicon](#62-carbon-vs-silicon)
 - [Resources](#resources)
+
+<br />
+
+# Overview
