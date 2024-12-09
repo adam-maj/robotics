@@ -71,6 +71,12 @@ Let's start by understanding the fundamentals of robotics from first principles.
 
 ![Fundamentals](./images/placeholder.png)
 
-Robotics systems convert arbitrary goals into actions to alter the physical world. We are particularly concerned with creating robots capable of automating the majority of economically valuable physical labor.
+Robotics is about building systems that can alter the physical world to accomplish arbitrary goals.
 
-With such general purpose robotic systems available, we would have what [Eric Jang](https://x.com/ericjang11) calls a "[read/write API to physical reality](https://evjang.com/2024/03/03/all-roads-robots.html)."
+We are particularly concerned with creating robots capable of automating the majority of economically valuable physical labor.
+
+With such general purpose robotic systems available, we would have what [Eric Jang](https://x.com/ericjang11) calls a "[read/write API to physical reality](https://evjang.com/2024/03/03/all-roads-robots.html)," where we could make all desired changes to the physical world by issuing commands to robots using software alone.
+
+To convert goals into actions, these systems need to [1] observe the state of the environment around them, [2] understand what actions to take to accomplish their goals, and [3] know how to physically act to execute their plans.
+
+These three requirements cover the 3 essential aspects of all robotics systems: **perception**, **planning**, and **control**.
