@@ -77,11 +77,11 @@ We are particularly concerned with creating robots capable of automating the maj
 
 With such general purpose robotic systems available, we would have what [Eric Jang](https://x.com/ericjang11) calls a "[read/write API to physical reality](https://evjang.com/2024/03/03/all-roads-robots.html)," where we could make all desired changes to the physical world by issuing commands to robots using software alone.
 
-To convert goals into actions, these systems need to [1] observe the state of the environment around them, [2] understand what actions to take to accomplish their goals, and [3] know how to physically act to execute their plans.
-
 > [!IMPORTANT]
 >
-> These three requirements cover the 3 essential aspects of all robotic systems:
+> To convert goals into actions, these systems need to [1] observe the state of their environment, [2] understand what actions to take to accomplish their goals, and [3] know how to physically act to execute their plans.
+
+> These requirements cover the 3 essential functions of all robotic systems:
 >
 > 1. **Perception**
 > 2. **Planning**
