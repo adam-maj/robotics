@@ -39,8 +39,8 @@ We will see that fully autonomous humanoids may be much farther away than expect
   - [5.3. Timelines](#53-timelines)
 - [6. Reflections](#6-reflections)
   - [6.1. Secrecy](#61-secrecy)
-  - [6.2. Nature's Engineering](#62-natures-engineering)
-  - [6.3. Carbon vs. Silicon](#63-carbon-vs-silicon)
+  - [6.3. Nature's Engineering](#63-natures-engineering)
+  - [6.4. Carbon vs. Silicon](#64-carbon-vs-silicon)
 - [Resources](#resources)
 
 <br />
@@ -86,3 +86,19 @@ With such general purpose robotic systems available, we would have what [Eric Ja
 > 1. **Perception**
 > 2. **Planning**
 > 3. **Control**
+
+We may be initially inclined to believe that planning is the hardest of these problems, since it often requires complex reasoning.
+
+However, we will see that the opposite is the case - planning is the easiest of these problems and is largely solved, whereas perception and control are far harder. We will see that the biggest barrier to progress in robotics today is in developing reliable control systems.
+
+This counter-intuitive difficulty of robotic control is reflected in Moravec's paradox:
+
+> Moravec's paradox is the observation in the fields of artificial intelligence and robotics that, contrary to traditional assumptions, reasoning requires very little computation, but sensorimotor and perception skills require enormous computational resources.
+>
+> - [Wikipedia](https://en.wikipedia.org/wiki/Moravec%27s_paradox)
+
+- Moravec's paradox. Control has always been harder. Humans like to think symbolic reasoning is harder. But we have LLMs, chess AI, etc. that can already do it (unless you're a Francois Chollet fan). Meanwhile, it took forever to make robots that can even do simple grasping.
+- Motor routines are actually insanely complex. Many steps, quick adjustments, etc. We just think it's easier because we have a massive amount of compute allocated to it.
+- This is reflective of the problem itself. Accurate motor control requires an understanding of the dynamics model of the world, which has far more complexity than symbols (dynamics, kinematics, friction/texture, shape/orientation, etc.)
+- The overall goal we are trying to achieve is broad generalization. We don't want a system that can just do 1 task, work with 1 object, operate in 1 environment, work with 1 goal. We want a robot that is fully generalized and fully autonomous: it can perform any goal, any task, on any object, in any environment (within the bounds of what a human could do) without the help of any human.
+- Let's look at the past to see how we have progressed closer to this goal over time.
