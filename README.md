@@ -63,6 +63,6 @@ Through this process, we'll explore the answers to the following questions:
 - Who will win the humanoid arms race?
 - How long will it take to achieve general purpose humanoids?
 
-Before we look into the series of innovations that have led us to modern robotics, let's first understand the fundamentals of what we are trying to accomplish with robotics from first principles.
+Let's start by understanding the fundamentals of robotics from first principles.
 
 # 1. Fundamentals
