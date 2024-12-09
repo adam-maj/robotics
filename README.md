@@ -57,7 +57,8 @@ To understand this true story of robotics, we must first look to the past to und
 
 Through this process, we'll explore the answers to the following questions:
 
-- How much progress have we made toward humanoids today? What are current robotics systems truly capable of?
+- How much progress have we made toward humanoids today?
+- What are current robotics systems truly capable of?
 - What are the constraints limiting progress toward general purpose humanoids?
 - What is the path to successfully building fully autonomous humanoids and deploying them at scale?
 - Who will win the humanoid arms race?
