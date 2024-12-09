@@ -1,22 +1,10 @@
 # robotics [WIP]
 
-A deep-dive on the entire history of robotics and what it tells us about the future of general purpose humanoids.
+A deep-dive on the entire history of robotics, highlighting the series of innovations that have now enabled the development of general purpose humanoids like Optimus and Figure.
 
 For each key milestone, I've included the critical papers in this repository, along with my notes and high-level explanations where relevant.
 
-<br />
-
-The rest of this page is my breakdown of everything we can learn from this history. We will see that:
-
-1. Progress in robotics is now primarily bottlenecked by data
-2. All humanoid robotics startups must design their strategy around this constraint
-3. The inherent difficulty of this challenge may imply drastically longer timelines than the public expects today
-
-<br />
-
-We will cover each of the above concerns in depth and focus on the constraints to understand **exactly what we must accomplish** to create general purpose humanoids, and **how long it may take** to accomplish this.
-
-Finally, we will explore how our development of humanoid robotics gives us grounds to appreciate the engineering of the human body and brain, and how these carbon vs. silicon intelligence stacks compare to each other.
+The rest of this page is my breakdown of everything we can learn from this history about the future of robotics and how the humanoid arms race will play out.
 
 <br />
 
