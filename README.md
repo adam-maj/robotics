@@ -66,3 +66,5 @@ Through this process, we'll explore the answers to the following questions:
 Let's start by understanding the fundamentals of robotics from first principles.
 
 # 1. Fundamentals
+
+![Fundamentals](./images/placeholder.png)
