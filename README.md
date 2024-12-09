@@ -80,7 +80,7 @@ With such general purpose robotic systems available, we would have what [Eric Ja
 > [!IMPORTANT]
 >
 > To convert goals into actions, these systems need to [1] observe the state of their environment, [2] understand what actions to take to accomplish their goals, and [3] know how to physically act to execute their plans.
-
+>
 > These requirements cover the 3 essential functions of all robotic systems:
 >
 > 1. **Perception**
