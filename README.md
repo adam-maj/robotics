@@ -95,7 +95,7 @@ This counter-intuitive difficulty of robotic control is reflected in Moravec's p
 
 > [!NOTE]
 >
-> _"Moravec's paradox is the observation in the fields of artificial intelligence and robotics that, contrary to traditional assumptions, reasoning requires very little computation, but sensorimotor and perception skills require enormous computational resources."_ > \- [Wikipedia](https://en.wikipedia.org/wiki/Moravec%27s_paradox)
+> \_"Moravec's paradox is the observation in the fields of artificial intelligence and robotics that, contrary to traditional assumptions, reasoning requires very little computation, but sensorimotor and perception skills require enormous computational resources." \- [Wikipedia](https://en.wikipedia.org/wiki/Moravec%27s_paradox)
 
 - Moravec's paradox. Control has always been harder. Humans like to think symbolic reasoning is harder. But we have LLMs, chess AI, etc. that can already do it (unless you're a Francois Chollet fan). Meanwhile, it took forever to make robots that can even do simple grasping.
 - Motor routines are actually insanely complex. Many steps, quick adjustments, etc. We just think it's easier because we have a massive amount of compute allocated to it.
