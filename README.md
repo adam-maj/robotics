@@ -38,10 +38,31 @@ We will see that fully autonomous humanoids may be much farther away than expect
   - [5.2. Who Wins?](#52-who-wins)
   - [5.3. Timelines](#53-timelines)
 - [6. Reflections](#6-reflections)
-  - [6.1. Nature's Engineering](#61-natures-engineering)
-  - [6.2. Carbon vs. Silicon](#62-carbon-vs-silicon)
+  - [6.1. Secrecy](#61-secrecy)
+  - [6.2. Nature's Engineering](#62-natures-engineering)
+  - [6.3. Carbon vs. Silicon](#63-carbon-vs-silicon)
 - [Resources](#resources)
 
 <br />
 
 # Overview
+
+Riding the tailwinds of recent progress in deep learning, robotics has again become a central technology focus area, with companies like [Optimus](https://www.tesla.com/we-robot), [Figure](https://www.figure.ai/), and [1x](https://www.1x.tech/) deploying hundreds of millions of dollars [see: [Figure raises $675M](https://www.prnewswire.com/news-releases/figure-raises-675m-at-2-6b-valuation-and-signs-collaboration-agreement-with-openai-302074897.html), [1x raises $100M](https://www.1x.tech/discover/1x-secures-100m-in-series-b-funding)] to develop general purpose humanoids.
+
+Given recent hype, twitter sentiment, venture narratives, and recent demos (see: [Tesla Optimus](https://www.youtube.com/watch?v=cpraXaw7dyc), [Figure 02](https://www.youtube.com/watch?v=0SRVJaOg9Co), [Figure 02 + OpenAI](https://www.youtube.com/watch?v=Sq1QZB5baNw), [1x NEO](https://www.youtube.com/watch?v=bUrLuUxv9gE)), it may seem like fully autonomous humanoids are right around the corner. Before my deep dive, my timelines were around 2-3 years.
+
+However, as I went farther into my deep dive, I noticed that the technical realities of the robotics industry point to a very different story than what current narratives suggest.
+
+To understand this true story of robotics, we must first look to the past to understand the series of innovations that have gotten the industry to where it is today. Then, we can understand what this tells us about what it will take to reach the goal of fully autonomous generally intelligent humanoids.
+
+Through this process, we'll explore the answers to the following questions:
+
+- How much progress have we made toward humanoids today? What are current robotics systems truly capable of?
+- What are the constraints limiting progress toward general purpose humanoids?
+- What is the path to successfully building fully autonomous humanoids and deploying them at scale?
+- Who will win the humanoid arms race?
+- How long will it take to achieve general purpose humanoids?
+
+Before we look into the series of innovations that have led us to modern robotics, let's first understand the fundamentals of what we are trying to accomplish with robotics from first principles.
+
+# 1. Fundamentals
