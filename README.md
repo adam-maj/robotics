@@ -79,4 +79,10 @@ With such general purpose robotic systems available, we would have what [Eric Ja
 
 To convert goals into actions, these systems need to [1] observe the state of the environment around them, [2] understand what actions to take to accomplish their goals, and [3] know how to physically act to execute their plans.
 
-These three requirements cover the 3 essential aspects of all robotics systems: **perception**, **planning**, and **control**.
+> [!IMPORTANT]
+>
+> These three requirements cover the 3 essential aspects of all robotic systems:
+>
+> 1. **Perception**
+> 2. **Planning**
+> 3. **Control**
