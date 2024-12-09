@@ -70,3 +70,7 @@ Let's start by understanding the fundamentals of robotics from first principles.
 # 1. Fundamentals
 
 ![Fundamentals](./images/placeholder.png)
+
+Robotics systems convert arbitrary goals into actions to alter the physical world. We are particularly concerned with creating robots capable of automating the majority of economically valuable physical labor.
+
+With such general purpose robotic systems available, we would have what [Eric Jang](https://x.com/ericjang11) calls a _[read/write API to physical reality](https://evjang.com/2024/03/03/all-roads-robots.html)_.
