@@ -93,6 +93,8 @@ However, we will see that the opposite is the case - planning is the easiest of 
 
 This counter-intuitive difficulty of robotic control is reflected in Moravec's paradox:
 
+> [!INFO]
+>
 > Moravec's paradox is the observation in the fields of artificial intelligence and robotics that, contrary to traditional assumptions, reasoning requires very little computation, but sensorimotor and perception skills require enormous computational resources.
 >
 > - [Wikipedia](https://en.wikipedia.org/wiki/Moravec%27s_paradox)
