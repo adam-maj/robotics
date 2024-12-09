@@ -8,8 +8,6 @@ The rest of this page is my breakdown of everything we can learn from this histo
 
 We will see that fully autonomous humanoids may be much farther away than expected.
 
-<br />
-
 > [!IMPORTANT]
 >
 > **This project is designed so everyone can get most of the value by just reading my overview on the rest of this page.**
@@ -19,8 +17,6 @@ We will see that fully autonomous humanoids may be much farther away than expect
 > [!NOTE]
 >
 > For more context, checkout the [original twitter thread](https://x.com/majmudaradam)
-
-<br />
 
 ### Table of Contents
 
