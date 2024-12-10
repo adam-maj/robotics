@@ -95,7 +95,7 @@ This counter-intuitive difficulty of robotic control is reflected in Moravec's p
 
 > [!NOTE]
 >
-> \_"Moravec's paradox is the observation in the fields of artificial intelligence and robotics that, contrary to traditional assumptions, reasoning requires very little computation, but sensorimotor and perception skills require enormous computational resources." \- [Wikipedia](https://en.wikipedia.org/wiki/Moravec%27s_paradox)
+> "Moravec's paradox is the observation in the fields of artificial intelligence and robotics that, contrary to traditional assumptions, reasoning requires very little computation, but sensorimotor and perception skills require enormous computational resources." \- [Wikipedia](https://en.wikipedia.org/wiki/Moravec%27s_paradox)
 
 This observation is reflected in the fact that modern AI systems have long been able to accomplish complex reasoning tasks like beating the world's best Go player, passing the Turing test, and now being more intelligent than the average human, while failing to perform sensorimotor tasks that a 1-year-old human could, like grasping objects and crawling.
 
@@ -108,3 +108,9 @@ The end goal of robotics is to achieve full **autonomy** and broad **generalizat
 We don't want a robot that's specialized for just a single goal, task, object, or environment; we want a robot that can accomplish any goal, perform any task, on any object, in any environment, without the help of any human.
 
 With this context, let's look to the series of innovations that have gotten us to the current state of robotics to understand how far we have come toward full autonomy and generalization.
+
+<br />
+
+# 2. History
+
+![Plaeholder](./images/placeholder.png)
