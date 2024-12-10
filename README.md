@@ -97,8 +97,14 @@ This counter-intuitive difficulty of robotic control is reflected in Moravec's p
 >
 > \_"Moravec's paradox is the observation in the fields of artificial intelligence and robotics that, contrary to traditional assumptions, reasoning requires very little computation, but sensorimotor and perception skills require enormous computational resources." \- [Wikipedia](https://en.wikipedia.org/wiki/Moravec%27s_paradox)
 
-- Moravec's paradox. Control has always been harder. Humans like to think symbolic reasoning is harder. But we have LLMs, chess AI, etc. that can already do it (unless you're a Francois Chollet fan). Meanwhile, it took forever to make robots that can even do simple grasping.
-- Motor routines are actually insanely complex. Many steps, quick adjustments, etc. We just think it's easier because we have a massive amount of compute allocated to it.
-- This is reflective of the problem itself. Accurate motor control requires an understanding of the dynamics model of the world, which has far more complexity than symbols (dynamics, kinematics, friction/texture, shape/orientation, etc.)
-- The overall goal we are trying to achieve is broad generalization. We don't want a system that can just do 1 task, work with 1 object, operate in 1 environment, work with 1 goal. We want a robot that is fully generalized and fully autonomous: it can perform any goal, any task, on any object, in any environment (within the bounds of what a human could do) without the help of any human.
-- Let's look at the past to see how we have progressed closer to this goal over time.
+This observation is reflected in the fact that modern AI systems have long been able to accomplish complex reasoning tasks like beating the world's best Go player, passing the Turing test, and now being more intelligent than the average human, while failing to perform sensorimotor tasks that a 1-year-old human could, like grasping objects and crawling.
+
+This paradox is a direct result of the complexity of the real world. Seemingly simple tasks often require [complex multi-step motor routines](https://www.youtube.com/watch?v=b1lysnGFpqI), an intuitive understanding of real world kinematics and dynamics, calibration against variable material frictions, and more. Dexterous manipulation is really hard.
+
+This truth is also reflected in the fact that the human brain has far more computational resources allocated toward controlling our hands and fingers than anything else, which is also why motor control feels much easier to us than high-level reasoning.
+
+The end goal of robotics is to achieve full **autonomy** and broad **generalization**.
+
+We don't want a robot that's specialized for just a single goal, task, object, or environment; we want a robot that can accomplish any goal, perform any task, on any object, in any environment, without the help of any human.
+
+With this context, let's look to the series of innovations that have gotten us to the current state of robotics to understand how far we have come toward full autonomy and generalization.
