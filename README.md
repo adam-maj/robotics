@@ -78,11 +78,7 @@ At the simplest level, robots convert ideas into actions.
 > 2. Plan what actions they need to take to accomplish their goals
 > 3. Know how to physically execute these actions
 >
-> These requirements cover the 3 essential functions of all robotic systems:
->
-> 1. **Perception**
-> 2. **Planning**
-> 3. **Control**
+> These requirements cover the 3 essential functions of all robotic systems: [1] **perception**, [2] **planning**, and [3] **control**.
 
 We may initially expect that planning is the hardest of these problems, since it depends on complex reasoning. However, we will see that the opposite is the case - planning is the easiest of these problems and is largely solved today.
 
