@@ -70,17 +70,19 @@ Robotics is about building systems that can alter the physical world to accompli
 
 At the simplest level, robots convert ideas into actions.
 
-In order to accomplish this, robotics systems need to:
-
-1. Observe and understand the state of their environment
-2. Plan what actions they need to take to accomplish their goals
-3. Know how to physically execute these actions
-
-These requirements cover the 3 essential functions of all robotic systems:
-
-1. **Perception**
-2. **Planning**
-3. **Control**
+> [!IMPORTANT]
+>
+> In order to accomplish this, robotics systems need to:
+>
+> 1. Observe and understand the state of their environment
+> 2. Plan what actions they need to take to accomplish their goals
+> 3. Know how to physically execute these actions
+>
+> These requirements cover the 3 essential functions of all robotic systems:
+>
+> 1. **Perception**
+> 2. **Planning**
+> 3. **Control**
 
 We may initially expect that planning is the hardest of these problems, since it depends on complex reasoning. However, we will see that the opposite is the case - planning is the easiest of these problems and is largely solved today.
 
