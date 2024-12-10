@@ -18,7 +18,7 @@
 - In order to do this, the hardware form factor is critical
 - Robotics training data requires camera and joint data for a specific hardware. If the hardware improves and then needs to change to do another task, you need a new robot, which destroys all the advantages of compounding. To mitigate this, you have to choose a single hardware which can remain mostly unchanged for a long time (so data doesn't become obsolete - not exactly accurate with Pi0).
 - The humanoid form factor works everywhere; the world is built for humans, so humanoids should be able to operate well in it.
-- We are far from generalization, so teleoperation will be needed for a long time. It might be too far away to make this work.
+- We are far from generalization, so tele-operation will be needed for a long time. It might be too far away to make this work.
 
 **What is currently the bottleneck**
 
@@ -56,4 +56,18 @@
 - These systems are far superior in compute capacity, energy usage (direct and simple), scale, life span.
 - We are currently superior in energy efficiency, out of distribution generalization. It's unlikely that we will stay ahead for long. Everything is moving toward silicon intelligence surpassing the capabilities of carbon based intelligence. Neuralink is the only hope at mitigating this.
 
-# Resources
+**moravec**
+
+---
+
+This counter-intuitive difficulty of robotic control is reflected in Moravec's paradox:
+
+> [!NOTE]
+>
+> "Moravec's paradox is the observation in the fields of artificial intelligence and robotics that, contrary to traditional assumptions, reasoning requires very little computation, but sensorimotor and perception skills require enormous computational resources." \- [Wikipedia](https://en.wikipedia.org/wiki/Moravec%27s_paradox).
+
+This observation is reflected in the fact that modern AI systems have long been able to accomplish complex reasoning tasks like beating the world's best Go player, passing the Turing test, and now being more intelligent than the average human, while failing to perform sensorimotor tasks that a 1-year-old human could, like grasping objects and crawling.
+
+This paradox is a direct result of the complexity of the real world. Seemingly simple tasks often require [complex multi-step motor routines](https://www.youtube.com/watch?v=b1lysnGFpqI), an intuitive understanding of real world kinematics and dynamics, calibration against variable material frictions, and more. Dexterous manipulation is really hard.
+
+This truth is also reflected in the fact that the human brain has far more computational resources allocated toward controlling our hands and fingers than anything else, which is also why motor control feels much easier to us than high-level reasoning.

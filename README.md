@@ -22,13 +22,7 @@ We will see that fully autonomous humanoids may be much farther away than expect
 
 - [Overview](#overview)
 - [1. Fundamentals](#1-fundamentals)
-- [2. History](#2-history)
-  - [2.1. Classical Control](#21-classical-control)
-  - [2.2. Deep Reinforcement Learning](#22-deep-reinforcement-learning)
-  - [2.3. Robotic Transformers](#23-robotic-transformers)
-- [3. Progress](#3-progress)
-  - [3.1. Generalization](#31-generalization)
-  - [3.2. Constraints](#32-constraints)
+- [2. Progress](#2-progress)
 - [4. Data](#2-data)
   - [4.1. Internet Data](#41-internet-data)
   - [4.2. Simulation](#42-simulation)
@@ -47,21 +41,22 @@ We will see that fully autonomous humanoids may be much farther away than expect
 
 # Overview
 
-Riding the tailwinds of recent progress in deep learning, robotics has again become a central technology focus area, with companies like [Optimus](https://www.tesla.com/we-robot), [Figure](https://www.figure.ai/), and [1x](https://www.1x.tech/) deploying hundreds of millions of dollars (see: [Figure raises $675M](https://www.prnewswire.com/news-releases/figure-raises-675m-at-2-6b-valuation-and-signs-collaboration-agreement-with-openai-302074897.html), [1x raises $100M](https://www.1x.tech/discover/1x-secures-100m-in-series-b-funding)) to develop general purpose humanoids.
+Riding the tailwinds of recent progress in deep learning, robotics has again regained the spotlight, with companies like [Optimus](https://www.tesla.com/we-robot), [Figure](https://www.figure.ai/), and [1x](https://www.1x.tech/) deploying hundreds of millions of dollars (see: [Figure raises $675M](https://www.prnewswire.com/news-releases/figure-raises-675m-at-2-6b-valuation-and-signs-collaboration-agreement-with-openai-302074897.html), [1x raises $100M](https://www.1x.tech/discover/1x-secures-100m-in-series-b-funding)) to develop general-purpose humanoids.
 
-Given recent hype, twitter sentiment, venture narratives, and recent demos (see: [Tesla Optimus](https://www.youtube.com/watch?v=cpraXaw7dyc), [Figure 02](https://www.youtube.com/watch?v=0SRVJaOg9Co), [Figure 02 + OpenAI](https://www.youtube.com/watch?v=Sq1QZB5baNw), [1x NEO](https://www.youtube.com/watch?v=bUrLuUxv9gE)), it may seem like fully autonomous humanoids are right around the corner. Before my deep dive, my timelines were around 2-3 years.
+Given recent hype, twitter sentiment, venture narratives, and recent demos (see: [Tesla Optimus](https://www.youtube.com/watch?v=cpraXaw7dyc), [Figure 02](https://www.youtube.com/watch?v=0SRVJaOg9Co), [Figure 02 + OpenAI](https://www.youtube.com/watch?v=Sq1QZB5baNw), [1x NEO](https://www.youtube.com/watch?v=bUrLuUxv9gE)), it may seem like fully autonomous humanoids are right around the corner. I originally anticipated that they might arrive within the next 2-3 years.
 
-However, as I went farther into my deep dive, I noticed that the technical realities of the robotics industry point to a very different story than what current narratives suggest.
+However, as I went farther into my deep dive, I noticed that the technical realities of current robotics progress point to a very different future than what current narratives suggest.
 
-To understand this true story of robotics, we must first look to the past to understand the series of innovations that have gotten the industry to where it is today. Then, we can understand what this tells us about what it will take to reach the goal of fully autonomous generally intelligent humanoids.
+To see this realistic future of the robotics industry, we'll first need to understand the series of innovations that have gotten the industry to where it is today.
 
-Through this process, we'll explore the answers to the following questions:
+Then, we'll use this to explore the answers to the following questions:
 
-- What are current humanoid robotics systems truly capable of?
-- What are the constraints limiting progress toward general purpose humanoids?
-- What is the path to successfully building fully autonomous humanoids and deploying them at scale?
+- What are state-of-the-art robots currently capable of?
+- What are the constraints limiting progress toward fully-autonomous generally-intelligent robotics?
+- What is the path to successfully build generally-intelligent robots?
+- How long will it take to create generally-intelligent robots?
 - Who will win the humanoid arms race?
-- How long will it take to achieve general purpose humanoids?
+- What does this mean for investment and company building in the robotics industry?
 
 Let's start by understanding the fundamentals of robotics from first principles.
 
@@ -71,46 +66,38 @@ Let's start by understanding the fundamentals of robotics from first principles.
 
 ![Fundamentals](./images/placeholder.png)
 
-Robotics is about building systems that can alter the physical world to accomplish arbitrary goals.
+Robotics is about building systems that can alter the physical world to accomplish arbitrary goals. Practically, we're interested in creating robots capable of automating the majority of economically valuable physical labor.
 
-We are particularly concerned with creating robots capable of automating the majority of economically valuable physical labor.
+At the simplest level, robots convert ideas into actions.
 
-With such general purpose robotic systems available, we would have what [Eric Jang](https://x.com/ericjang11) calls a "[read/write API to physical reality](https://evjang.com/2024/03/03/all-roads-robots.html)," where we could make all desired changes to the physical world by issuing commands to robots using software alone.
+In order to accomplish this, robotics systems need to:
 
-> [!IMPORTANT]
->
-> To convert goals into actions, these systems need to observe the state of their environment, understand what actions to take to accomplish their goals, and know how to act to physically execute their plans.
->
-> These requirements cover the 3 essential functions of all robotic systems:
->
-> 1. **Perception**
-> 2. **Planning**
-> 3. **Control**
+1. Observe and understand the state of their environment
+2. Plan what actions they need to take to accomplish their goals
+3. Know how to physically execute these actions
 
-We may be initially inclined to believe that planning is the hardest of these problems, since it often requires complex reasoning.
+These requirements cover the 3 essential functions of all robotic systems:
 
-However, we will see that the opposite is the case - planning is the easiest of these problems and is largely solved, whereas perception and control are far harder. We will see that the biggest barrier to progress in robotics today is in developing reliable control systems.
+1. **Perception**
+2. **Planning**
+3. **Control**
 
-This counter-intuitive difficulty of robotic control is reflected in Moravec's paradox:
+We may initially expect that planning is the hardest of these problems, since it depends on complex reasoning. However, we will see that the opposite is the case - planning is the easiest of these problems and is largely solved today.
 
-> [!NOTE]
->
-> "Moravec's paradox is the observation in the fields of artificial intelligence and robotics that, contrary to traditional assumptions, reasoning requires very little computation, but sensorimotor and perception skills require enormous computational resources." \- [Wikipedia](https://en.wikipedia.org/wiki/Moravec%27s_paradox)
-
-This observation is reflected in the fact that modern AI systems have long been able to accomplish complex reasoning tasks like beating the world's best Go player, passing the Turing test, and now being more intelligent than the average human, while failing to perform sensorimotor tasks that a 1-year-old human could, like grasping objects and crawling.
-
-This paradox is a direct result of the complexity of the real world. Seemingly simple tasks often require [complex multi-step motor routines](https://www.youtube.com/watch?v=b1lysnGFpqI), an intuitive understanding of real world kinematics and dynamics, calibration against variable material frictions, and more. Dexterous manipulation is really hard.
-
-This truth is also reflected in the fact that the human brain has far more computational resources allocated toward controlling our hands and fingers than anything else, which is also why motor control feels much easier to us than high-level reasoning.
+Meanwhile, the biggest barrier to progress in robotics today is in developing reliable control systems.
 
 The end goal of robotics is to achieve full **autonomy** and broad **generalization**.
 
 We don't want a robot that's specialized for just a single goal, task, object, or environment; we want a robot that can accomplish any goal, perform any task, on any object, in any environment, without the help of any human.
 
-With this context, let's look to the series of innovations that have gotten us to the current state of robotics to understand how far we have come toward full autonomy and generalization.
+With such general purpose robotic systems available, we would have what [Eric Jang](https://x.com/ericjang11) calls a "[read/write API to physical reality](https://evjang.com/2024/03/03/all-roads-robots.html)," where we could make all desired changes to the physical world by issuing commands to robots using software alone.
+
+This is the holy grail of robotics; such a system would be so economically valuable that the prospect of it has motivated the billions of dollars flowing into the industry today.
+
+Before we can understand how close we are to this goal, we first need to look at the series of innovations that have gotten us to the current state of robotics.
 
 <br />
 
 # 2. History
 
-![Plaeholder](./images/placeholder.png)
+![Placeholder](./images/placeholder.png)
