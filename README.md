@@ -114,6 +114,8 @@ The challenge of developing general-purpose robotics is both a hardware and a so
 
 Since a robot's software is entirely dependent on its hardware for sensory inputs and control outputs, we'll briefly cover robotics hardware first.
 
+Then, we'll turn to understanding the series of software innovations over the past decade that are largely responsible for the recent interest in robotics.
+
 <br />
 
 ## 2.1 Hardware
