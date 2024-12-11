@@ -10,11 +10,11 @@ We will see that fully autonomous humanoids may be much farther away than expect
 
 > [!IMPORTANT]
 >
-> This project is designed so everyone can get most of the value by just reading my overview on the rest of this page.
->
-> **For those who don't care about any technical details and are only concerned with practical considerations, skip to the [future](#3-future) section.**
+> This project is designed so that everyone can get most of the value by just reading my overview on the rest of this page.
 >
 > Then, people curious to learn about the technical details of each innovation can explore the rest of the repository via the links in the [resources](#resources) section.
+>
+> **For those who don't care about any technical details and are only concerned with implications about the future of robotics, skip to the [future](#3-future) section.**
 
 > [!NOTE]
 >
