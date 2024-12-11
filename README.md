@@ -20,22 +20,26 @@ We will see that fully autonomous humanoids may be much farther away than expect
 
 ## Table of Contents
 
-- [Overview](#overview)
-- [1. Fundamentals](#1-fundamentals)
-- [2. Progress](#2-progress)
-- [4. Data](#2-data)
-  - [4.1. Internet Data](#41-internet-data)
-  - [4.2. Simulation](#42-simulation)
-  - [4.3. Imitation](#43-imitation)
-- [5. Future](#5-future)
-  - [5.1. The Winning Strategy](#51-the-winning-strategy)
-  - [5.2. Who Wins?](#52-who-wins)
-  - [5.3. Timelines](#53-timelines)
-- [6. Reflections](#6-reflections)
-  - [6.1. Secrecy](#61-secrecy)
-  - [6.3. Nature's Engineering](#63-natures-engineering)
-  - [6.4. Carbon vs. Silicon](#64-carbon-vs-silicon)
-- [Resources](#resources)
+- [Overview](#o)
+- [1. Fundamentals](#)
+- [2. Progress](#)
+  - [2.1 Hardware](#)
+  - [2.2 Software](#)
+    - [2.2.1 Perception](#)
+    - [2.2.2 Planning](#)
+    - [2.2.3 Control](#)
+  - [2.3 Generalization](#)
+- [3. Future](#)
+  - [3.1. Constraints](#)
+  - [3.2. Data](#)
+  - [3.3. The Winning Strategy](#)
+  - [3.4. Who Wins?](#)
+  - [3.5. Timelines](#)
+- [4. Reflections](#)
+  - [4.1. Secrecy](#)
+  - [4.2. Nature's Engineering](#)
+  - [4.3. Carbon vs. Silicon](#)
+- [Resources](#)
 
 <br />
 
@@ -102,11 +106,7 @@ Before we can understand how close we are to the goal of general-purpose robotic
 
 <br />
 
-# 2. History
-
-![Placeholder](./images/placeholder.png)
-
-## 2.1 Hardware
+# 2. Hardware
 
 The challenge of developing general-purpose robotics is both a hardware and a software problem.
 
@@ -147,3 +147,37 @@ It's also worth noting that there has been significant progress on quadruped rob
 The bottom-line on robotic hardware is that there are a number of considerations for improving cost, safety, and flexibility that will become more important over time, but it is not currently the bottleneck in developing general-purpose humanoids.
 
 For that, we'll have to turn to understanding progress in robotics software.
+
+# 3. Software
+
+![Placeholder](./images/placeholder.png)
+
+## 3.1 Perception
+
+### Breakthrough #1: SLAM
+
+### Breakthrough #2: ORB-SLAM
+
+### Breakthrough #3: SLAM with Deep Learning
+
+## 3.2 Planning
+
+### Breakthrough #1: Hierarchical Task Planning
+
+### Breakthrough #2: Reasoning with LLMs
+
+## 3.3 Control
+
+### Breakthrough #1: Classical Control
+
+### Breakthrough #2: Simulation
+
+### Breakthrough #3: Deep Reinforcement Learning
+
+### Breakthrough #4: End-to-end Learning
+
+### Breakthrough #5: Tele-operation
+
+### Breakthrough #6: Robotic Transformers
+
+### Breakthrough #7: Pre-training + Fine-tuning
