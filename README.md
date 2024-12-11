@@ -72,13 +72,17 @@ At the simplest level, robots convert ideas into actions.
 
 > [!IMPORTANT]
 >
-> In order to accomplish this, robotics systems need to:
+> In order to accomplish this, robotic systems need to:
 >
 > 1. Observe and understand the state of their environment
 > 2. Plan what actions they need to take to accomplish their goals
 > 3. Know how to physically execute these actions
 >
-> These requirements cover the 3 essential functions of all robotic systems: [1] **perception**, [2] **planning**, and [3] **control**.
+> These requirements cover the 3 essential functions of all robotic systems:
+>
+> 1. **Perception**
+> 2. **Planning**
+> 3. **Control**
 
 We may initially expect that planning is the hardest of these problems, since it depends on complex reasoning. However, we will see that the opposite is the case - planning is the easiest of these problems and is largely solved today.
 
@@ -92,10 +96,54 @@ With such general purpose robotic systems available, we would have what [Eric Ja
 
 This is the holy grail of robotics; such a system would be so economically valuable that the prospect of it has motivated the billions of dollars flowing into the industry today.
 
-Before we can understand how close we are to this goal, we first need to look at the series of innovations that have gotten us to the current state of robotics.
+From here on, I'll refer to these fully autonomous, generally intelligent, and broadly capable robotic systems as general-purpose robotics.
+
+Before we can understand how close we are to the goal of general-purpose robotics, we first need to look at the series of innovations that have gotten us to the current state of robotics.
 
 <br />
 
 # 2. History
 
 ![Placeholder](./images/placeholder.png)
+
+## 2.1 Hardware
+
+The challenge of developing general-purpose robotics is both a hardware and a software problem.
+
+Since a robot's software is entirely dependent on its hardware for sensory inputs and control outputs, we'll briefly cover robotics hardware first.
+
+A robot is made of a group of **rigid bodies**, connected by **joints**, driven by **actuators**, with collocated **sensors** and **compute**.
+
+Each of these parts corresponds with one of the 3 critical functions of a robot:
+
+1. Cameras, LiDAR, IMUs, and other sensors allow the robot to perceive its environment.
+2. Actuators let the robot move at its joints, allowing it to move itself relative to its environment, or to move objects within its environment.
+3. Compute is used to process sensory information, convert it into action plans, and execute these action plans by controlling actuators.
+
+> [!NOTE]
+>
+> Though there are a number of important considerations for improving these hardware systems which we will discuss, it's important to note that robotic hardware hasn't been the primary constraint on progress for a few decades.
+>
+> For example, [here's a video](https://www.youtube.com/watch?v=o7JH3UWO6I0) of the PR-1 robot from 2008. We can see that even 15 years ago, it was capable of doing pick and place tasks, and its hardware resembles that used in many modern robotics research papers like [SayCan](./4-generalization/3-say-can/1-saycan.pdf).
+
+Designing general-purpose robotic hardware involves several trade-offs that have to be balanced:
+
+1. **Degrees of Freedom** - The robot needs enough degrees of freedom of movement for it to perform a diversity of tasks, like climbing stairs, traversing uneven terrain, opening doors, and manipulating various objects.
+2. **Configuration Complexity** - While we want robots with sufficient degrees of freedom, more complex configurations also mean more difficulty training robotic control systems. The hardware must strike a balance between flexibility and simplicity.
+3. **Torque vs. Weight** - Robotic actuators need to have a high torque to weight ratio, so they can lift objects and manipulate the environment without weighing down the robot and impeding its movement.
+4. **Safety** - Robots that are meant to operate in environments with humans must pay attention to their safety. This requires actuators with low rotational speeds to prevent injury to nearby humans (check out [this blog post on motor physics and safety](https://evjang.com/2024/08/31/motors.html) for more depth).
+5. **Cost** - If general-purpose robots are to be deployed at scale, they need to be cheap enough to mass produce, and eventually, to be purchased by consumers. This means costly sensors like LiDAR and other expensive hardware have a high opportunity cost.
+
+Additionally, once a particular hardware configuration is selected and robots of that form-factor are deployed, they will be able to collect data specifically useful for improving the generalization of that robotic hardware.
+
+For this reason, it's important that robotics companies design hardware systems that are sufficiently general that they will be able to reap compounding benefits from the increasing availability of data post-deployment.
+
+This is why so many companies have now opted to develop humanoid robotics. Their argument is that the world is designed for humans, so the humanoid is the robotic form factor that will be most generally capable of performing tasks in our world.
+
+We will soon explore what it would take for this bet on humanoids to be justified.
+
+It's also worth noting that there has been significant progress on quadruped robots from companies like [Unitree](https://www.unitree.com/) and [Boston Dynamics](https://bostondynamics.com/products/spot/), though this form factor is far less generally capable so we will not focus on it here.
+
+The bottom-line on robotic hardware is that there are a number of considerations for improving cost, safety, and flexibility that will become more important over time, but it is not currently the bottleneck in developing general-purpose humanoids.
+
+For that, we'll have to turn to understanding progress in robotics software.
