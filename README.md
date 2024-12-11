@@ -130,9 +130,13 @@ Each of these parts corresponds with one of the 3 critical functions of a robot:
 
 > [!NOTE]
 >
-> Though there are a number of important considerations for improving these hardware systems which we will discuss, it's important to note that robotic hardware hasn't been the primary constraint on progress for a few decades.
+> Though there are a number of hardware considerations that will have an important impact on the scalability and functionality of general-purpose robotics, **hardware has not been the primary constraint limiting robotics progress for a few decades.**
 >
-> For example, [here's a video](https://www.youtube.com/watch?v=o7JH3UWO6I0) of the PR-1 robot from 2008. We can see that even 15 years ago, it was capable of doing pick and place tasks, and its hardware resembles that used in many modern robotics research papers like [SayCan](./4-generalization/3-say-can/1-saycan.pdf).
+> For example, [here's a video](https://www.youtube.com/watch?v=o7JH3UWO6I0) of the PR-1 robot from 2008.
+>
+> We can see that even 15 years ago, it was capable of doing pick and place tasks. Additionally, its hardware resembles that used in many modern robotics research papers like [SayCan](./4-generalization/3-say-can/1-saycan.pdf).
+
+### Considerations
 
 Designing general-purpose robotic hardware involves several trade-offs that have to be balanced:
 
@@ -142,19 +146,40 @@ Designing general-purpose robotic hardware involves several trade-offs that have
 4. **Safety** - Robots that are meant to operate in environments with humans must pay attention to their safety. This requires actuators with low rotational speeds to prevent injury to nearby humans (check out [this blog post on motor physics and safety](https://evjang.com/2024/08/31/motors.html) for more depth).
 5. **Cost** - If general-purpose robots are to be deployed at scale, they need to be cheap enough to mass produce, and eventually, to be purchased by consumers. This means costly sensors like LiDAR and other expensive hardware have a high opportunity cost.
 
-Additionally, once a particular hardware configuration is selected and robots of that form-factor are deployed, they will be able to collect data specifically useful for improving the generalization of that robotic hardware.
+It's worth noting that modern motors are often expensive, high rotational velocity, low torque, and heavy, which is suboptimal for many of these considerations.
 
-For this reason, it's important that robotics companies design hardware systems that are sufficiently general that they will be able to reap compounding benefits from the increasing availability of data post-deployment.
+This is why developing cheaper, lighter, safer actuators is an important focus for companies like [Clone](https://clonerobotics.com/) (developing [artificial muscle actuators](https://x.com/clonerobotics/status/1849181515022053845)).
 
-This is why so many companies have now opted to develop humanoid robotics. Their argument is that the world is designed for humans, so the humanoid is the robotic form factor that will be most generally capable of performing tasks in our world.
+### Form Factor
 
-We will soon explore what it would take for this bet on humanoids to be justified.
+In addition to these trade-offs, selecting a specific robotic form factor has important downstream consequences on future improvements.
 
-It's also worth noting that there has been significant progress on quadruped robots from companies like [Unitree](https://www.unitree.com/) and [Boston Dynamics](https://bostondynamics.com/products/spot/), though this form factor is far less generally capable so we will not focus on it here.
+We will see that robotic software is heavily dependent on data collected from exactly the same robot that is meant to be deployed on. Robotic software learns to take actions based on the exact joints, sensors, and actuators it is trained with data from.
 
-The bottom-line on robotic hardware is that there are a number of considerations for improving cost, safety, and flexibility that will become more important over time, but it is not currently the bottleneck in developing general-purpose humanoids.
+Significantly changing the robot's hardware often means prior software becomes obsolete.
 
-For that, we'll have to turn to understanding progress in robotics software.
+> [!IMPORTANT]
+> Meanwhile, companies that are able to maintain the same hardware over time will benefit from the compounding advantages of deploying robots in the world, collecting diverse real-world datasets, creating improved models for their robots, and then using these improved models to motivate more deployments and revenue to further fuel this process.
+>
+> For this reason, it's important that robotics companies design hardware systems that are sufficiently general, so they can keep reaping the rewards of this data flywheel without having to alter their hardware.
+
+This is why so many companies have now opted to develop humanoids.
+
+Their argument is that the world is designed for humans, so humanoids will be generally capable of performing most tasks in our world.
+
+In other words, they believe that the humanoid form factor is sufficiently general such that they will be able to focus on collecting data and improving their software over time without having to alter their hardware too much.
+
+> [!NOTE]
+>
+> There has also been significant progress developing quadruped robots over the past decade from companies like [Unitree](https://www.unitree.com/) and [Boston Dynamics](https://bostondynamics.com/products/spot/), though this form factor is far less generally capable, so I won't focus on it in this deep dive.
+
+### Humanoids
+
+Since humanoids are the form factor that the largest robotics companies have now opted to bet on, let's briefly look at the hardware capabilities of modern humanoid systems.
+
+> [!NOTE]
+> The bottom-line on robotic hardware is that there are a number of considerations for improving cost, safety, and flexibility that will become more important over time, but it is not currently the bottleneck in developing general-purpose humanoids.
+> For that, we'll have to turn to understanding progress in robotics software.
 
 <br />
 
