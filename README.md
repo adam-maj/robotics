@@ -309,7 +309,7 @@ This suggests that the robotic perception problem is structured with a complexit
   <img src="/images/readme/figure-slam.jpeg" alt="Figure SLAM" width="50%" />
 </p>
 <p align="center">
-  <i>A SLAM solution created by a Figure humanoid robot, from [Brett Adcock's twitter](https://x.com/adcock_brett/status/1864420719138099391).</i>
+  <i>A SLAM solution created by a Figure humanoid robot, from <a href="https://x.com/adcock_brett/status/1864420719138099391" target="_blank">Brett Adcock's twitter</a<.</i>
 </p>
 
 <br />
