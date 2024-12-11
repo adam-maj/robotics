@@ -200,11 +200,53 @@ With this context in mind, we can turn to understanding robotic software systems
 
 ## 2.2 Software
 
+![Placeholder](./images/placeholder.png)
+
+Software is where most of the progress in robotics has occurred over the past decade, and is the place we must look to understand where the future of robotics is headed.
+
+In this section, we'll focus on the series of innovations that have led us to the current frontier of robotic software. Then, we'll use this to understand the limitations of current capabilities and what we must accomplish to achieve general-purpose robotics.
+
+Robotic software defines the "brain" of the robot; its responsible for using sensor data and actuators to process the robots' **perception**, **plan** actions, and issue **control** commands.
+
+We may initially expect that planning is the most difficult of these functions - it often requires high-level reasoning abilities, understanding of environmental context, natural language, and more, whereas controlling limbs to grab and manipulate object seems comparatively simple.
+
+In reality, the opposite is the case. Planning is the easiest of these functions and is now largely solved with models like [SayCan](./4-generalization/3-say-can/1-saycan.pdf) and [RT2](./4-generalization/6-vla/1-vla.pdf) (which we will cover soon), whereas creating effective motor control policies is the main constraint limiting progress today.
+
+> [!INFO]
+>
+> This counter-intuitive difficulty of robotic control is captured in **Moravec's paradox**:
+>
+> "Moravec's paradox is the observation in the fields of artificial intelligence and robotics that, contrary to traditional assumptions, reasoning requires very little computation, but sensorimotor and perception skills require enormous computational resources." \- [Wikipedia](https://en.wikipedia.org/wiki/Moravec%27s_paradox)
+>
+> We can see the truth in this in the fact that modern AI systems have long been able to accomplish complex reasoning tasks like beating the best human chess player, Go player, passing the Turing test, and now being more intelligent than the average human, all while robots consistently fail to perform basic sensorimotor tasks that a 1-year-old human could, like grasping objects and crawling.
+
+Moravec's paradox is not really paradox, it is instead a direct result of the complexity of the real world.
+
+Tasks that seem simple to us often actually require complex multi-step motor routines, an intuitive understanding of real world kinematics and dynamics, calibration against variable material frictions, resistance against external disruptive forces, and more. Meanwhile, symbol manipulation is a relatively lower-dimensional and less complex problem.
+
+To get a sense for this complexity that we often fail to appreciate, check out [this video where Eric Jang annotates all the motor routines required to open a package of dates](https://www.youtube.com/watch?v=b1lysnGFpqI).
+
+The truth of Moravec's paradox is also reflected in the human brain, which has far more computational resources allocated toward controlling our hands and fingers than the rest of our body. This may also be why motor control feels so easy to us compared to high-level reasoning.
+
+With this context, let's first look at the innovations that have changed perception and planning systems before we dive into the far more complex challenge of robotic control.
+
 ## 2.2.1 Perception
 
-### Breakthrough #1: SLAM
+Robotic perception is concerned with processing sensory data about the robot's environment to understand:
 
-### Breakthrough #2: ORB-SLAM
+1. The structure of the environment
+2. The presence and location of objects in the environment
+3. Its own position and orientation within the environment
+
+All of these necessities require the robot to construct an internal representation of its environment that it can constantly update as it moves and reference in its decision-making.
+
+This is exactly the goal of SLAM systems.
+
+### Breakthrough #1: Early SLAM
+
+**Simultaneous Localization and Mapping (SLAM)**
+
+### Breakthrough #2: Monocular SLAM
 
 ### Breakthrough #3: SLAM with Deep Learning
 
