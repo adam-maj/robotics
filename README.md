@@ -108,11 +108,13 @@ Before we can understand how close we are to the goal of general-purpose robotic
 
 # 2. Progress
 
-## 2.1 Hardware
+![Placeholder](./images/placeholder.png)
 
 The challenge of developing general-purpose robotics is both a hardware and a software problem.
 
 Since a robot's software is entirely dependent on its hardware for sensory inputs and control outputs, we'll briefly cover robotics hardware first.
+
+## 2.1 Hardware
 
 A robot is made of a group of **rigid bodies**, connected by **joints**, driven by **actuators**, with collocated **sensors** and **compute**.
 
@@ -151,8 +153,6 @@ The bottom-line on robotic hardware is that there are a number of considerations
 For that, we'll have to turn to understanding progress in robotics software.
 
 ## 2.2 Software
-
-![Placeholder](./images/placeholder.png)
 
 ## 2.2.1 Perception
 
