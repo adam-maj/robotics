@@ -163,9 +163,9 @@ We will see that robotic software is heavily dependent on data collected from ex
 Significantly changing the robot's hardware often means prior software becomes obsolete.
 
 > [!IMPORTANT]
-> Meanwhile, companies that are able to maintain the same hardware over time will benefit from the compounding advantages of deploying robots in the world, collecting diverse real-world datasets, creating improved models for their robots, and then using these improved models to motivate more deployments and revenue to further fuel this process.
+> Companies that are able to maintain the same hardware over time will benefit from the **compounding advantages** of deploying robots in the world, collecting diverse real-world datasets, creating improved models for their robots, and then using these improved models to motivate more deployments and revenue to further fuel this process.
 >
-> For this reason, it's important that robotics companies design hardware systems that are sufficiently general, so they can keep reaping the rewards of this data flywheel without having to alter their hardware.
+> For this reason, **it's important that robotics companies design hardware systems that are sufficiently general**, so they can keep reaping the rewards of this data flywheel without having to alter their hardware.
 
 This is why so many companies have now opted to develop humanoids.
 
