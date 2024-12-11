@@ -188,6 +188,8 @@ For that, we'll have to turn to understanding progress in robotics software.
 
 ## 2.3 Generalization
 
+<br />
+
 # 3. Future
 
 ### 3.1 Constraints
@@ -199,6 +201,8 @@ For that, we'll have to turn to understanding progress in robotics software.
 ### 3.4 Who Wins?
 
 ### 3.5 Timelines
+
+<br />
 
 # 4. Reflections
 
