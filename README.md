@@ -230,6 +230,8 @@ The truth of Moravec's paradox is also reflected in the human brain, which has f
 
 With this context, let's first look at the innovations that have changed perception and planning systems before we dive into the far more complex challenge of robotic control.
 
+<br />
+
 ## 2.2.1 Perception
 
 Robotic perception is concerned with processing sensory data about the robot's environment to understand:
@@ -242,19 +244,77 @@ All of these necessities require the robot to construct an internal representati
 
 This is exactly the goal of SLAM systems.
 
+> [!NOTE]
+>
+> Sensory perception is also a significant part of robotic control since control heavily depends on sensorimotor policies, but we will cover that separately in the control section.
+
 ### Breakthrough #1: Early SLAM
 
-**Simultaneous Localization and Mapping (SLAM)** systems
+**Simultaneous Localization and Mapping (SLAM)** systems use robotic sensor data to construct a consistent internal representation of the environment (mapping) and understand the robot's position in it (localization).
+
+Early SLAM systems often used LiDAR sensors, sometimes combined with cameras, IMUs, and other sensors, and then used sensor fusion to synthesize all this data into a single map.
+
+If sensors were perfectly accurate, we would have no need for SLAM - the robot would easily be able to understand its exact trajectory as it moved through the environment and with a LiDAR sensor, it could perfectly construct a map of its environment with point-wise depth data.
+
+The challenge with SLAM comes in the fact that sensors have some error. As the robot navigates the environment, this error slowly accumulates, causing the robot to miscalculate where it has moved (due to slightly inaccurate IMU readings) which then distorts it's understanding of the environment since this shifts the relative position of points in its environment.
+
+SLAM solutions all solve this problem in the same way:
+
+1. As the robot navigates through the environment, store the relative positions of points of interest around it
+2. Detect when the robot sees the same point of interest from multiple different perspectives
+3. Triangulate the locations of all the different points of interest to reduce errors in localization and mapping
+
+<p align="center">
+  <img src="/images/readme/slam-correlations.png" alt="slam correlations" width="50%" />
+</p>
+<p align="center">
+  <i>The robot detects points of interest with correlations. As the correlations between points of interest grow, estimated locations become more accurate.</i>
+</p>
+
+Early SLAM solutions like [EKF-SLAM and FastSLAM](./1-perception/1-slam/1-slam.pdf) used purely algorithmic methods like particle filters to construct a map of the environment.
+
+However, these solutions often depended on expensive LiDAR sensors. Due to hardware cost concerns, this dependence was infeasible for affordable mass-produced robotics, so the industry turned to SLAM solutions that only required visual data from cameras.
 
 ### Breakthrough #2: Monocular SLAM
 
+[ORB-SLAM](./1-perception/4-orb-slam/1-orb-slam.pdf) represented a major breakthrough by providing a SLAM solution that only depended on a single camera, with no dependence on LiDAR.
+
+Because monocular SLAM systems don't have access to point-wise depth data from LiDAR that makes SLAM much easier, they have to estimate the relative positions of the camera and points of interest in the environment purely from visual data.
+
+Earlier monocular SLAM solutions like [ORB-SLAM](./1-perception/4-orb-slam/1-orb-slam.pdf) accomplish this by detecting some form of image features (like corners, in this case [ORB](./1-perception/3-orb/orb.pdf) features), and then triangulating these image features across key-frames using strategies like **bundle adjustment** and **pose graph optimization**.
+
+These solutions also started to integrate **loop closures** where a robot could perform a massive map readjustment and error correction every time it returned to the same location (since errors in relative positions between points of interest become obvious).
+
 ### Breakthrough #3: SLAM with Deep Learning
+
+It's worth noting that modern SLAM solutions like [DROID-SLAM](./1-perception/5-droid-slam/1-droid-slam.pdf) and [NeRF-SLAM](https://arxiv.org/pdf/2210.13641) (among many others) have started to integrate deep learning into their systems to varying degrees.
+
+However, these deep learning systems don't look like modern internet scale models where they have few priors and rely on massive amounts of data to refine their weights. Instead, they are still usually primarily algorithm solutions with heavy priors built into their architecture, with deep learning integrated into just a few places.
+
+Notably, [ORB-SLAM3](https://arxiv.org/abs/2007.11898) is a purely algorithmic SLAM solution built after ORB-SLAM that still has nearly state-of-the-art performance, indicating that deep learning has yet to offer a significant advantage in robotic perception.
+
+This suggests that the robotic perception problem is structured with a complexity such that a purely deep learning based solution is unrecoverable given the current scale of data we have, and that significant inductive bias is required.
+
+> [!IMPORTANT]
+>
+> The bottom-line on robotic perception is that functional monocular SLAM solutions currently exist with loop-closing and the ability to recover from errors. These solutions are still far from the quality of state-of-the-art LiDAR based solutions and have a lot of room for improvement, but are not currently the blocker for deploying humanoid robotics in the world.
+
+<p align="center">
+  <img src="/images/readme/figure-slam.png" alt="Figure SLAM" width="50%" />
+</p>
+<p align="center">
+  <i>A SLAM solution created by a Figure humanoid robot, from [Brett Adcock's twitter](https://x.com/adcock_brett/status/1864420719138099391).</i>
+</p>
+
+<br />
 
 ## 2.2.2 Planning
 
 ### Breakthrough #1: Hierarchical Task Planning
 
 ### Breakthrough #2: Reasoning with LLMs
+
+<br />
 
 ## 2.2.3 Control
 
