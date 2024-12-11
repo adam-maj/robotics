@@ -248,6 +248,8 @@ This is exactly the goal of SLAM systems.
 >
 > Sensory perception is also a significant part of robotic control since control heavily depends on sensorimotor policies, but we will cover that separately in the control section.
 
+<br />
+
 ### Breakthrough #1: Early SLAM
 
 **Simultaneous Localization and Mapping (SLAM)** systems use robotic sensor data to construct a consistent internal representation of the environment (mapping) and understand the robot's position in it (localization).
@@ -275,6 +277,8 @@ Early SLAM solutions like [EKF-SLAM and FastSLAM](./1-perception/1-slam/1-slam.p
 
 However, these solutions often depended on expensive LiDAR sensors. Due to hardware cost concerns, this dependence was infeasible for affordable mass-produced robotics, so the industry turned to SLAM solutions that only required visual data from cameras.
 
+<br />
+
 ### Breakthrough #2: Monocular SLAM
 
 [ORB-SLAM](./1-perception/4-orb-slam/1-orb-slam.pdf) represented a major breakthrough by providing a SLAM solution that only depended on a single camera, with no dependence on LiDAR.
@@ -284,6 +288,8 @@ Because monocular SLAM systems don't have access to point-wise depth data from L
 Earlier monocular SLAM solutions like [ORB-SLAM](./1-perception/4-orb-slam/1-orb-slam.pdf) accomplish this by detecting some form of image features (like corners, in this case [ORB](./1-perception/3-orb/orb.pdf) features), and then triangulating these image features across key-frames using strategies like **bundle adjustment** and **pose graph optimization**.
 
 These solutions also started to integrate **loop closures** where a robot could perform a massive map readjustment and error correction every time it returned to the same location (since errors in relative positions between points of interest become obvious).
+
+<br />
 
 ### Breakthrough #3: SLAM with Deep Learning
 
@@ -300,7 +306,7 @@ This suggests that the robotic perception problem is structured with a complexit
 > The bottom-line on robotic perception is that functional monocular SLAM solutions currently exist with loop-closing and the ability to recover from errors. These solutions are still far from the quality of state-of-the-art LiDAR based solutions and have a lot of room for improvement, but are not currently the blocker for deploying humanoid robotics in the world.
 
 <p align="center">
-  <img src="/images/readme/figure-slam.png" alt="Figure SLAM" width="50%" />
+  <img src="/images/readme/figure-slam.jpeg" alt="Figure SLAM" width="50%" />
 </p>
 <p align="center">
   <i>A SLAM solution created by a Figure humanoid robot, from [Brett Adcock's twitter](https://x.com/adcock_brett/status/1864420719138099391).</i>
