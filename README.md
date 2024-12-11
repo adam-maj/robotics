@@ -316,9 +316,47 @@ This suggests that the robotic perception problem is structured with a complexit
 
 ## 2.2.2 Planning
 
-### Breakthrough #1: Hierarchical Task Planning
+Robotic planning is about using an understanding of the environment to convert the robot's goals into concrete action plans.
 
-### Breakthrough #2: Reasoning with LLMs
+Specifically, this consists of **path planning**, **task planning**, and **motion planning**. We will focus on path planning and task planning here, as low-level motion planning is really the job of robotic control.
+
+**1. Path Planning**
+
+The challenge of robotic path planning is primarily concerned with safety; the robot needs to navigate its environment to a target position without colliding with humans and objects in the environment.
+
+Traditional path-finding algorithms like [A\*](/2-planning/1-path-planning/1-a-star/) work to find optimal paths in discrete and relatively simple environments, but robots operate in complex environments with continuous configuration spaces (the number of specific trajectories a robot could take from one location to another is near infinite).
+
+To address this challenge, robots have to use random sampling based path planning algorithms like [Probabilistic Roadmaps (PRM)](./2-planning/1-path-planning/2-prm/prm.pdf) and [Rapidly-exploring Random Trees](./2-planning/1-path-planning/3-rrt/1-rrt.pdf) to create best-effort trajectory plans that avoid collisions. Then, they can use optimization algorithms like [CHOMP](./2-planning/1-path-planning/4-chomp/1-chomp.pdf) to ensure that selected trajectories optimize smoothness in addition to just avoiding collisions.
+
+> [!IMPORTANT]
+>
+> **Capabilities & Limitations: Path Planning**
+>
+> - Modern path planning systems can effectively generate best-effort trajectories in complex continuous environments
+> - These algorithms are capable of optimizing to avoid collisions and maximize smoothness
+> - Modern algorithms still struggle with path planning in the presence of dynamic objects in the environment (like walking humans)
+
+**2. Task Planning**
+
+Robotic task planning involves converting the high-level goal of the robot into sub-tasks and eventually individual motor routines to accomplish the goal.
+
+This requires an understanding of the robot's environment and the objects within it, the capabilities of the robot, and high-level reasoning abilities to plan within these constraints.
+
+Until a few years ago, task planning systems all used hierarchical symbolic approaches to task planning like hierarchical task networks (HTN), [STRIPS](./2-planning/2-task-planning/1-strips/strips.pdf) and [Planning Domain Definition Language (PDDL)](./2-planning/2-task-planning/3-pddl/pddl.pdf) which allow roboticists to manually define the domain of valid concepts to reason about.
+
+This worked for simple environments where robots had a limited set of problems to consider (like in industrial cases where robots have a very limited task space) but is infeasible for any general-purpose robotics system where the complexity of environments quickly explodes.
+
+This problem remained unsolved until the recent success of multi-modal LLMs provided access to models with advanced visual and semantic reasoning capabilities.
+
+Recent robotic systems like [SayCan](./4-generalization/3-say-can/1-saycan.pdf) and [RT2](./4-generalization/6-vla/1-vla.pdf) use these pre-trained VLMs for their reasoning abilities and fine-tune them to understand the capabilities afforded by robotic control systems to create effective task planning systems that can direct the robot to accomplish long-horizon tasks and solve reasoning problems that were previously intractable.
+
+> [!IMPORTANT]
+>
+> **Capabilities & Limitations: Task Planning**
+>
+> - Modern task planning systems have advanced reasoning abilities and are grounded in the realities of actions that the robot can actually perform
+> - These systems have effectively integrated high-level task planning with low-level robotic control to successfully accomplish goal-oriented behavior in complex environments
+> - Robotic task planning can now be considered a relatively solved problem
 
 <br />
 
