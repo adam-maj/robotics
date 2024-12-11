@@ -114,7 +114,9 @@ The challenge of developing general-purpose robotics is both a hardware and a so
 
 Since a robot's software is entirely dependent on its hardware for sensory inputs and control outputs, we'll briefly cover robotics hardware first.
 
-# 2.1 Hardware
+<br />
+
+## 2.1 Hardware
 
 A robot is made of a group of **rigid bodies**, connected by **joints**, driven by **actuators**, with collocated **sensors** and **compute**.
 
@@ -152,7 +154,9 @@ The bottom-line on robotic hardware is that there are a number of considerations
 
 For that, we'll have to turn to understanding progress in robotics software.
 
-# 2.2 Software
+<br />
+
+## 2.2 Software
 
 ## 2.2.1 Perception
 
@@ -185,6 +189,8 @@ For that, we'll have to turn to understanding progress in robotics software.
 ### Breakthrough #7: Pre-training + Fine-tuning
 
 ### Breakthrough #8: Cross-embodiment
+
+<br />
 
 ## 2.3 Generalization
 
