@@ -181,11 +181,20 @@ In other words, they believe that the humanoid form factor is sufficiently gener
 
 ### Humanoids
 
-Since humanoids are the form factor that the largest robotics companies have now opted to bet on, let's briefly look at the hardware capabilities of modern humanoid systems.
+Since most large robotics companies have now bet on the humanoid form factor, let's briefly look at the hardware capabilities of modern humanoid systems.
 
-> [!NOTE]
-> The bottom-line on robotic hardware is that there are a number of considerations for improving cost, safety, and flexibility that will become more important over time, but it is not currently the bottleneck in developing general-purpose humanoids.
-> For that, we'll have to turn to understanding progress in robotics software.
+We can get a cursory overview by looking at the demo for [Optimus Gen 2](https://www.youtube.com/watch?v=cpraXaw7dyc&t=3s) or [Figure 02](https://www.youtube.com/watch?v=0SRVJaOg9Co).
+
+They don't give much information, but we can pick up on a few important considerations:
+
+- They have high degree-of-freedom hands with dexterous manipulation capabilities. These will enable much more complex motor control in the future, though they are much more difficult to train than simple graspers.
+- They appear to use only cameras for vision, opting against LiDAR systems that are often used on quadrupeds (due to cost optimization for mass production).
+- They have AI compute on board, which can be used for running inference on vision-language-models. We'll see that modern robotics software has adapted these models to be an essential part of their control systems.
+- Figure mentions their battery life. These robots may initially require frequent charging or need to be plugged in to operate, which is a hardware limitation that will improve over time.
+
+Most importantly, though these robots are expensive and have limited compute and battery life, their basic functionality should be sufficient to accomplish most physical labor.
+
+With this context in mind, we can turn to understanding robotic software systems, which are currently the real bottleneck in the way of developing general-purpose robotics.
 
 <br />
 
