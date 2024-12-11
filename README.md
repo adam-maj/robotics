@@ -212,4 +212,6 @@ For that, we'll have to turn to understanding progress in robotics software.
 
 ### 4.3 Carbon vs. Silicon
 
+<br />
+
 # Resources
