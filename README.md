@@ -106,7 +106,9 @@ Before we can understand how close we are to the goal of general-purpose robotic
 
 <br />
 
-# 2. Hardware
+# 2. Progress
+
+## 2.1 Hardware
 
 The challenge of developing general-purpose robotics is both a hardware and a software problem.
 
@@ -148,11 +150,11 @@ The bottom-line on robotic hardware is that there are a number of considerations
 
 For that, we'll have to turn to understanding progress in robotics software.
 
-# 3. Software
+## 2.2 Software
 
 ![Placeholder](./images/placeholder.png)
 
-## 3.1 Perception
+## 2.2.1 Perception
 
 ### Breakthrough #1: SLAM
 
@@ -160,13 +162,13 @@ For that, we'll have to turn to understanding progress in robotics software.
 
 ### Breakthrough #3: SLAM with Deep Learning
 
-## 3.2 Planning
+## 2.2.2 Planning
 
 ### Breakthrough #1: Hierarchical Task Planning
 
 ### Breakthrough #2: Reasoning with LLMs
 
-## 3.3 Control
+## 2.2.3 Control
 
 ### Breakthrough #1: Classical Control
 
@@ -181,3 +183,29 @@ For that, we'll have to turn to understanding progress in robotics software.
 ### Breakthrough #6: Robotic Transformers
 
 ### Breakthrough #7: Pre-training + Fine-tuning
+
+### Breakthrough #8: Cross-embodiment
+
+## 2.3 Generalization
+
+# 3. Future
+
+### 3.1 Constraints
+
+### 3.2 Data
+
+### 3.3 The Winning Strategy
+
+### 3.4 Who Wins?
+
+### 3.5 Timelines
+
+# 4. Reflections
+
+### 4.1 Secrecy
+
+### 4.2 Nature's Engineering
+
+### 4.3 Carbon vs. Silicon
+
+# Resources
