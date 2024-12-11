@@ -212,7 +212,7 @@ We may initially expect that planning is the most difficult of these functions -
 
 In reality, the opposite is the case. Planning is the easiest of these functions and is now largely solved with models like [SayCan](./4-generalization/3-say-can/1-saycan.pdf) and [RT2](./4-generalization/6-vla/1-vla.pdf) (which we will cover soon), whereas creating effective motor control policies is the main constraint limiting progress today.
 
-> [!INFO]
+> [!NOTE]
 >
 > This counter-intuitive difficulty of robotic control is captured in **Moravec's paradox**:
 >
@@ -244,7 +244,7 @@ This is exactly the goal of SLAM systems.
 
 ### Breakthrough #1: Early SLAM
 
-**Simultaneous Localization and Mapping (SLAM)**
+**Simultaneous Localization and Mapping (SLAM)** systems
 
 ### Breakthrough #2: Monocular SLAM
 
