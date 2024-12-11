@@ -136,6 +136,8 @@ Each of these parts corresponds with one of the 3 critical functions of a robot:
 >
 > We can see that even 15 years ago, it was capable of doing pick and place tasks. Additionally, its hardware resembles that used in many modern robotics research papers like [SayCan](./4-generalization/3-say-can/1-saycan.pdf).
 
+<br />
+
 ### Considerations
 
 Designing general-purpose robotic hardware involves several trade-offs that have to be balanced:
@@ -149,6 +151,8 @@ Designing general-purpose robotic hardware involves several trade-offs that have
 It's worth noting that modern motors are often expensive, high rotational velocity, low torque, and heavy, which is suboptimal for many of these considerations.
 
 This is why developing cheaper, lighter, safer actuators is an important focus for companies like [Clone](https://clonerobotics.com/) (developing [artificial muscle actuators](https://x.com/clonerobotics/status/1849181515022053845)).
+
+<br />
 
 ### Form Factor
 
@@ -172,6 +176,8 @@ In other words, they believe that the humanoid form factor is sufficiently gener
 > [!NOTE]
 >
 > There has also been significant progress developing quadruped robots over the past decade from companies like [Unitree](https://www.unitree.com/) and [Boston Dynamics](https://bostondynamics.com/products/spot/), though this form factor is far less generally capable, so I won't focus on it in this deep dive.
+
+<br />
 
 ### Humanoids
 
