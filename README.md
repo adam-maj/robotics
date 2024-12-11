@@ -320,7 +320,9 @@ Robotic planning is about using an understanding of the environment to convert t
 
 Specifically, this consists of **path planning**, **task planning**, and **motion planning**. We will focus on path planning and task planning here, as low-level motion planning is really the job of robotic control.
 
-**1. Path Planning**
+<br />
+
+### Path Planning
 
 The challenge of robotic path planning is primarily concerned with safety; the robot needs to navigate its environment to a target position without colliding with humans and objects in the environment.
 
@@ -336,7 +338,9 @@ To address this challenge, robots have to use random sampling based path plannin
 > - These algorithms are capable of optimizing to avoid collisions and maximize smoothness
 > - Modern algorithms still struggle with path planning in the presence of dynamic objects in the environment (like walking humans)
 
-**2. Task Planning**
+<br />
+
+### Task Planning
 
 Robotic task planning involves converting the high-level goal of the robot into sub-tasks and eventually individual motor routines to accomplish the goal.
 
