@@ -39,7 +39,6 @@ We will see that fully autonomous humanoids may be much farther away than expect
 - [4. Reflections](#)
   - [4.1. Secrecy](#)
   - [4.2. Nature's Engineering](#)
-  - [4.3. Carbon vs. Silicon](#)
 - [Resources](#)
 
 <br />
@@ -819,11 +818,41 @@ Building humanoid robotics is a natural extension to their companies most core s
 
 # 4. Reflections
 
+This section is for a few interesting tangents I noticed through my deep dive that didn't fit into the main narrative. It can be treated as an appendix.
+
+<br />
+
 ### 4.1 Secrecy
+
+The deep learning industry progressed almost entirely in public through published research up until ~3 years ago, where labs started to privatize research to keep their technology proprietary.
+
+Meanwhile, robotics has developed almost entirely in secrecy for the past few decades, with companies like [Boston Dynamics](https://bostondynamics.com/) and Chinese companies achieving [impressive results](https://www.youtube.com/watch?v=29ECwExc-_M) with no published paper trail.
+
+In fact, in almost every area of robotics, including SLAM algorithms, locomotion, dexterous manipulation, path planning, and more are almost entirely proprietary.
+
+This made it more difficult to infer where the current state-of-the-art is, though the few people publishing public research like Physical Intelligence help to make educated guessed about it.
+
+<br />
 
 ### 4.2 Nature's Engineering
 
-### 4.3 Carbon vs. Silicon
+Studying robotics gives grounds for an appreciation of the complexity of the real world and the impressive capabilities of human motor control that's difficult to get anywhere else.
+
+It highlights the fact that the human body and brain is really a solution to the exact same reinforcement learning problem that robots are trying to solve: goal-oriented action in the real world.
+
+Our software and hardware were optimized by the natural selection process.
+
+A similar process is occurring in robotics research today.
+
+Humans often have pre-conceived notions about what type of systems ought to work (nicely organized symbolic systems with understandable components integrated in a hierarchical structure). But the selection criteria of good research filters out these ideas and reveals what actually works.
+
+And in this process, we are starting to see that the correct approach to robotics is quickly converging closer to re-engineering the human brain.
+
+To create robotics systems, we are now moving toward creating a single end-to-end system, optimized together, with different components offering different inductive bias via varying architectures and serving a purpose for specific sub-problems within perception, planning, and control. This is exactly how the human brain is architected.
+
+We will likely need to construct other functions of the brain within deep learning systems like long-term memory to improve our robotic systems.
+
+As we get closer to general-purpose humanoid robotics, we get closer to re-engineering the entire human.
 
 <br />
 
