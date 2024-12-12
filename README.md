@@ -528,11 +528,21 @@ These models demonstrate the following generalization capabilities:
 4. **Hardware** - The cross-embodiment results demonstrated by pi0 indicate that it may be possible to create robotics foundational models that can operate across hardware. However, it's worth noting that pi0 was trained with robots that all used simple graspers, and this approach would likely require a far larger scale of data in order to work on 5-finger manipulators.
 5. **Manipulation** - Robots are still far from being able to manipulate most objects. The diversity of ways that we manipulate physical objects is highly complex, and robots have only demonstrated the ability to perform manipulation skills that are directly in their dataset (like grasping and releasing), with little generalization abilities here.
 
+Robotic manipulation is by far the largest barrier to progress right now in terms of how far behind it is compared with other functions.
+
+Robots still struggle with unfamiliar objects, new environments, and unknown control skills. In the next section, we will try to reason about how much data is required to achieve generalization in robotic manipulation.
+
 > [!IMPORTANT]
 >
-> Robotic manipulation is by far the largest barrier to progress right now in terms of how far behind it is compared with other functions.
+> **State-of-the-art Capabilities**
 >
-> Robots in struggle with unfamiliar objects, new environments, and unknown control skills. In the next section, we will try to reason about how much data is required to achieve generalization in robotic manipulation.
+> Current robotic capabilities have gotten to the point where we can:
+>
+> 1. Manually collect a dataset for specific tasks and fine-tune VLA + ACT based models to complete these tasks with relative accuracy and error-correction
+> 2. These systems show moderate generalization to new same-task scenarios but no generalization to new manipulation skills.
+> 3. There are still significant technical challenges on all fronts (perception, planning, locomotion, dexterous manipulation) to get to the reliability and safety necessary for public deployments
+>
+> Note that we are far from generalization to new manipulation skills, with no indication of any sign of such skills forming with current amounts of data.
 
 > [!NOTE]
 >
