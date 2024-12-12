@@ -522,11 +522,11 @@ This approach is essentially a combination of the results of [RT2](./4-generaliz
 
 These models demonstrate the following generalization capabilities:
 
-- **Objects** - VLAs have demonstrated high ability to recognize the presence of a variety of objects and understand when they are useful.
-- **Environments** - VLAs can operate in a variety of diverse environments, due to the general visual intelligence abilities of pre-training vision-language models.
-- **Reasoning** - High-level reasoning is close to being a solved problem, with LLMs providing sufficient problem-solving abilities for most execution oriented real-world tasks.
-- **Hardware** - The cross-embodiment results demonstrated by pi0 indicate that it may be possible to create robotics foundational models that can operate across hardware. However, it's worth noting that pi0 was trained with robots that all used simple graspers, and this approach would likely require a far larger scale of data in order to work on 5-finger manipulators.
-- **Manipulation** - Robots are still far from being able to manipulate most objects. The diversity of ways that we manipulate physical objects is highly complex, and robots have only demonstrated the ability to perform manipulation skills that are directly in their dataset (like grasping and releasing), with little generalization abilities here.
+1. **Objects** - VLAs have demonstrated high ability to recognize the presence of a variety of objects and understand when they are useful.
+2. **Environments** - VLAs can operate in a variety of diverse environments, due to the general visual intelligence abilities of pre-training vision-language models.
+3. **Reasoning** - High-level reasoning is close to being a solved problem, with LLMs providing sufficient problem-solving abilities for most execution oriented real-world tasks.
+4. **Hardware** - The cross-embodiment results demonstrated by pi0 indicate that it may be possible to create robotics foundational models that can operate across hardware. However, it's worth noting that pi0 was trained with robots that all used simple graspers, and this approach would likely require a far larger scale of data in order to work on 5-finger manipulators.
+5. **Manipulation** - Robots are still far from being able to manipulate most objects. The diversity of ways that we manipulate physical objects is highly complex, and robots have only demonstrated the ability to perform manipulation skills that are directly in their dataset (like grasping and releasing), with little generalization abilities here.
 
 > [!IMPORTANT]
 >
