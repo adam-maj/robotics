@@ -500,7 +500,7 @@ It's hard to overestimate how much value VLMs have brought to robotic planning a
 
 <br />
 
-### Breakthrough #8: Cross-embodiment
+### Breakthrough #7: Cross-embodiment
 
 Finally, [Physical Intelligence's](https://www.physicalintelligence.company/) first robotics foundation model [pi0](./4-generalization/7-pi0/1-pi0.pdf) just introduced another set of impressive architectural and training innovations.
 
