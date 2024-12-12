@@ -389,7 +389,7 @@ The earliest approaches to robotic control were based in [classical control](./3
 These physics based models usually involved directly modelling forces on objects and using forward and inverse kinematics and dynamics models that predict the movements that would result from specific motor commands, and try to predict in reverse the motor commands necessary to generate desired movement outputs.
 
 <p align="center">
-  <img src="/images/readme/grasp-contacts.jpeg" alt="grasp contacts" width="50%" />
+  <img src="/images/readme/grasp-contacts.png" alt="grasp contacts" width="50%" />
 </p>
 <p align="center">
   <i>A simple example of modeling forces of a finger contact.</i>
@@ -442,7 +442,7 @@ This approach helped to make the policies robust against differences between the
 All of these advancements were combined into [OpenAI's robotic hand](./3-control/3-simulation/4-sim-manipulation/1-sim-manipulation.pdf) which was trained entirely in MuJoCo and demonstrated impressive 5-finger dexterous manipulation abilities with a block ([check out the video here](https://www.youtube.com/watch?v=jwSbzNHGflM)).
 
 <p align="center">
-  <img src="/images/readme/openai-hand.jpeg" alt="openai-hand" width="70%" />
+  <img src="/images/readme/openai-hand.png" alt="openai-hand" width="70%" />
 </p>
 <p align="center">
   <i>OpenAI's robotic hand in reality and simulation</i>
