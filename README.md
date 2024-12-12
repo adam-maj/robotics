@@ -857,3 +857,77 @@ As we get closer to general-purpose humanoid robotics, we get closer to re-engin
 <br />
 
 # Resources
+
+## Papers
+
+**Perception**
+
+- **SLAM** - Simultaneous Localization and Mapping: Part I (2006), Hugh Durrant Whyte and Tim Bailey [[PDF]](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=1638022)
+- **SIFT** - Distinctive Image Features from Scale-Invariant Keypoints (2004), David G. Lowe [[PDF]](https://www.cs.ubc.ca/~lowe/papers/ijcv04.pdf)
+- **ORB** - ORB: an efficient alternative to SIFT or SURF (2011), Ethan Rublee et al.
+- **ORB-SLAM** - ORB-SLAM: a Versatile and Accurate Monocular SLAM System (2015), Raul Mur-Artal et al. [[PDF]](https://arxiv.org/pdf/1502.00956)
+- **DROID-SLAM** - DROID-SLAM: Deep Visual SLAM for Monocular, Stereo, and RGB-D Cameras (2021), Zachary Teed and Jia Deng [[PDF]](https://arxiv.org/pdf/2108.10869)
+
+**Planning**
+
+- **A-star** - A Formal Basis for the Heuristic Determination of Minimum Cost Paths (1966), Peter E. Hart et al. [[PDF]](https://ai.stanford.edu/~nilsson/OnlinePubs-Nils/PublishedPapers/astar.pdf)
+- **PRM** - Probabilistic Roadmaps for Path Palnning in High-Dimensional Configuration Spaces (1996), Lydia E. Kavraki et al. [[PDF]](https://www.cs.cmu.edu/~motionplanning/papers/sbp_papers/PRM/prmbasic_01.pdf)
+- **RRT** - Rapidly-Exploring Random Trees: A New Tool for Path Planning, Steven M. LaValle [[PDF]](https://msl.cs.illinois.edu/~lavalle/papers/Lav98c.pdf)
+- **CHOMP** - CHOMP: Gradient Optimization Techniques for Efficient Motion Planning (2009), Nathan Ratliff et al. [[PDF]](https://www.ri.cmu.edu/pub_files/2009/5/icra09-chomp.pdf)
+- **TrajOpt** - Finding Locally Optimal, Collision-Free Trajectories with Sequential Convex Optimization (2013), John Schulman [[PDF]](https://www.roboticsproceedings.org/rss09/p31.pdf)
+- **STRIPS** - STRIPS: A New Approach to the Application of Theorem Proving to Problem Solving (1971), Richard E. Fikes and Nils J. Nilsson [[PDF]](https://ai.stanford.edu/~nilsson/OnlinePubs-Nils/PublishedPapers/strips.pdf)
+- **Max-Q** - Hierarchical Reinforcement Learning with the MAXQ Value Function Decomposition (1999), Thomas G. Dietterich [[PDF]](https://arxiv.org/pdf/cs/9905014)
+- **PDDL** - PPDL2.1: An Extension to PDDL for Expressing Temporal Planning Domains (2003), Maria Fox and Derek Long [[PDF]](https://arxiv.org/pdf/1106.4561)
+- **ASP** - What Is Answer Set Programming? (2008), Valdimir Lifschitz [[PDF]](https://www.cs.utexas.edu/~vl/papers/wiasp.pdf)
+- **Clingo** - Clingo = ASP + Control: Preliminary Report (2014), Martin Gebser et al. [[PDF]](https://arxiv.org/pdf/1405.3694)
+
+**Classical Control**
+
+- **Classical Control** - Modern Robotics: Mechanis, Planning, and Control (2019), Kevin M. Lynch and Frank C. Park
+- **Model Control** - Model learning for robot control: A survey (2011), Duy Nguyen Tuong and Jan Peters [[PDF]](https://www.researchgate.net/publication/51046423_Model_learning_for_robot_control_A_survey)
+
+**Reinforcement Learning**
+
+- **MDP** - Reinforcement Learning: A Survey (1996), Leslie Pack Kaelbling et al. [[PDF]](https://arxiv.org/pdf/cs/9605103)
+- **Atari** - Playing Atari with Deep Reinforcement Learning (2013), Volodymyr Mnih et al. [[PDF]](https://arxiv.org/pdf/1312.5602)
+- **A3C** - Asynchronous Methods for Deep Reinforcement Learning (2016), Volodymyr Mnih et al. [[PDF]](https://arxiv.org/pdf/1602.01783)
+- **TRPO** - Trust Region Policy Optimization (2015), John Schulman et al. [[PDF]](https://arxiv.org/pdf/1502.05477)
+- **GAE** - High-Dimensional Continuous Control Using Generalized Advantage Estimation (2015), John Schulman et al. [[PDF]](https://arxiv.org/pdf/1506.02438)
+- **PPO** - Proximal Policy Optimization Algorithms (2016), John Schulman et al. [[PDF]](https://arxiv.org/abs/1707.06347)
+- **DDPG** - Continuous control with deep reinforcement learning (2015), Timothy P. Lillicrap et al. [[PDF]](https://arxiv.org/pdf/1509.02971)
+- **SAC** - Soft Actor-Critic: Off-Policy Maximum Entropy Deep Reinforcement Learning with a Stochastic Actor (2018), Tuomas Haarnoja et al. [[PDF]](https://arxiv.org/pdf/1801.01290)
+- **Curiosity** - Large-Scale Study of Curiosity-Driven Learning (2018), Yuri Burda et al. [[PDF]](https://arxiv.org/pdf/1808.04355)
+
+**Simulation**
+
+- **MuJoCo** - MuJoCo: A physics engine for model-based control (2012), Emanuel Todorov et al. [[PDF]](https://homes.cs.washington.edu/~todorov/papers/TodorovIROS12.pdf)
+- **Domain Randomization** - Domain Randomization for Transferring Deep Neural Networks from Simulation to the Real World (2017), Josh Tobin et al. [[PDF]](https://arxiv.org/pdf/1703.06907)
+- **Dynamics Randomization** - Sim-to-Real Transfer of Robotic Control with Dynamics Randomization (2017), Xue Bin Peng et al. [[PDF]](https://arxiv.org/pdf/1710.06537)
+- **OpenAI Dexterous Manipulation** - Learning Dexterous In-Hand Manipulation (2018), Marcin Andrychowicz et al. [[PDF]](https://arxiv.org/pdf/1808.00177)
+- **Simulation Optimization** - Closing the Sim-to-Real Loop: Adapting Simulation Randomization with Real World Experience (2018), Yevgen Chebotar et al. [[PDF]](https://arxiv.org/pdf/1810.05687)
+
+**Imitation Learning**
+
+- **ALVINN** - ALVINN: An Autonomus Land Vehicle in a Neural Network (1988), Dean A. Pomerleau [[PDF]](https://proceedings.neurips.cc/paper/1988/file/812b4ba287f5ee0bc9d43bbf5bbe87fb-Paper.pdf)
+- **DAgger** - A Reduction of Imitation Learning and Structured Prediction to No-Regret Online Learning (2010), Stephane Ross [[PDF]](https://arxiv.org/pdf/1011.0686)
+- **IRL** - Apprenticeship Learning via Inverse Reinforcement Learning (2012), Pieter Abbeel and Andrew Y. Ng [[PDF]](https://ai.stanford.edu/~ang/papers/icml04-apprentice.pdf)
+- **GAIL** - Generative Adversarial Imitation Learning (2016), Jonathan Ho and Stefano Ermon [[PDF]](https://arxiv.org/pdf/1606.03476)
+- **MAML** - Model-Agnostic Meta-Learning for Fast Adaptation of Deep Networks (2017), Chelsea Finn et al. [[PDF]](https://arxiv.org/pdf/1703.03400)
+- **One-Shot** - One-Shot Imitation Learning (2017), Yan Duan et al. [[PDF]](https://arxiv.org/pdf/1703.07326)
+
+**Locomotion**
+
+- **ZMP** - Zero-Moment Point: Thirty Five Years of Its Life (2004), Miomir Vukobratovic and Branislav Borovac [[PDF]](https://www.researchgate.net/publication/220065796_Zero-Moment_Point_-_Thirty_Five_Years_of_its_Life)
+- **Preview Control** - Biped Walking Pattern Generation by using Preview Control of Zero-Moment Point (2003), Shuuji Kajita et al. [[PDF]](https://www.researchgate.net/publication/4041375_Biped_walking_pattern_generation_by_using_preview_control_of_zero-moment_point)
+- **Biped** - Reinforcement Learning for Versatile, Dynamic, and Robust Bipedal Locomotion Control (2024), Zhongyu Li et al. [[PDF]](https://arxiv.org/pdf/2401.16889)
+- **Quadruped** - Learning Quadrupedal Locomotion over Challenging Terrain (2020), Joonho Lee et al. [[PDF]](https://arxiv.org/pdf/2010.11251)
+
+**Generalization**
+
+- **E2E** - End-to-End Training of Deep Visuomotor Policies (2015), Sergey Levine et al. [[PDF]](https://arxiv.org/pdf/1504.00702)
+- **BC-Z** - BC-Z: Zero-Shot Task Generalization with Robotic Imitation Learning (2022), Eric Jang et al. [[PDF]](https://arxiv.org/pdf/2202.02005)
+- **SayCan** - Do As I Can, Not As I Say: Grounding Language in Robotic Affordances (2022), Michael Ahn et al. [[PDF]](https://arxiv.org/pdf/2204.01691)
+- **RT1** - RT-1: Robotics Transformer for Real-World Control at Scale (2022), Anthony Brohan et al. [[PDF]](https://arxiv.org/pdf/2212.06817)
+- **ACT** - Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware (2023), Tony Z. Zhao et al. [[PDF]](https://arxiv.org/pdf/2304.13705)
+- **VLA** - RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control (2023), Anthony Brohan et al. [[PDF]](https://arxiv.org/pdf/2307.15818)
+- **Pi0** - π0: A Vision-Language-Action Flow Model for General Robot Control (2024), Kevin Black et al. [[PDF]](https://www.physicalintelligence.company/download/pi0.pdf)
