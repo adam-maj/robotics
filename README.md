@@ -439,14 +439,14 @@ These problems were addressed with techniques like [Domain Randomization](./3-co
 
 This approach helped to make the policies robust against differences between the simulation and reality, allowing the robot to learn a general approach to control that doesn't depend on a specific set of physical conditions and laws, allowing it to generalize to the real world as just another subset of its learned abilities.
 
-All of these advancements were combined into [OpenAI's robotic hand](./3-control/3-simulation/4-sim-manipulation/1-sim-manipulation.pdf) which was trained entirely in MuJoCo and demonstrated impressive 5-finger dexterous manipulation abilities with a block ([check out the video here](https://www.youtube.com/watch?v=jwSbzNHGflM)).
-
 <p align="center">
   <img src="/images/readme/openai-hand.png" alt="openai-hand" width="70%" />
 </p>
 <p align="center">
   <i>OpenAI's robotic hand in reality and simulation</i>
 </p>
+
+All of these advancements were combined into [OpenAI's robotic hand](./3-control/3-simulation/4-sim-manipulation/1-sim-manipulation.pdf) which was trained entirely in MuJoCo and demonstrated impressive 5-finger dexterous manipulation abilities with a block ([check out the video here](https://www.youtube.com/watch?v=jwSbzNHGflM)).
 
 <br />
 
