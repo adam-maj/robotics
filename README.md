@@ -706,7 +706,7 @@ Let's look at each one to understand the path forward.
 
 <br />
 
-**1. Repurposing Internet Data**
+### 1. Repurposing Internet Data
 
 One approach is to try to use the diverse video data available online. Many of these videos have sections with humans moving and manipulating objects, which could potentially be used to infer priors on manipulation skills.
 
@@ -724,7 +724,7 @@ It's unlikely that this approach has sufficient signal for robotics generalizati
 
 <br />
 
-**2. Simulation**
+### 2. Simulation
 
 Training in simulation offers near unlimited data scale since we can parallelize training with more compute.
 
@@ -736,7 +736,7 @@ Because of this, simulation is unlikely to be the path forward.
 
 <br />
 
-**3. Real World Data**
+### 3. Real World Data
 
 Given the requirement of the rich complexity of the real world, the only path forward seems to be to collect data from the real world.
 
