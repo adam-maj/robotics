@@ -318,8 +318,6 @@ This suggests that the robotic perception problem is structured with a complexit
 
 ## 2.2.2 Planning
 
-![Planning](./images/readme/planning.png)
-
 Robotic planning is about using an understanding of the environment to convert the robot's goals into concrete action plans.
 
 Specifically, this consists of **path planning**, **task planning**, and **motion planning**. We will focus on path planning and task planning here, as low-level motion planning is really the job of robotic control.
