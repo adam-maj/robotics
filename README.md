@@ -574,7 +574,7 @@ In this section, we'll look at how this arms race will play out by answering the
 
 ## 3.1 Constraints
 
-![Placeholder](./images/readme//constraints.png)
+![Constraints](./images/readme/constraints.png)
 
 We have seen that current capabilities leave much to be desired in the way of general-purpose robotics.
 
@@ -625,8 +625,6 @@ With this in mind, let's take a look at what needs to happen to overcome this da
 <br />
 
 ## 3.2 Data Scale
-
-![Placeholder](./images//placeholder.png)
 
 We have already seen that scaling laws work from deep learning progress over the past 5 years: **given sufficient data, we can scale up parameters and use more compute to get much better models with impressive generalization capabilities.**
 
