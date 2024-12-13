@@ -860,7 +860,7 @@ As we get closer to general-purpose humanoid robotics, we get closer to re-engin
 
 ## Topics
 
-> [!INFO]
+> [!NOTE]
 >
 > Each topic highlighted in this repository is covered in a folder linked below.
 >
