@@ -68,7 +68,7 @@ Let's start by understanding the fundamentals of robotics from first principles.
 
 # 1. Fundamentals
 
-![Fundamentals](./images/placeholder.png)
+![Fundamentals](./images/readme/fundamentals.png)
 
 Robotics is about building systems that can alter the physical world to accomplish arbitrary goals. Practically, we're interested in creating robots capable of automating the majority of economically valuable physical labor.
 
@@ -107,8 +107,6 @@ Before we can understand how close we are to the goal of general-purpose robotic
 <br />
 
 # 2. Progress
-
-![Placeholder](./images/placeholder.png)
 
 The challenge of developing general-purpose robotics is both a hardware and a software problem.
 
@@ -156,6 +154,8 @@ This is why developing cheaper, lighter, safer actuators is an important focus f
 
 ### Form Factor
 
+![Form Factor](./images/readme/form-factor.png)
+
 In addition to these trade-offs, selecting a specific robotic form factor has important downstream consequences on future improvements.
 
 We will see that robotic software is heavily dependent on data collected from exactly the same robot that is meant to be deployed on. Robotic software learns to take actions based on the exact joints, sensors, and actuators it is trained with data from.
@@ -181,6 +181,8 @@ In other words, they believe that the humanoid form factor is sufficiently gener
 
 ### Humanoids
 
+![Humanoids](./images/readme/humanoids.png)
+
 Since most large robotics companies have now bet on the humanoid form factor, let's briefly look at the hardware capabilities of modern humanoid systems.
 
 We can get a cursory overview by looking at the demo for [Optimus Gen 2](https://www.youtube.com/watch?v=cpraXaw7dyc&t=3s) or [Figure 02](https://www.youtube.com/watch?v=0SRVJaOg9Co).
@@ -199,8 +201,6 @@ With this context in mind, we can turn to understanding robotic software systems
 <br />
 
 ## 2.2 Software
-
-![Placeholder](./images/placeholder.png)
 
 Software is where most of the progress in robotics has occurred over the past decade, and is the place we must look to understand where the future of robotics is headed.
 
@@ -233,6 +233,8 @@ With this context, let's first look at the innovations that have changed percept
 <br />
 
 ## 2.2.1 Perception
+
+![Perception](./images/readme/perception.png)
 
 Robotic perception is concerned with processing sensory data about the robot's environment to understand:
 
@@ -316,6 +318,8 @@ This suggests that the robotic perception problem is structured with a complexit
 
 ## 2.2.2 Planning
 
+![Planning](./images/readme/planning.png)
+
 Robotic planning is about using an understanding of the environment to convert the robot's goals into concrete action plans.
 
 Specifically, this consists of **path planning**, **task planning**, and **motion planning**. We will focus on path planning and task planning here, as low-level motion planning is really the job of robotic control.
@@ -365,6 +369,8 @@ Recent robotic systems like [SayCan](./4-generalization/3-say-can/1-saycan.pdf) 
 <br />
 
 ## 2.2.3 Control
+
+![Control](./images/readme/control.png)
 
 As we've discussed, robotic control is by far the hardest part of building robotic systems due to the incomprehensible complexity of the real world, and we are currently far from true generalization.
 
@@ -568,7 +574,7 @@ In this section, we'll look at how this arms race will play out by answering the
 
 ## 3.1 Constraints
 
-![Placeholder](./images//placeholder.png)
+![Placeholder](./images/readme//constraints.png)
 
 We have seen that current capabilities leave much to be desired in the way of general-purpose robotics.
 
