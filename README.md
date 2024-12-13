@@ -375,7 +375,7 @@ Recent robotic systems like [SayCan](./4-generalization/3-say-can/1-saycan.pdf) 
 
 ## 2.2.3 Control
 
-![Control](./images/readme/control.png)
+![Control](./images/readme/control-1.png)
 
 As we've discussed, robotic control is by far the hardest part of building robotic systems due to the incomprehensible complexity of the real world, and we are currently far from true generalization.
 
