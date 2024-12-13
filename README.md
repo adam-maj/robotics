@@ -1,6 +1,6 @@
 # robotics [WIP]
 
-A deep-dive on the entire history of robotics, highlighting the series of innovations that have enabled the development of general purpose humanoids like Optimus and Figure.
+A deep-dive on the entire history of robotics, highlighting the series of innovations that enabled general-purpose humanoids like Optimus and Figure.
 
 For each key milestone, I've included the critical papers in this repository, along with my notes and high-level explanations where relevant.
 
@@ -12,7 +12,7 @@ We will see that fully autonomous humanoids may be much farther away than expect
 >
 > This project is designed so that everyone can get most of the value by just reading my overview on the rest of this page.
 >
-> Then, people curious to learn about the technical details of each innovation can explore the rest of the repository via the links in the [resources](#resources) section.
+> Then, people curious to learn about the technical details can explore the papers in the rest of the repository.
 >
 > **For those who don't care about any technical details and are only concerned with implications about the future of robotics, skip to the [future](#3-future) section.**
 
@@ -22,7 +22,7 @@ We will see that fully autonomous humanoids may be much farther away than expect
 
 ## Table of Contents
 
-- [Overview](#o)
+- [Overview](#)
 - [1. Fundamentals](#)
 - [2. Progress](#)
   - [2.1 Hardware](#)
@@ -857,6 +857,76 @@ As we get closer to general-purpose humanoid robotics, we get closer to re-engin
 <br />
 
 # Resources
+
+## Topics
+
+> [!INFO]
+>
+> Each topic highlighted in this repository is covered in a folder linked below.
+>
+> In each folder, you'll find a copy of the critical papers related to the topic (`.pdf` files), along with my own breakdown of the paper and core intuitions when relevant (in the `.ipynb` files).
+
+**Perception**
+
+- [1.1. SLAM](./1-perception/1-slam/)
+- [1.2. SIFT](./1-perception/2-sift/)
+- [1.3. ORB](./1-perception/3-orb/)
+- [1.4. ORB-SLAM](./1-perception/4-orb-slam/)
+- [1.5. DROID-SLAM](./1-perception/5-droid-slam/)
+
+**Planning**
+
+- [2.1. Path Planning](./2-planning/1-path-planning/)
+  - [2.1.1. A-Star](./2-planning/1-path-planning/1-a-star/)
+  - [2.1.2. Probabilistic Roadmaps](./2-planning/1-path-planning/2-prm/)
+  - [2.1.3. Rapidly-exploring Random Trees](./2-planning/1-path-planning/3-rrt/)
+  - [2.1.4. CHOMP](./2-planning/1-path-planning/4-chomp/)
+  - [2.1.5. Trajectory Optimization](./2-planning/1-path-planning/5-traj-opt/)
+- [2.2. Task Planning](./2-planning/2-task-planning/)
+  - [2.2.1. STRIPS](./2-planning/2-task-planning/1-strips/)
+  - [2.2.2. Max-Q](./2-planning/2-task-planning/2-max-q/)
+  - [2.2.3. Planning Domain Definition Language](./2-planning/2-task-planning/3-pddl/)
+  - [2.2.4. Answer Set Programming](./2-planning/2-task-planning/4-asp/)
+
+**Control**
+
+- [3.1. Classical Control](./3-control/1-classical-control/)
+- [3.2. Reinforcement Learning](./3-control/2-reinforcement-learning/)
+  - [3.2.1. Markov Decision Processes](./3-control/2-reinforcement-learning/1-mdp/)
+  - [3.2.2. Deep Q-Networks (Atari)](./3-control/2-reinforcement-learning/2-atari/)
+  - [3.2.3. Asynchronous Actor Critic (A3C)](./3-control/2-reinforcement-learning/3-a3c/)
+  - [3.2.4. Trust Region Policy Optimization (TRPO)](./3-control/2-reinforcement-learning/4-trpo/)
+  - [3.2.5. Generalized Advantage Estimation (GAE)](./3-control/2-reinforcement-learning/5-gae/)
+  - [3.2.6. Proximal Policy Optimization (PPO)](./3-control/2-reinforcement-learning/6-ppo/)
+  - [3.2.7. Deep Deterministic Policy Gradient (DDPG)](./3-control/2-reinforcement-learning/7-ddpg/)
+  - [3.2.8. Soft-Actor Critic](./3-control/2-reinforcement-learning/8-sac/)
+  - [3.2.9. Curiosity Learning](./3-control/2-reinforcement-learning/9-curiosity/)
+- [3.3. Simulation Learning](./3-control/3-simulation/)
+  - [3.3.1. MuJoCo](./3-control/3-simulation/1-mujoco/)
+  - [3.3.2. Domain Randomization](./3-control/3-simulation/2-domain-randomization/)
+  - [3.3.3. Dynamics Randomization](./3-control/3-simulation/3-dynamics-randomization/)
+  - [3.3.4. Learning Dexterous Manipulation in Simulation (OpenAI)](./3-control/3-simulation/4-sim-manipulation/)
+  - [3.3.5. Simulation Optimization](./3-control/3-simulation/5-sim-opt/)
+- [3.4. Imitation Learning](./3-control/4-imitation/)
+  - [3.3.1. Behavior Cloning (ALVINN)](./3-control/4-imitation/1-alvinn/)
+  - [3.3.2. Dataset Aggregation (DAgger)](./3-control/4-imitation/2-dagger/)
+  - [3.3.3. Inverse Reinforcement Learning (IRL)](./3-control/4-imitation/3-irl/)
+  - [3.3.4. Generative Adversarial Imitation Learning (GAIL)](./3-control/4-imitation/4-gail/)
+  - [3.3.5. Model Agnostic Meta-Learning (MAML)](./3-control/4-imitation/5-maml/)
+  - [3.3.6. One-Shot Imitation Learning](./3-control/4-imitation/6-one-shot/)
+- [3.5. Locomotion](./3-control/5-locomotion/)
+  - [3.5.1. Zero Moment Point (ZMP)](./3-control/5-locomotion/1-zmp/)
+  - [3.5.2. Locomotion with Deep Reinforcement Learning](./3-control/5-locomotion/2-drl/)
+
+**Generalization**
+
+- [4.1. End-to-end Visuomotor Policies](./4-generalization/1-e2e/)
+- [4.2. BC-Z](./4-generalization/2-bc-z/)
+- [4.3. SayCan](./4-generalization/3-say-can/)
+- [4.4. Robotic Transformer](./4-generalization/4-rt1/)
+- [4.5. ALoHA & Action Chunking Transformer (ACT)](./4-generalization/5-act/)
+- [4.6. Robotic Transformer 2 (RT2) & Vision-Language-Action (VLA)](./4-generalization/6-vla/)
+- [4.7. Cross-embodiment (π0)](./4-generalization/7-pi0/)
 
 ## Papers
 
