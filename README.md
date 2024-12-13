@@ -358,6 +358,13 @@ This problem remained unsolved until the recent success of multi-modal LLMs prov
 
 Recent robotic systems like [SayCan](./4-generalization/3-say-can/1-saycan.pdf) and [RT2](./4-generalization/6-vla/1-vla.pdf) use these pre-trained VLMs for their reasoning abilities and fine-tune them to understand the capabilities afforded by robotic control systems to create effective task planning systems that can direct the robot to accomplish long-horizon tasks and solve reasoning problems that were previously intractable.
 
+<p align="center">
+  <img src="/images/readme/saycan.png" alt="slam correlations" width="50%" />
+</p>
+<p align="center">
+  <i>An example of SayCan coming up with a task plan and grounding plans in robotic capabilities</i>
+</p>
+
 > [!IMPORTANT]
 >
 > **Capabilities & Limitations: Task Planning**
@@ -437,6 +444,13 @@ However, early simulation software was not designed specifically for robotics, a
 
 In 2012, a group of robotics engineers released [MuJoCo](./3-control/3-simulation/1-mujoco/1-mujoco.pdf), an open-source simulator built specifically with attention to the concerns of robotics needs with highly accurate contact and rigid body dynamics calculations. All breakthrough simulation research in robotics afterwards has been conducted in MuJoCo.
 
+<p align="center">
+  <img src="/images/readme/mujoco.png" alt="grasp contacts" width="70%" />
+</p>
+<p align="center">
+  <i>Examples of robotic systems modeled in MuJoCo.</i>
+</p>
+
 Training control policies comes with the challenge of transferring policies from simulation to reality, known as the **sim-to-real problem**. Any inaccuracies in the simulation software itself magnify errors in the policy as it is used in the real world. In particular, RL policies trained in simulation often learn to exploit inaccuracies in the simulation to achieve their goal, and then fall apart in the real world where the actual laws of physics prevent these exploits.
 
 These problems were addressed with techniques like [Domain Randomization](./3-control/3-simulation/2-domain-randomization/1-domain-randomization.pdf), [Dynamics Randomization](./3-control/3-simulation/3-dynamics-randomization/1-dynamics-randomization.pdf), and [Simulation Optimization](./3-control/3-simulation/5-sim-opt/1-sim-opt.pdf) where control policies were trained with randomized object textures, lighting conditions, and even laws of physics.
@@ -482,6 +496,13 @@ However, early attempts at training control policies often lacked sufficient dat
 
 Then, models like [BC-Z](./4-generalization/2-bc-z/1-bc-z.pdf) used these techniques to demonstrate that training control policies from tele-operation data via imitation learning could be an effective training strategy.
 
+<p align="center">
+  <img src="/images/readme/aloha.png" alt="grasp contacts" width="80%" />
+</p>
+<p align="center">
+  <i>The ALoHA tele-operation system.</i>
+</p>
+
 Most recently, the development of [ALoHa](./4-generalization/5-act/1-act.pdf), a low-cost hardware system for tele-operation, has set a standard for relatively cheaply collected real world robotic data for training models.
 
 <br />
@@ -508,7 +529,14 @@ It's hard to overestimate how much value VLMs have brought to robotic planning a
 
 Finally, [Physical Intelligence's](https://www.physicalintelligence.company/) first robotics foundation model [pi0](./4-generalization/7-pi0/1-pi0.pdf) just introduced another set of impressive architectural and training innovations.
 
-Most notably, they trained their model on data from many different robotics hardware embodiments (a **cross-embodiment dataset**), allowing it to generalize to new hardware with a small amount of fine-tuning.
+<p align="center">
+  <img src="/images/readme/cross-embodiment.png" alt="grasp contacts" width="80%" />
+</p>
+<p align="center">
+  <i>A diagram of the mixture of data sources and robotics hardware used for cross-embodiment training.</i>
+</p>
+
+Most notably, they trained their model on data from many different robotics hardware systems (a **cross-embodiment dataset**), allowing it to generalize to new hardware with a small amount of fine-tuning.
 
 This represents an impressive form of generalization which may help to alleviate concerns about making adjustments to robotic hardware over time, and also presents the prospect of a **robotic foundation model** which can work across all hardware architectures.
 
@@ -720,9 +748,11 @@ It's unlikely that this approach has sufficient signal for robotics generalizati
 
 > [!NOTE]
 >
-> Skild has probably accomplished impressive state-of-the-art results analogous to what Physical Intelligence has demonstrated with their pre-training + fine-tuning approach, though they are likely to have achieved a more advanced level of generalization.
+> Skild has probably accomplished impressive state-of-the-art results analogous to what Physical Intelligence has demonstrated with their pre-training + fine-tuning approach.
 >
-> We don't have any way to know this since they haven't publicly released results yet.
+> In their [Forbes fundraising announcement](https://archive.ph/oz6ii), they suggest that "the robots using Skild’s AI models also demonstrated 'emergent capabilities' — entirely new abilities they weren’t taught. These are often simple, like recovering an object that slips out of hand or rotating an object."
+>
+> This also suggests a level of generalization that is unlikely to be beyond what Physical Intelligence has demonstrated, though we don't have any way to know this since they haven't publicly released results yet.
 
 <br />
 
