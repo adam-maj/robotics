@@ -949,6 +949,8 @@ As we get closer to general-purpose humanoid robotics, we get closer to re-engin
 - [4.6. Robotic Transformer 2 (RT2) & Vision-Language-Action (VLA)](./4-generalization/6-vla/)
 - [4.7. Cross-embodiment (π0)](./4-generalization/7-pi0/)
 
+<br />
+
 ## Papers
 
 **Perception**
