@@ -234,7 +234,7 @@ With this context, let's first look at the innovations that have changed percept
 
 ## 2.2.1 Perception
 
-![Perception](./images/readme/perception.png?)
+![Perception](./images/readme/perception-1.png)
 
 Robotic perception is concerned with processing sensory data about the robot's environment to understand:
 
