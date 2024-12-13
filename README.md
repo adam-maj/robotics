@@ -866,6 +866,8 @@ As we get closer to general-purpose humanoid robotics, we get closer to re-engin
 >
 > In each folder, you'll find a copy of the critical papers related to the topic (`.pdf` files), along with my own breakdown of the paper and core intuitions when relevant (in the `.ipynb` files).
 
+<br />
+
 ### 1. Perception
 
 - [1.1. SLAM](./1-perception/1-slam/)
@@ -873,6 +875,8 @@ As we get closer to general-purpose humanoid robotics, we get closer to re-engin
 - [1.3. ORB](./1-perception/3-orb/)
 - [1.4. ORB-SLAM](./1-perception/4-orb-slam/)
 - [1.5. DROID-SLAM](./1-perception/5-droid-slam/)
+
+<br />
 
 ### 2. Planning
 
@@ -890,6 +894,8 @@ As we get closer to general-purpose humanoid robotics, we get closer to re-engin
 - [2.2.2. Max-Q](./2-planning/2-task-planning/2-max-q/)
 - [2.2.3. Planning Domain Definition Language](./2-planning/2-task-planning/3-pddl/)
 - [2.2.4. Answer Set Programming](./2-planning/2-task-planning/4-asp/)
+
+<br />
 
 ### 3. Control
 
@@ -930,6 +936,8 @@ As we get closer to general-purpose humanoid robotics, we get closer to re-engin
 
 - [3.5.1. Zero Moment Point (ZMP)](./3-control/5-locomotion/1-zmp/)
 - [3.5.2. Locomotion with Deep Reinforcement Learning](./3-control/5-locomotion/2-drl/)
+
+<br />
 
 ### 4. Generalization
 
