@@ -14,7 +14,7 @@ We will see that fully autonomous humanoids may be much farther away than expect
 >
 > Then, people curious to learn about the technical details can explore the papers in the rest of the repository.
 >
-> **For those who don't care about any technical details and are only concerned with implications about the future of robotics, skip to the [future](#3-future) section.**
+> **For those who want to skip all technical details and go straight to my analysis of the future of robotics (not recommended), jump to the [future](#3-future) section.**
 
 > [!NOTE]
 >
@@ -45,13 +45,13 @@ We will see that fully autonomous humanoids may be much farther away than expect
 
 # Overview
 
-Riding the tailwinds of recent progress in deep learning, robotics has again regained the spotlight, with companies like [Optimus](https://www.tesla.com/we-robot), [Figure](https://www.figure.ai/), and [1x](https://www.1x.tech/) deploying hundreds of millions of dollars (see: [Figure raises $675M](https://www.prnewswire.com/news-releases/figure-raises-675m-at-2-6b-valuation-and-signs-collaboration-agreement-with-openai-302074897.html), [1x raises $100M](https://www.1x.tech/discover/1x-secures-100m-in-series-b-funding)) to develop general-purpose humanoids.
+Riding the tailwinds of recent progress in deep learning, robotics has again regained the spotlight, with companies like [Optimus](https://www.tesla.com/we-robot), [Figure](https://www.figure.ai/), and [1x](https://www.1x.tech/) deploying hundreds of millions of dollars (see: [Figure raises $675M](https://www.prnewswire.com/news-releases/figure-raises-675m-at-2-6b-valuation-and-signs-collaboration-agreement-with-openai-302074897.html), [1x raises $100M](https://www.1x.tech/discover/1x-secures-100m-in-series-b-funding)) to develop general-purpose humanoids, and others like [Physical Intelligence](https://www.physicalintelligence.company/) and [Skild](https://www.skild.ai/) raising large rounds (see: [Physical Intelligence raised $400M](https://www.reuters.com/technology/artificial-intelligence/robot-ai-startup-physical-intelligence-raises-400-mln-bezos-openai-2024-11-04/), [Skild raises $300M](https://www.skild.ai/blogs/announcing-our-300m-series-a)) to develop robotics foundational models.
 
-Given recent hype, twitter sentiment, venture narratives, and recent demos (see: [Tesla Optimus](https://www.youtube.com/watch?v=cpraXaw7dyc), [Figure 02](https://www.youtube.com/watch?v=0SRVJaOg9Co), [Figure 02 + OpenAI](https://www.youtube.com/watch?v=Sq1QZB5baNw), [1x NEO](https://www.youtube.com/watch?v=bUrLuUxv9gE)), it may seem like fully autonomous humanoids are right around the corner. I originally anticipated that they might arrive within the next 2-3 years.
+Given all the hype, twitter sentiment, venture narratives, and recent demos (see: [Tesla Optimus](https://www.youtube.com/watch?v=cpraXaw7dyc), [Figure 02](https://www.youtube.com/watch?v=0SRVJaOg9Co), [Figure 02 + OpenAI](https://www.youtube.com/watch?v=Sq1QZB5baNw), [1x NEO](https://www.youtube.com/watch?v=bUrLuUxv9gE)), it may seem like fully autonomous humanoids are right around the corner. I originally anticipated that they might arrive within the next 2-3 years.
 
 However, as I went farther into my deep dive, I noticed that **the technical realities of current robotics progress point to a very different future than what current narratives suggest.**
 
-To see this realistic future of the robotics industry, we'll first need to understand the series of innovations that have gotten the industry to where it is today.
+To see this realistic future of the robotics industry, we'll first need to understand the series of innovations that have gotten robotics technology to its current state.
 
 Then, we'll use this to explore the answers to the following questions:
 
@@ -70,9 +70,11 @@ Let's start by understanding the fundamentals of robotics from first principles.
 
 ![Fundamentals](./images/readme/fundamentals.png)
 
-Robotics is about building systems that can alter the physical world to accomplish arbitrary goals. Practically, we're interested in creating robots capable of automating the majority of economically valuable physical labor.
+Robotics is about building systems that can alter the physical world to accomplish arbitrary goals.
 
-At the simplest level, robots convert ideas into actions.
+Practically, we're interested in creating robots capable of automating the majority of economically valuable physical labor.
+
+At the simplest level, **robots convert ideas into actions**.
 
 > [!IMPORTANT]
 >
@@ -80,7 +82,7 @@ At the simplest level, robots convert ideas into actions.
 >
 > 1. Observe and understand the state of their environment
 > 2. Plan what actions they need to take to accomplish their goals
-> 3. Know how to physically execute these actions
+> 3. Know how to physically execute these actions with their hardware
 >
 > These requirements cover the 3 essential functions of all robotic systems:
 >
@@ -88,19 +90,25 @@ At the simplest level, robots convert ideas into actions.
 > 2. **Planning**
 > 3. **Control**
 
-We may initially expect that planning is the hardest of these problems, since it depends on complex reasoning. However, we will see that the opposite is the case - planning is the easiest of these problems and is largely solved today.
+We may initially expect that planning is the hardest of these problems, since it depends on complex reasoning.
+
+However, we will see that the opposite is the case - planning is the easiest of these problems and is largely solved today.
 
 Meanwhile, the biggest barrier to progress in robotics today is in developing reliable control systems.
 
+<br />
+
 The end goal of robotics is to achieve full **autonomy** and broad **generalization**.
 
-We don't want a robot that's specialized for just a single goal, task, object, or environment; we want a robot that can accomplish any goal, perform any task, on any object, in any environment, without the help of any human.
+We don't want a robot that's specialized for just a single goal, task, object, or environment; such robots already exist in a variety of areas (especially in industrial automation).
+
+Instead, we want a robot that can accomplish any goal, perform any task, on any object, in any environment, without the help of any human.
 
 With such general purpose robotic systems available, we would have what [Eric Jang](https://x.com/ericjang11) calls a "[read/write API to physical reality](https://evjang.com/2024/03/03/all-roads-robots.html)," where we could make all desired changes to the physical world by issuing commands to robots using software alone.
 
-This is the holy grail of robotics; such a system would be so economically valuable that the prospect of it has motivated the billions of dollars flowing into the industry today.
+This is the holy grail of robotics. Such a system would be so economically valuable that the prospect of it has motivated the billions of dollars flowing into the industry today, as it would generate trillions of dollars for the world (and thus, for investors).
 
-From here on, I'll refer to these fully autonomous, generally intelligent, and broadly capable robotic systems as general-purpose robotics.
+From here on, I'll refer to these fully autonomous, generally intelligent, and broadly capable robotic systems as **general-purpose robotics**.
 
 Before we can understand how close we are to the goal of general-purpose robotics, we first need to look at the series of innovations that have gotten us to the current state of robotics.
 
@@ -110,7 +118,7 @@ Before we can understand how close we are to the goal of general-purpose robotic
 
 The challenge of developing general-purpose robotics is both a hardware and a software problem.
 
-Since a robot's software is entirely dependent on its hardware for sensory inputs and control outputs, we'll briefly cover robotics hardware first.
+Since a robot's software is entirely dependent on its hardware for sensory inputs and control outputs, we'll briefly cover robotics hardware first. Though it's important, we'll see that hardware is not the current bottleneck to progress.
 
 Then, we'll turn to understanding the series of software innovations over the past decade that are largely responsible for the recent interest in robotics.
 
@@ -123,7 +131,7 @@ A robot is made of a group of **rigid bodies**, connected by **joints**, driven 
 Each of these parts corresponds with one of the 3 critical functions of a robot:
 
 1. Cameras, LiDAR, IMUs, and other sensors allow the robot to perceive its environment.
-2. Actuators let the robot move at its joints, allowing it to move itself relative to its environment, or to move objects within its environment.
+2. Actuators let the robot move at its joints, allowing it to [1] move itself relative to its environment, or [2] to move objects relative to its environment.
 3. Compute is used to process sensory information, convert it into action plans, and execute these action plans by controlling actuators.
 
 > [!NOTE]
@@ -132,7 +140,7 @@ Each of these parts corresponds with one of the 3 critical functions of a robot:
 >
 > For example, [here's a video](https://www.youtube.com/watch?v=o7JH3UWO6I0) of the PR-1 robot from 2008.
 >
-> We can see that even 15 years ago, it was capable of doing pick and place tasks. Additionally, its hardware resembles that used in many modern robotics research papers like [SayCan](./4-generalization/3-say-can/1-saycan.pdf).
+> We can see that even 15 years ago, it was capable of doing pick and place tasks that some robots still struggle with today. Additionally, its hardware resembles that used in many modern robotics research papers like [SayCan](./4-generalization/3-say-can/1-saycan.pdf).
 
 <br />
 
@@ -148,7 +156,7 @@ Designing general-purpose robotic hardware involves several trade-offs that have
 
 It's worth noting that modern motors are often expensive, high rotational velocity, low torque, and heavy, which is suboptimal for many of these considerations.
 
-This is why developing cheaper, lighter, safer actuators is an important focus for companies like [Clone](https://clonerobotics.com/) (developing [artificial muscle actuators](https://x.com/clonerobotics/status/1849181515022053845)).
+This is why developing cheaper, lighter, safer actuators is an important focus for companies like [Clone](https://clonerobotics.com/) (developing [artificial muscle actuators](https://x.com/clonerobotics/status/1849181515022053845)) and [1x](https://www.1x.tech/) ([developing safer motors](https://evjang.com/2024/08/31/motors.html)).
 
 <br />
 
@@ -158,16 +166,22 @@ This is why developing cheaper, lighter, safer actuators is an important focus f
 
 In addition to these trade-offs, selecting a specific robotic form factor has important downstream consequences on future improvements.
 
-We will see that robotic software is heavily dependent on data collected from exactly the same robot that it's meant to be deployed on. Robotic software learns to take actions based on the exact joints, sensors, and actuators it is trained with data from.
+We will see that robotic software is heavily dependent on data collected from exactly the same robot that it's meant to be deployed on. Robotic software learns to take actions based on the exact joint, sensor, and actuator data it is trained on.
 
-Significantly changing the robot's hardware often means prior software becomes obsolete.
+Significantly altering the robot's hardware over time means prior software, and most importantly data (which we will see is extremely difficult to collect), becomes obsolete.
 
 > [!IMPORTANT]
-> Companies that are able to maintain the same hardware over time will benefit from the **compounding advantages** of deploying robots in the world, collecting diverse real-world datasets, creating improved models for their robots, and then using these improved models to motivate more deployments and revenue to further fuel this process.
+> Companies that are able to maintain the same hardware over time will benefit from the **compounding advantages** of:
+>
+> 1. Deploying robots in the world
+> 2. Collecting diverse real-world datasets
+> 3. Using this data to train improved models for their robots
+> 4. Using these improved models to generate more deployments and revenue
+> 5. Using the excess revenue to further fuel this process
 >
 > For this reason, **it's important that robotics companies design hardware systems that are sufficiently general**, so they can keep reaping the rewards of this data flywheel without having to alter their hardware.
 
-This is why so many companies have now opted to develop humanoids.
+**This is exactly why so many companies have now opted to develop humanoids.**
 
 Their argument is that the world is designed for humans, so humanoids will be generally capable of performing most tasks in our world.
 
@@ -189,10 +203,10 @@ We can get a cursory overview by looking at the demo for [Optimus Gen 2](https:/
 
 They don't give much information, but we can pick up on a few important considerations:
 
-- They have high degree-of-freedom hands with dexterous manipulation capabilities. These will enable much more complex motor control in the future, though they are much more difficult to train than simple graspers.
+- They have high degree-of-freedom hands with dexterous manipulation capabilities. These will enable much more complex motor control in the future, though they are orders of magnitude more difficult to train than simple graspers.
 - They appear to use only cameras for vision, opting against LiDAR systems that are often used on quadrupeds (due to cost optimization for mass production).
-- They have AI compute on board, which can be used for running inference on vision-language-models. We'll see that modern robotics software has adapted these models to be an essential part of their control systems.
-- Figure mentions their battery life. These robots may initially require frequent charging or need to be plugged in to operate, which is a hardware limitation that will improve over time.
+- They have AI compute on board, which can be used for running multi-modal LLM inference. We'll see that modern robotics software has adapted these models to be an essential part of their control systems.
+- Figure mentions their battery life, though they don't specify how long this will last. These robots may initially require frequent charging or need to be plugged in to operate, which is a hardware limitation that will improve over time.
 
 Most importantly, though these robots are expensive and have limited compute and battery life, their basic functionality should be sufficient to accomplish most physical labor.
 
@@ -204,11 +218,24 @@ With this context in mind, we can turn to understanding robotic software systems
 
 Software is where most of the progress in robotics has occurred over the past decade, and is the place we must look to understand where the future of robotics is headed.
 
-In this section, we'll focus on the series of innovations that have led us to the current frontier of robotic software. Then, we'll use this to understand the limitations of current capabilities and what we must accomplish to achieve general-purpose robotics.
+In this section, we'll focus on the series of innovations that have led us to the current frontier of robotic software.
 
-Robotic software defines the "brain" of the robot; its responsible for using sensor data and actuators to process the robots' **perception**, **plan** actions, and issue **control** commands.
+Then, we'll use this to understand:
 
-We may initially expect that planning is the most difficult of these functions - it often requires high-level reasoning abilities, understanding of environmental context, natural language, and more, whereas controlling limbs to grab and manipulate object seems comparatively simple.
+1. The limitations of current capabilities
+2. What we must accomplish to achieve general-purpose robotics
+
+<br />
+
+**Moravec's Paradox**
+
+Robotic software is responsible for using sensor data and actuators to process the robots' **perception**, **plan** actions, and issue **control** commands.
+
+In this sense, it represents the "brain" of the robot.
+
+We may initially expect that planning is the most difficult of these functions, since it requires high-level reasoning abilities, understanding of environmental context, natural language, and more.
+
+Meanwhile, controlling limbs to grab and manipulate object seems comparatively simple.
 
 In reality, the opposite is the case. Planning is the easiest of these functions and is now largely solved with models like [SayCan](./4-generalization/3-say-can/1-saycan.pdf) and [RT2](./4-generalization/6-vla/1-vla.pdf) (which we will cover soon), whereas creating effective motor control policies is the main constraint limiting progress today.
 
@@ -220,15 +247,25 @@ In reality, the opposite is the case. Planning is the easiest of these functions
 >
 > We can see the truth in this in the fact that modern AI systems have long been able to accomplish complex reasoning tasks like beating the best human chess player, Go player, passing the Turing test, and now being more intelligent than the average human, all while robots consistently fail to perform basic sensorimotor tasks that a 1-year-old human could, like grasping objects and crawling.
 
-Moravec's paradox is not really paradox, it is instead a direct result of the complexity of the real world.
+Moravec's paradox is not really paradox; it is instead a direct result of the complexity of the real world.
 
-Tasks that seem simple to us often actually require complex multi-step motor routines, an intuitive understanding of real world kinematics and dynamics, calibration against variable material frictions, resistance against external disruptive forces, and more. Meanwhile, symbol manipulation is a relatively lower-dimensional and less complex problem.
+Tasks that seem simple to us often actually require:
+
+1. Complex multi-step motor routines
+2. An intuitive understanding of real world kinematics and dynamics
+3. Calibration against variable material frictions
+4. Resistance against external disruptive forces
+5. etc.
+
+Meanwhile, symbol manipulation is a relatively lower-dimensional and less complex problem, as we have seen with the recent success of LLMs.
 
 To get a sense for this complexity that we often fail to appreciate, check out [this video where Eric Jang annotates all the motor routines required to open a package of dates](https://www.youtube.com/watch?v=b1lysnGFpqI).
 
-The truth of Moravec's paradox is also reflected in the human brain, which has far more computational resources allocated toward controlling our hands and fingers than the rest of our body. This may also be why motor control feels so easy to us compared to high-level reasoning.
+The truth of Moravec's paradox is also reflected in the human brain, which has far more computational resources allocated toward controlling our hands and fingers than the rest of our body (I won't include these here for aesthetic reasons, but checkout these [images of the cortical homunculus](https://en.wikipedia.org/wiki/Cortical_homunculus#Representation) which show you what the human body would look like if body parts were scaled to a size proportional to the amount of neural compute allocated to them. You can see that the hands are gigantic).
 
-With this context, let's first look at the innovations that have changed perception and planning systems before we dive into the far more complex challenge of robotic control.
+This may also be why motor control feels so easy to us compared to high-level reasoning.
+
+With this context, let's first look at the innovations that have enabled modern robotic perception and planning systems before we dive into the far more complex challenge of robotic control.
 
 <br />
 
@@ -242,42 +279,51 @@ Robotic perception is concerned with processing sensory data about the robot's e
 2. The presence and location of objects in the environment
 3. Its own position and orientation within the environment
 
-All of these necessities require the robot to construct an internal representation of its environment that it can constantly update as it moves and reference in its decision-making.
+All of these necessities require the robot to construct an internal representation of its environment that it can update as it explores and reference in its decision-making.
 
 This is exactly the goal of SLAM systems.
 
 > [!NOTE]
 >
-> Sensory perception is also a significant part of robotic control since control heavily depends on sensorimotor policies, but we will cover that separately in the control section.
+> Sensory perception is also a significant part of robotic control since control heavily depends on sensorimotor policies, but we will cover that aspect of perception separately in the control section.
 
 <br />
 
 ### Breakthrough #1: Early SLAM
 
-**Simultaneous Localization and Mapping (SLAM)** systems use robotic sensor data to construct a consistent internal representation of the environment (mapping) and understand the robot's position in it (localization).
+**Simultaneous Localization and Mapping (SLAM)** systems use robotic sensor data to:
 
-Early SLAM systems often used LiDAR sensors, sometimes combined with cameras, IMUs, and other sensors, and then used sensor fusion to synthesize all this data into a single map.
+1. Construct a consistent internal representation of the environment (**mapping**)
+2. Understand the robot's position in it (**localization**).
 
-If sensors were perfectly accurate, we would have no need for SLAM - the robot would easily be able to understand its exact trajectory as it moved through the environment and with a LiDAR sensor, it could perfectly construct a map of its environment with point-wise depth data.
+SLAM systems depend on a combination of LiDAR sensors, cameras, IMUs, and other sensors
 
-The challenge with SLAM comes in the fact that sensors have some error. As the robot navigates the environment, this error slowly accumulates, causing the robot to miscalculate where it has moved (due to slightly inaccurate IMU readings) which then distorts it's understanding of the environment since this shifts the relative position of points in its environment.
+They use a technique called **sensor fusion** to synthesize all this data so it can be used to construct a single map.
 
-SLAM solutions all solve this problem in the same way:
+> [!IMPORTANT]
+>
+> **If sensors were perfectly accurate, we would have no need for SLAM** - the robot would be able to understand its exact trajectory and could perfectly construct a map of its environment with point-wise depth data using LiDAR.
+>
+> **The challenge with SLAM comes in the fact that sensors have some error.**
 
-1. As the robot navigates through the environment, store the relative positions of points of interest around it
-2. Detect when the robot sees the same point of interest from multiple different perspectives
-3. Triangulate the locations of all the different points of interest to reduce errors in localization and mapping
+As the robot navigates the environment, this error slowly accumulates, causing the robot to miscalculate where it has moved (due to slightly inaccurate IMU readings) which then distorts it's understanding of the environment since this shifts the relative position of different points.
+
+SLAM solutions all solve this problem with the following process:
+
+1. As the robot navigates through the environment, it stores the relative positions of points of interest around it.
+2. The robot detects when it sees the same point of interest from multiple different perspectives.
+3. It uses this data to triangulate the locations of all the different points of interest to reduce errors in localization and mapping
 
 <p align="center">
   <img src="/images/readme/slam-correlations.png" alt="slam correlations" width="50%" />
 </p>
 <p align="center">
-  <i>The robot detects points of interest with correlations. As the correlations between points of interest grow, estimated locations become more accurate.</i>
+  <i>The robot detects correlations between different points of interest over time. As the correlations between points of interest grow, estimated locations become more accurate.</i>
 </p>
 
 Early SLAM solutions like [EKF-SLAM and FastSLAM](./1-perception/1-slam/1-slam.pdf) used purely algorithmic methods like particle filters to construct a map of the environment.
 
-However, these solutions often depended on expensive LiDAR sensors. Due to hardware cost concerns, this dependence was not feasible for affordable mass-produced robotics, so the industry turned to SLAM solutions that only required visual data from cameras.
+However, these solutions often relied on LiDAR sensors. This expensive dependency was prohibitive for mass scale robotics, so the industry had to turn to SLAM solutions that could work with only visual data from cameras.
 
 <br />
 
@@ -285,19 +331,21 @@ However, these solutions often depended on expensive LiDAR sensors. Due to hardw
 
 [ORB-SLAM](./1-perception/4-orb-slam/1-orb-slam.pdf) represented a major breakthrough by providing a SLAM solution that only depended on a single camera, with no dependence on LiDAR.
 
-Because monocular SLAM systems don't have access to point-wise depth data from LiDAR that makes SLAM much easier, they have to estimate the relative positions of the camera and points of interest in the environment purely from visual data.
+Because monocular systems don't have access to point-wise depth data from LiDAR that makes SLAM much easier, they have to estimate relative camera and point positions from visual data alone.
 
-Earlier monocular SLAM solutions like [ORB-SLAM](./1-perception/4-orb-slam/1-orb-slam.pdf) accomplish this by detecting some form of image features (like corners, in this case [ORB](./1-perception/3-orb/orb.pdf) features), and then triangulating these image features across key-frames using strategies like **bundle adjustment** and **pose graph optimization**.
+Earlier monocular SLAM solutions like [ORB-SLAM](./1-perception/4-orb-slam/1-orb-slam.pdf) accomplish this by detecting image features (like [ORB](./1-perception/3-orb/orb.pdf) features which pickup on corners), and then triangulating these image features across key-frames using strategies like **bundle adjustment** and **pose graph optimization**.
 
-These solutions also started to integrate **loop closures** where a robot could perform a massive map readjustment and error correction every time it returned to the same location (since errors in relative positions between points of interest become obvious).
+These solutions also started to integrate **loop closures** where a robot could perform many error corrections and map readjustments every time it returned to the same location (since errors in relative positions between points of interest become obvious).
 
 <br />
 
 ### Breakthrough #3: SLAM with Deep Learning
 
-It's worth noting that modern SLAM solutions like [DROID-SLAM](./1-perception/5-droid-slam/1-droid-slam.pdf) and [NeRF-SLAM](https://arxiv.org/pdf/2210.13641) (among many others) have started to integrate deep learning into their systems to varying degrees.
+Modern SLAM solutions like [DROID-SLAM](./1-perception/5-droid-slam/1-droid-slam.pdf) and [NeRF-SLAM](https://arxiv.org/pdf/2210.13641) (among many others) have started to integrate deep learning into their systems to varying degrees.
 
-However, these deep learning systems don't look like modern internet scale models where they have few priors and rely on massive amounts of data to refine their weights. Instead, they are still usually primarily algorithm solutions with heavy priors built into their architecture, with deep learning integrated into just a few places.
+However, these deep learning systems don't look like modern internet scale models where they have few priors and rely on massive amounts of data to refine their weights.
+
+Instead, they are still primarily algorithm solutions with heavy priors built into their architecture, with deep learning integrated into just a few places.
 
 Notably, [ORB-SLAM3](https://arxiv.org/abs/2007.11898) is a purely algorithmic SLAM solution built after ORB-SLAM that still has nearly state-of-the-art performance, indicating that deep learning has yet to offer a significant advantage in robotic perception.
 
@@ -305,7 +353,9 @@ This suggests that the robotic perception problem is structured with a complexit
 
 > [!IMPORTANT]
 >
-> The bottom-line on robotic perception is that functional monocular SLAM solutions currently exist with loop-closing and the ability to recover from errors. These solutions are still far from the quality of state-of-the-art LiDAR based solutions and have a lot of room for improvement, but are not currently the blocker for deploying humanoid robotics in the world.
+> The bottom-line on robotic perception is that functional monocular SLAM solutions currently exist with loop-closing and the ability to recover from errors.
+>
+> These solutions are still far from the quality of state-of-the-art LiDAR based solutions and have a lot of room for improvement, but are not currently the blocker for deploying humanoid robotics in the world.
 
 <p align="center">
   <img src="/images/readme/figure-slam.jpeg" alt="Figure SLAM" width="50%" />
@@ -336,9 +386,9 @@ To address this challenge, robots have to use random sampling based path plannin
 >
 > **Capabilities & Limitations: Path Planning**
 >
-> - Modern path planning systems can effectively generate best-effort trajectories in complex continuous environments
-> - These algorithms are capable of optimizing to avoid collisions and maximize smoothness
-> - Modern algorithms still struggle with path planning in the presence of dynamic objects in the environment (like walking humans)
+> - Modern path planning systems can effectively generate best-effort trajectories in complex continuous environments.
+> - These algorithms are capable of optimizing to avoid collisions and maximize smoothness.
+> - Modern algorithms still struggle with path planning in the presence of dynamic objects in the environment (like walking humans).
 
 <br />
 
@@ -348,28 +398,34 @@ Robotic task planning involves converting the high-level goal of the robot into 
 
 This requires an understanding of the robot's environment and the objects within it, the capabilities of the robot, and high-level reasoning abilities to plan within these constraints.
 
+<br />
+
 Until a few years ago, task planning systems all used hierarchical symbolic approaches to task planning like hierarchical task networks (HTN), [STRIPS](./2-planning/2-task-planning/1-strips/strips.pdf) and [Planning Domain Definition Language (PDDL)](./2-planning/2-task-planning/3-pddl/pddl.pdf) which allow roboticists to manually define the domain of valid concepts to reason about.
 
 This worked for simple environments where robots had a limited set of problems to consider (like in industrial cases where robots have a very limited task space) but is not feasible for any general-purpose robotics system where the complexity of environments quickly explodes.
 
+<br />
+
 This problem remained unsolved until the recent success of multi-modal LLMs provided access to models with advanced visual and semantic reasoning capabilities.
 
-Recent robotic systems like [SayCan](./4-generalization/3-say-can/1-saycan.pdf) and [RT2](./4-generalization/6-vla/1-vla.pdf) use these pre-trained VLMs for their reasoning abilities and fine-tune them to understand the capabilities afforded by robotic control systems to create effective task planning systems that can direct the robot to accomplish long-horizon tasks and solve reasoning problems that were previously intractable.
-
 <p align="center">
-  <img src="/images/readme/saycan.png" alt="slam correlations" width="50%" />
+  <img src="/images/readme/saycan.png" alt="slam correlations" width="100%" />
 </p>
 <p align="center">
   <i>An example of SayCan coming up with a task plan and grounding plans in robotic capabilities</i>
 </p>
 
+Recent robotic systems like [SayCan](./4-generalization/3-say-can/1-saycan.pdf) and [RT2](./4-generalization/6-vla/1-vla.pdf) use these pre-trained VLMs for their reasoning capacities and fine-tune them to understand the capabilities afforded by robotic control systems.
+
+This creates effective task planning systems that can direct the robot to accomplish long-horizon tasks and solve reasoning problems that were previously intractable.
+
 > [!IMPORTANT]
 >
 > **Capabilities & Limitations: Task Planning**
 >
-> - Modern task planning systems have advanced reasoning abilities and are grounded in the realities of actions that the robot can actually perform
-> - These systems have effectively integrated high-level task planning with low-level robotic control to successfully accomplish goal-oriented behavior in complex environments
-> - Robotic task planning can now be considered a relatively solved problem
+> - Modern task planning systems have advanced reasoning abilities and are grounded in the realities of actions that the robot can actually perform.
+> - These systems have effectively integrated high-level task planning with low-level robotic control to successfully accomplish goal-oriented behavior in complex environments.
+> - Robotic task planning can now be considered a relatively solved problem.
 
 <br />
 
@@ -377,15 +433,17 @@ Recent robotic systems like [SayCan](./4-generalization/3-say-can/1-saycan.pdf) 
 
 ![Control](./images/readme/control.png)
 
-As we've discussed, robotic control is by far the hardest part of building robotic systems due to the incomprehensible complexity of the real world, and we are currently far from true generalization.
+As we've discussed, robotic control is by far the hardest part of building robotic systems due to the incomprehensible complexity of the real world.
+
+We are currently far from true generalization in this domain.
 
 Robotic control deals with converting task and action plans from the robot's planning system (ex: "pick up the ball," "open the pack of dates," "walk up the stairs") into actual motor control outputs.
 
-Our approach to robotic control has gone through 3 major shifts over the past 3 decades:
+The approach robotic control has gone through 3 major shifts over the past 3 decades:
 
 1. **Classical Control** - We initially tried to manually design robotic control policies with our own manually programmed physics models, resembling early efforts in deep learning to accomplish manual feature engineering.
 2. **Deep Reinforcement Learning** - Driven by progress in deep reinforcement learning in the 2010s after AI systems became adept at games like Atari, Go, and Dota, reinforcement learning algorithms were successfully applied to learn robotic control policies, especially in simulation.
-3. **Robotic Transformers** - Driven by recent progress in generative models, transformers trained on internet scale data have now been successfully re-purposed for robotics.
+3. **Robotic Transformers** - Following recent progress in generative models, transformers trained on internet scale data have now been successfully re-purposed for robotics.
 
 Let's take a look at these major transitions, along with the other important breakthroughs in robotic control that have gotten us to current capabilities.
 
@@ -393,9 +451,12 @@ Let's take a look at these major transitions, along with the other important bre
 
 ### Breakthrough #1: Classical Control
 
-The earliest approaches to robotic control were based in [classical control](./3-control/1-classical-control/3-classical-control.ipynb). They involved manual modeling of the kinematics and dynamics of the environment and robot joints and rigid bodies.
+The earliest approaches to robotic control were based in [classical control](./3-control/1-classical-control/3-classical-control.ipynb). They involved manual modeling of the kinematics and dynamics of the environment, robot joints, and rigid bodies.
 
-These physics based models usually involved directly modelling forces on objects and using forward and inverse kinematics and dynamics models that predict the movements that would result from specific motor commands, and try to predict in reverse the motor commands necessary to generate desired movement outputs.
+These physics based models usually involved directly modelling forces on objects and using:
+
+1. **Forward kinematics and dynamics models** that predict the movements that would result from specific motor commands.
+2. **Inverse kinematics and dynamics models** that try to predict in reverse the motor commands necessary to generate desired movement outputs.
 
 <p align="center">
   <img src="/images/readme/grasp-contacts.png" alt="grasp contacts" width="50%" />
@@ -416,31 +477,33 @@ Just as these approaches were eventually replaced by deep learning based methods
 
 In the early 2010s, progress in deep reinforcement learning quickly exploded after years of slow results. Deep reinforcement algorithms started to show better than human performance on simple games like [Atari](https://arxiv.org/abs/1312.5602), and eventually far more complex games like [Go](https://www.nature.com/articles/nature16961) and [Dota 2](https://arxiv.org/abs/1912.06680)
 
-This progress provided a new direction for improvement for robotics control systems, since robotic control is essentially a reinforcement learning problem: the robot (agent) needs to learn to take actions in an environment (to control its actuators) to maximize reward (effectively executing planned actions).
+This progress provided a new direction for improvement for robotics control systems, since **robotic control is essentially a reinforcement learning problem**: the robot (agent) needs to learn to take actions in an environment (to control its actuators) to maximize reward (effectively executing planned actions).
 
 Because of this, roboticists tried to apply the progress in deep reinforcement learning toward robotic control.
 
-This came with several challenges on-top of just naively applying the same DRL algorithms to robotics: while games have explicitly defined rules and discrete state spaces, robotics deal with continuous configuration spaces (robot joints can in one of a near infinite number of specific positions) and highly complex environments where achieving training convergence is challenging.
+This came with several challenges on-top of just naively applying the same DRL algorithms to robotics: while games have explicitly defined rules and discrete state spaces, robots deal with continuous configuration spaces (robot joints can be in one of a near infinite number of specific positions) and highly complex environments where achieving training convergence is challenging.
 
 Deep reinforcement learning algorithms like [Trust Region Policy Optimization (TRPO)](./3-control/2-reinforcement-learning/4-trpo/1-trpo.pdf) and [Proximal Policy Optimization (PPO)](./3-control/2-reinforcement-learning/6-ppo/1-ppo.pdf) provided a path to good RL training convergence in continuous environments by optimizing training step-sizing (which is particularly challenging with reinforcement learning) and providing optimal reward signal across long-horizon tasks (where robots have to issue thousands of motor commands before they get the reward for completing the task).
 
 These algorithms enabled breakthrough results in simulation where simulated models of quadruped and biped robots learned walking patterns from scratch.
 
-While simulated robots could run thousands of iterations concurrently to learn, training reinforcement learning policies on real world robots was constrained by the inability collect too many samples, leading to more sample efficient algorithms like [Deep Deterministic Policy Gradient (DDPG)](./3-control/2-reinforcement-learning/7-ddpg/1-ddpg.pdf) and [Soft Actor-Critic (SAC)](./3-control/2-reinforcement-learning/8-sac/1-sac.pdf) that were more sample efficient due to reusing the same data multiple times.
+While simulated robots could run thousands of iterations concurrently to learn, training reinforcement learning policies on real world robots was constrained by the inability to collect too many samples, leading to algorithms like [Deep Deterministic Policy Gradient (DDPG)](./3-control/2-reinforcement-learning/7-ddpg/1-ddpg.pdf) and [Soft Actor-Critic (SAC)](./3-control/2-reinforcement-learning/8-sac/1-sac.pdf) that were more sample efficient due to reusing the same data multiple times.
 
-These algorithms allowed the training of reinforcement learning control policies real-world robots with more sample efficiency.
+These algorithms allowed the training of reinforcement learning control policies real-world robots.
 
 <br />
 
 ### Breakthrough #3: Simulation
 
-The progress in deep reinforcement learning for robotics was also driven by the improved usability of simulation software that occurred at the same time.
+Progress in deep reinforcement learning for robotics was also driven by the improved usability of simulation software that occurred at the same time.
 
-Training robotic control policies in simulation offers the advantage of parallelization and scale that far exceeds what's possible in reality, due to the ability to scale up training by just increasing the amount of compute dedicated to it (in contrast to reality, where training is constrained by expensive hardware and the speed of the rate limits of physics).
+Training robotic control policies in simulation offers the advantage of parallelization and scale that far exceeds what's possible in reality, due to the ability to scale up training by just increasing the amount of compute dedicated to it (in contrast to reality, where training is constrained by expensive hardware and the rate limits of physics).
 
 However, early simulation software was not designed specifically for robotics, and did not have enough accuracy in its contact and rigid body dynamics to generate policies that work in the real world.
 
-In 2012, a group of robotics engineers released [MuJoCo](./3-control/3-simulation/1-mujoco/1-mujoco.pdf), an open-source simulator built specifically with attention to the concerns of robotics needs with highly accurate contact and rigid body dynamics calculations. All breakthrough simulation research in robotics afterwards has been conducted in MuJoCo.
+In 2012, a group of engineers released [MuJoCo](./3-control/3-simulation/1-mujoco/1-mujoco.pdf), an open-source simulator built specifically with attention to the concerns of robotics, with highly accurate contact and rigid body dynamics calculations.
+
+**All breakthrough simulation research in robotics afterwards has been conducted in MuJoCo.**
 
 <p align="center">
   <img src="/images/readme/mujoco.png" alt="grasp contacts" width="70%" />
@@ -449,7 +512,9 @@ In 2012, a group of robotics engineers released [MuJoCo](./3-control/3-simulatio
   <i>Examples of robotic systems modeled in MuJoCo.</i>
 </p>
 
-Training control policies comes with the challenge of transferring policies from simulation to reality, known as the **sim-to-real problem**. Any inaccuracies in the simulation software itself magnify errors in the policy as it is used in the real world. In particular, RL policies trained in simulation often learn to exploit inaccuracies in the simulation to achieve their goal, and then fall apart in the real world where the actual laws of physics prevent these exploits.
+Training simulated control policies comes with the challenge of transferring policies from simulation to reality, known as the **sim-to-real problem**.
+
+Any inaccuracies in the simulation software itself magnify errors in the policy as it is used in the real world. In particular, RL policies trained in simulation often learn to exploit inaccuracies in the simulation to achieve their goal, and then fall apart in the real world where the actual laws of physics prevent these exploits.
 
 These problems were addressed with techniques like [Domain Randomization](./3-control/3-simulation/2-domain-randomization/1-domain-randomization.pdf), [Dynamics Randomization](./3-control/3-simulation/3-dynamics-randomization/1-dynamics-randomization.pdf), and [Simulation Optimization](./3-control/3-simulation/5-sim-opt/1-sim-opt.pdf) where control policies were trained with randomized object textures, lighting conditions, and even laws of physics.
 
@@ -468,15 +533,24 @@ All of these advancements were combined into [OpenAI's robotic hand](./3-control
 
 ### Breakthrough #4: End-to-end Learning
 
-Initially, deep learning based robotic control systems often trained the vision and motor components separately, training a vision system to detect relevant information from cameras and pass down latents to a motor control system to act.
+Initially, deep learning based robotic control systems trained their vision and motor components separately, training a vision system to detect relevant information from cameras and pass down latents to a motor control system to act.
 
-In such setups, researchers were restricting the flow of information between the perception and control systems. This may have followed from a similar bias as our initial approaches to manual feature engineering in machine learning and hierarchical task planning in robotics, where we tend to prefer nicely structured systems where components can be grouped into understandable functional roles.
+In such setups, researchers restricted the flow of information between the perception and control systems.
 
-However, with the introduction of [end-to-end visuomotor policies](./4-generalization/1-e2e/1-e2e.pdf), roboticists started to jointly train vision and motor control systems together with a single objective, allowing the deep learning systems to tune the flow of information between these systems themselves with no restrictions.
+This may have followed from a similar bias as our initial approaches to manual feature engineering in machine learning and hierarchical task planning in robotics, where we tend to prefer nicely structured systems where components can be grouped into understandable functional roles.
+
+<p align="center">
+  <img src="/images/readme/end-to-end.png" alt="end-to-end" width="70%" />
+</p>
+<p align="center">
+  <i>A comparison of the modular and end-to-end training architectures for robotics.</i>
+</p>
+
+However, with the introduction of [end-to-end visuomotor policies](./4-generalization/1-e2e/1-e2e.pdf), roboticists started to jointly train vision and motor control systems together with a single objective, allowing the deep learning systems to tune the flow of information between these systems on their own with no restrictions.
 
 This learning approach was then further validated by [BC-Z](./4-generalization/2-bc-z/1-bc-z.pdf), which used end-to-end training to achieve state-of-the-art results in robotic control with a robot that could generalize to unseen tasks.
 
-Now, modern robotic systems are all built in this way, and we can see a broader trend toward training increasingly end-to-end system where all parts of the robotics problem are trained together with a single objective function.
+Now, modern robotic systems are all built in this way, and we can see a broader trend toward training increasingly end-to-end systems where all parts of the robotics problem are trained together with a single objective function.
 
 <br />
 
@@ -492,7 +566,7 @@ Algorithms like [Behavior Cloning](./3-control/4-imitation/1-alvinn/1-alvinn.pdf
 
 However, early attempts at training control policies often lacked sufficient data to recover from unseen scenarios that experts would not show, which motivated the creation of [DAgger](./3-control/4-imitation/2-dagger/1-dagger.pdf) to help augment the dataset during training with sufficient data.
 
-Then, models like [BC-Z](./4-generalization/2-bc-z/1-bc-z.pdf) used these techniques to demonstrate that training control policies from tele-operation data via imitation learning could be an effective training strategy.
+Then, models like [BC-Z](./4-generalization/2-bc-z/1-bc-z.pdf) used these techniques to demonstrate that training control policies from tele-operation data via imitation learning could be an effective strategy.
 
 <p align="center">
   <img src="/images/readme/aloha.png" alt="grasp contacts" width="80%" />
@@ -507,11 +581,11 @@ Most recently, the development of [ALoHa](./4-generalization/5-act/1-act.pdf), a
 
 ### Breakthrough #6: Robotic Transformers
 
-Recent progress in LLMs with the transformer architecture has motivated the use of transformers and internet-scale models in robotics.
+Recent progress in LLMs with the transformer architecture has motivated the use of transformers and internet-scale data in robotics.
 
 Models like Google DeepMind's [Robotics Transformer 1 (RT1)](./4-generalization/4-rt1/1-rt1.pdf) showed that a transformer trained on large amounts of image, text, and robotic control data could achieve state-of-the-art results, validating the use of the transformer architecture for robotics.
 
-Then, [SayCan](./4-generalization/3-say-can/1-saycan.pdf) and [Robotics Transformer 2 (RT2)](./4-generalization/6-vla/1-vla.pdf) showed that multi-modal vision-language-models (VLMs) could be fine-tuned to perform robotic planning and control, mirroring the pre-training and fine-tuning paradigm that create the most successfully early LLMs like GPT-2 and GPT-3.
+Then, [SayCan](./4-generalization/3-say-can/1-saycan.pdf) and [Robotics Transformer 2 (RT2)](./4-generalization/6-vla/1-vla.pdf) showed that multi-modal vision-language-models (VLMs) could be fine-tuned to perform robotic planning and control, mirroring the pre-training and fine-tuning paradigm that create the most successful early LLMs like GPT-2 and GPT-3.
 
 RT2 introduce the **vision-language-action (VLA)** model paradigm which is now the current state-of-the-art in robotic control.
 
@@ -527,6 +601,8 @@ This use of pre-trained open-source VLMs in robotics is one of the largest contr
 
 Finally, [Physical Intelligence's](https://www.physicalintelligence.company/) first robotics foundation model [pi0](./4-generalization/7-pi0/1-pi0.pdf) just introduced another set of impressive architectural and training innovations.
 
+Most notably, they trained their model on data from many different robotics hardware systems (a **cross-embodiment dataset**), allowing it to generalize to new hardware with a small amount of fine-tuning.
+
 <p align="center">
   <img src="/images/readme/cross-embodiment.png" alt="grasp contacts" width="80%" />
 </p>
@@ -534,19 +610,17 @@ Finally, [Physical Intelligence's](https://www.physicalintelligence.company/) fi
   <i>A diagram of the mixture of data sources and robotics hardware used for cross-embodiment training.</i>
 </p>
 
-Most notably, they trained their model on data from many different robotics hardware systems (a **cross-embodiment dataset**), allowing it to generalize to new hardware with a small amount of fine-tuning.
+This represents an impressive form of generalization which may help to alleviate concerns about making adjustments to robotic hardware over time, and also presents the prospect of a single **robotic foundation model** which can work across all hardware architectures.
 
-This represents an impressive form of generalization which may help to alleviate concerns about making adjustments to robotic hardware over time, and also presents the prospect of a **robotic foundation model** which can work across all hardware architectures.
-
-It appears that cross-embodiment may actually improve robotic control by allowing the robot to isolate the relevant aspects of world model dynamics from the specifics of the robot.
+It appears that cross-embodiment may actually improve robotic control by allowing the robot to isolate the relevant aspects of world model dynamics from the specifics of the robot, enabling new levels of generalization.
 
 <br />
 
 ## 2.3 Generalization
 
-Now that we've covered the innovations that have led us to the current frontier of robotics, we can evaluate the capabilities of state-of-the-art robots to see how far they generalize and how much farther we have to go before we achieve general-purpose robots.
+Now that we've covered the innovations that have led us to the current frontier of robotics, we can evaluate the capabilities of state-of-the-art robots to see [1] how far they generalize and [2] how much farther we will have to go before we achieve general-purpose robots.
 
-Despite all the variety of different approaches to robotics over the past 3 decades, the frontier has now converged to a relatively straightforward approach build around end-to-end training of transformer with internet-scale pre-training data and manually collected tele-operation datasets.
+Despite all the variety of different approaches to robotics over the past 3 decades, the frontier has now converged to a relatively straightforward approach build around end-to-end training of transformers with internet-scale pre-training data and manually collected tele-operation datasets.
 
 This approach is essentially a combination of the results of [RT2](./4-generalization/6-vla/1-vla.pdf) (introduced the VLA) and [ACT](./4-generalization/5-act/1-act.pdf), with [pi0](./4-generalization/7-pi0/1-pi0.pdf) currently representing the most impressive publicly released model.
 
@@ -554,11 +628,11 @@ These models demonstrate the following generalization capabilities:
 
 1. **Objects** - VLAs have demonstrated high ability to recognize the presence of a variety of objects and understand when they are useful.
 2. **Environments** - VLAs can operate in a variety of diverse environments, due to the general visual intelligence abilities of pre-training vision-language models.
-3. **Reasoning** - High-level reasoning is close to being a solved problem, with LLMs providing sufficient problem-solving abilities for most execution oriented real-world tasks.
-4. **Hardware** - The cross-embodiment results demonstrated by pi0 indicate that it may be possible to create robotics foundational models that can operate across hardware. However, it's worth noting that pi0 was trained with robots that all used simple graspers, and this approach would likely require a far larger scale of data in order to work on 5-finger manipulators.
+3. **Reasoning** - High-level reasoning is close to being a solved problem, with LLMs providing sufficient problem-solving abilities for most real-world tasks.
+4. **Hardware** - The cross-embodiment results demonstrated by pi0 indicate that it may be possible to create robotics foundational models that can operate across hardware. However, it's worth noting that pi0 was trained with robots that all used simple graspers, and _this approach would likely require a far larger scale of data in order to work on 5-finger manipulators_.
 5. **Manipulation** - Robots are still far from being able to manipulate most objects. The diversity of ways that we manipulate physical objects is highly complex, and robots have only demonstrated the ability to perform manipulation skills that are directly in their dataset (like grasping and releasing), with little generalization abilities here.
 
-Robotic manipulation is by far the largest barrier to progress right now in terms of how far behind it is compared with other functions.
+**Robotic manipulation is by far the largest barrier to progress right now** in terms of how far behind it is compared with other functions.
 
 Robots still struggle with unfamiliar objects, new environments, and unknown control skills. In the next section, we will try to reason about how much data is required to achieve generalization in robotic manipulation.
 
@@ -576,7 +650,7 @@ Robots still struggle with unfamiliar objects, new environments, and unknown con
 
 > [!NOTE]
 >
-> Robotic perception and locomotion still remain somewhat separate from the rest of robotic planning control.
+> Robotic perception and locomotion still remain somewhat separate from the rest of robotic planning and control.
 >
 > Due to the secrecy of the robotics industry, we don't know exactly how these systems are connected into the overall robot, but it's likely that companies are moving toward end-to-end integration across all modules of the robot.
 
@@ -606,7 +680,9 @@ We have seen that current capabilities leave much to be desired in the way of ge
 
 The best robots today will be able to pick up new tasks autonomously given manually collected task specific datasets, but they are far from being able to execute arbitrary tasks on demand due to their insufficient manipulation ability.
 
-In order to justify the valuations and capital being poured into humanoid robotics today, they need to get to a point where they can generalize to new tasks and environments with full autonomy.
+**In order to justify the valuations and capital being poured into humanoid robotics today, they need to get to a point where they can generalize to new tasks and environments with full autonomy.**
+
+<br />
 
 Recent hype generated by the intelligence gains in LLMs extracted from scaling laws has made people optimistic about similar progress curves in the robotics space, which is what has made robotics enter the spotlight again.
 
@@ -628,15 +704,17 @@ As we have seen, creating a fully autonomous and general-purpose robot is now a 
 >
 > **We can evaluate how these constraints relate to robotics to understand the current directions for progress.**
 
-**Compute** and **compute efficiency** have all gotten pushed forward by the deep learning industry through the invention of high throughput parallel compute and optimized deep learning software. Frontier AI chips are sufficient for large training runs and are now quickly improving with capital from the AI industry. This also means we have enough compute to train models with a large number of **parameters**, which we have seen with recent generative models going up to trillions of parameters. So these are not currently constraints for robotics progress.
+**Compute** and **compute efficiency** have all gotten pushed forward by the deep learning industry through the invention of high throughput parallel compute and optimized deep learning software. Frontier AI chips are sufficient for large training runs and are now quickly improving with capital from the AI industry.
+
+This also means we have enough compute to train models with a large number of **parameters**, which we have seen with recent generative models going up to trillions of parameters. So these are not currently constraints for robotics progress.
 
 **Energy** has not yet become the constraint for training progress even for large generative models, and the AI industry is already addressing this future constraint by [developing more nuclear to address data center energy demands](https://www.theverge.com/2023/9/26/23889956/microsoft-next-generation-nuclear-energy-smr-job-hiring). Robotics is far from running into this constraint.
 
-[**Optimization & regularization** techniques](https://github.com/adam-maj/deep-learning/tree/main/02-optimization-and-regularization) have been good enough to train large models for many years now, as evident with the successful training of LLMs and other large generative models.
+**Optimization & regularization** [techniques](https://github.com/adam-maj/deep-learning/tree/main/02-optimization-and-regularization) have been good enough to train large models for many years now, as evident with the successful training of LLMs and other large generative models.
 
-We can see that all the above constraints have been lifted by recent progress in the AI industry, which is part of what makes robotics progress more feasible now.
+We can see that all of the above constraints have been lifted by recent progress in the AI industry, which is part of what makes progress toward general-purpose robotics more feasible now.
 
-Additionally, with the recent creation of the [Vision-Language-Action](./4-generalization/6-vla/1-vla.pdf) model and [Action Chunking Transformer](./4-generalization/5-act/1-act.pdf) model, it appears that we now have the **architecture** necessary to create highly capable autonomous robots, as evident with the successful [training of pi0 to autonomously fold laundry](https://x.com/chris_j_paxton/status/1852047463978254460).
+Additionally, with the recent creation of the [Vision-Language-Action](./4-generalization/6-vla/1-vla.pdf) model and the [Action Chunking Transformer](./4-generalization/5-act/1-act.pdf), it appears that we now have the **architecture** necessary to create highly capable autonomous robots, as evident with the successful [training of pi0 to autonomously fold laundry](https://x.com/chris_j_paxton/status/1852047463978254460).
 
 > [!IMPORTANT]
 >
@@ -658,36 +736,38 @@ We have already seen that scaling laws work from deep learning progress over the
   <img src="/images/readme/scaling-laws.png" alt="Scaling Laws" width="50%" />
 </p>
 <p align="center">
-  <i>Scaling laws for model performance as a function of parameters</i>
+  <i>LLM scaling laws for model performance as a function of parameters.</i>
 </p>
 
 With LLMs, we could instantly start training larger models once we realized this, because we didn't have any data problem to solve.
 
-Once we learned that scaling laws work, compute was ready with NVIDIA pushing the frontier of GPUs for gaming, and we had the right architecture with the invention of the transformer, we had internet scale data available to train on.
+Once we learned that scaling laws work, compute was ready with NVIDIA pushing the frontier of GPUs for gaming, we had the right architecture with the invention of the transformer, and most importantly, **we had internet scale data available to train on**.
 
 We don't have this for robotics.
 
-Robots currently require data collected from sufficiently similar hardware systems, which means it's challenging to repurpose data from anywhere other than manually creating new datasets.
+Robots currently require data collected from sufficiently similar hardware systems, which means it's challenging to repurpose old data from anywhere. Instead, we have to manually create new datasets.
 
 > [!NOTE]
 >
-> Technically, we've seen with [pi0](./4-generalization/7-pi0/1-pi0.pdf) that cross-embodiment training can be used to train one robot's control by fine-tuning it off a model pre-training on other robot hardware.
+> Technically, we've seen with [pi0](./4-generalization/7-pi0/1-pi0.pdf) that cross-embodiment training can be used to train one robot's control by fine-tuning it from a model pre-trained on other robot hardware.
 >
-> However, this system still used hardware systems that were all similar and relatively simple, and would likely not work at all at current data scales for more complex hardware like humanoids with dexterous fingers.
+> However, this model used hardware systems that were all similar and relatively simple, and would likely not work at current data scales for more complex hardware like humanoids with 5-finger hands.
 
-Given these limitations, **any company that wants to create general-purpose humanoids will have to figure out a way to create the datasets themselves.**
+Given these limitations, **any company that wants to create general-purpose humanoids will have to figure out a way to create their datasets themselves.**
 
 > [!IMPORTANT]
 >
 > It's not clear that it will even be possible to accomplish this.
 >
-> The scale of data required to train current state-of-the-art models with good generalization capabilities was at the entire internet.
+> The scale of data required to train current state-of-the-art models with good generalization capabilities was that of the entire internet.
 >
 > LLM datasets start with petabytes of public internet data (like the [Common Crawl dataset](https://commoncrawl.org/)), proprietary data, and licensed data and pare this down through de-duplication and other filtering to the highest signal few terabytes of data to train on (corresponding with trillions of tokens).
 >
 > Meanwhile, we can see that video models like [Sora](https://sora.com) trained on trillions of tokens [still haven't generalized to reliably learn the laws of physics](https://x.com/deedydas/status/1866734755192115586), which is something robotics models will have to excel at (this is not to be pessimistic about Sora, the model is still very impressive and will improve over time).
 >
-> Additionally, Sora and other generative model's difficulties generalizing to understand the laws of physics despite trillions of tokens may be an indicator of how hard of a problem this is.
+> Additionally, the fact that Sora and other generative models have such difficulty generalizing to understand the laws of physics despite trillions of tokens is an indicator of how hard of a problem this is.
+
+<br />
 
 It takes trillions of tokens to train a good LLM, multi-modal image-language model, or generative video model.
 
@@ -695,7 +775,7 @@ So how much data would it require to train a good general-purpose robotics model
 
 We can consider a few details about the relative complexity of learning a robotics model vs. other problems:
 
-- Robotics represents the final and most complex deep learning problem today, requiring an understanding of language and high-level reasoning, vision, dynamics and the laws of physics, and physical manipulation
+- Robotics represents the final and most complex deep learning problem today, requiring an understanding of language, high-level reasoning, vision, the laws of physics, and physical manipulation
 - Moravec's paradox has shown us that the complexity of this problem far surpasses that of high-level reasoning
 - Generative models trained on trillions of video tokens still have not generalized to understand the nuances of the laws of physics
 
@@ -703,18 +783,22 @@ We can try to ground our calculations by looking at the amount of data required 
 
 - **BC-Z** - Used 25,877 expert robot demonstrations (corresponding with 125 hours of robot time) collected across 100 tasks and 9 skills by 7 operators.
 - **RT-1** - Used 130k episodes across 700 tasks and 13 robots, collected across 17 months.
-- **ACT** - Used 30-60 minutes for 6 tasks, with 400-700 time steps per task and 50 demonstrations per task (120,000 time steps total)
+- **ACT** - Used 30-60 minutes of data per task for 6 tasks, with 400-700 time steps per task and 50 demonstrations per task (120,000 time steps total)
 - **pi0** - Used 903M time steps, across 68 tasks.
 
-These are datasets that can already take many months to collect across a variety of tasks, and some are already approaching very large token counts.
+These are datasets that often took many months to collect across a variety of tasks, and some are already approaching very large token counts.
 
-For example, with pi0, if we assume the standard 256 tokens per image, along with a variety of tokens for text instructions and sensor data (we can assume 250 tokens total per time step to be conservative), they are already training on around 250B tokens, and have yet to come close to skill level generalization. It's also worth mentioning that Physical Intelligence is a [well-capitalized](https://www.reuters.com/technology/artificial-intelligence/robot-ai-startup-physical-intelligence-raises-400-mln-bezos-openai-2024-11-04/) company so this result represents a frontier result from a well-funded company rather than a research project, with capital deployed into generating training data.
+For example, with pi0, if we assume the standard 256 tokens per image, along with a variety of tokens for text instructions and sensor data (we can assume 250 tokens total per time step to be conservative), they are already training on around 250B tokens, and have yet to come close to skill-level generalization.
 
-In addition to the higher complexity of the robotics problem, the above numbers all reflect dataset sizes for models that all used simple graspers (with 2 fingers without joints), which represents a substantially easier problem than 5-finger hands (likely order of magnitude easier).
+It's also worth mentioning that Physical Intelligence is a [well-funded](https://www.reuters.com/technology/artificial-intelligence/robot-ai-startup-physical-intelligence-raises-400-mln-bezos-openai-2024-11-04/) company, so their model represents a frontier result with sufficient capital to generate training data, rather than a capital-constrained research project.
 
-Though it's impossible to predict exactly how much data will be required to solve the general-purpose robotics problem, all of the above points to the fact that the problem is far more complex than that of LLMs. Saying that we will require 100x more tokens is likely a large underestimate (given the orders of magnitude complexity differences in the underlying).
+In addition to the higher complexity of the robotics problem, the above numbers all reflect dataset sizes for models that used simple graspers (with 2 jointless fingers), which represents a substantially easier problem than 5-finger hands (orders of magnitude easier).
 
-At this rate, it may 100s of trillions of tokens or more to start to get toward the generalization we need for general-purpose humanoids.
+<br />
+
+Though it's impossible to predict exactly how much data will be required to solve the general-purpose robotics problem, all of the above points to the fact that the problem is far more complex than that of LLMs. Saying that we will require 100x more tokens is likely a large underestimate (given the orders of magnitude complexity differences in the underlying problems).
+
+**At this rate, it may take 100s of trillions of tokens or more to start to get toward the generalization we need for general-purpose humanoids.**
 
 Everyone in the robotics industry understands that data is the current bottleneck to progress, and that we are going to need orders of magnitude more data to get to generalization - so the question is: how will we generate this data?
 
@@ -736,7 +820,7 @@ Let's look at each one to understand the path forward.
 
 ### 1. Repurposing Internet Data
 
-One approach is to try to use the diverse video data available online. Many of these videos have sections with humans moving and manipulating objects, which could potentially be used to infer priors on manipulation skills.
+One approach is to try to use the diverse video data available online. Many of these videos have sections with humans moving and manipulating objects, which could be used to infer priors on manipulation skills.
 
 [Skild](https://www.skild.ai/) claims to have done this [to achieve impressive generalization results](https://archive.ph/oz6ii). But it's likely that this approach can only be used to improve pre-training.
 
@@ -750,7 +834,7 @@ It's unlikely that this approach has sufficient signal for robotics generalizati
 >
 > In their [Forbes fundraising announcement](https://archive.ph/oz6ii), they suggest that "the robots using Skild’s AI models also demonstrated 'emergent capabilities' — entirely new abilities they weren’t taught. These are often simple, like recovering an object that slips out of hand or rotating an object."
 >
-> This also suggests a level of generalization that is unlikely to be beyond what Physical Intelligence has demonstrated, though we don't have any way to know this since they haven't publicly released results yet.
+> This suggests a level of generalization that is unlikely to be beyond what Physical Intelligence has demonstrated, though we don't have any way to know this for sure since they haven't publicly released results yet.
 
 <br />
 
@@ -760,7 +844,7 @@ Training in simulation offers near unlimited data scale since we can parallelize
 
 However, as we've covered, simulation can be useful to learn specific control policies, but it doesn't offer us the complexity of the real world required for true generalization to new environments, objects, and skills.
 
-Approximating this complexity in simulation would require constructing simulated worlds just as complex as the real world, which is intractable.
+**Achieving sufficient complexity in simulation would require constructing simulated worlds just as complex as the real world**, which is clearly intractable.
 
 Because of this, simulation is unlikely to be the path forward.
 
@@ -768,23 +852,27 @@ Because of this, simulation is unlikely to be the path forward.
 
 ### 3. Real World Data
 
-Given the requirement of the rich complexity of the real world, the only path forward seems to be to collect data from the real world.
+Given the need to train on the rich complexity of the real world, **the only path forward seems to be to collect data from the real world.**
 
-Before we have achieved fully autonomous robots that can operate in the real world (which is exactly what we need the data for), mixed autonomy and tele-operation will be the only path to collect data of this format.
+Before we have achieved fully autonomous robots that can operate in the real world (which is exactly what we need the data to create), mixed autonomy and tele-operation will be the only path to collect data of this format.
 
-This is why nearly every robotics company today has started with a tele-operation or task specifc autonomy approach to creating a dataset. Their strategy is to use human operators or niche task robots to justify deployments in the real world, which they can then use to collect data and develop autonomy.
+This is why nearly every robotics company today has started with a tele-operation or task specifc autonomy approach to create their dataset.
 
-> [!NOTE]
+Their strategy is to use human operators or niche task-specific robots to justify deployments in the real world, which they can then use to collect data and develop autonomy.
+
+> [!IMPORTANT]
 >
 > The internet scale datasets that we used to create frontier generative models were all created by **network effects** that played out over decades and created trillions of dollars of value for the world. This made it economically feasible to generate a dataset at such a scale.
 >
-> If we had tried today to directly spend capital to create a similar dataset to train LLMs, it seems farfetched that we would be able to replicate something of comparable quality.
+> If we had tried today to directly spend capital to create a similar dataset to train LLMs, it seems farfetched that we would be able to replicate something of comparable quality to the internet.
 >
 > But this is similar to what we're trying to do for robotics today.
 
 In order for this strategy to work, deployed robots need to be revenue generating, or the robotics company needs to have access to a reliable and continuous stream of capital.
 
-Selecting the right strategy to get enough data is critical. Let's understand what needs to happen for this approach to work.
+**Selecting the right strategy to get enough data is critical.**
+
+Let's understand what needs to happen for this approach to work.
 
 <br />
 
@@ -792,21 +880,37 @@ Selecting the right strategy to get enough data is critical. Let's understand wh
 
 In order to collect the necessary scale of data, we will likely need fleets of robots deployed in the real world, operating across a variety of tasks, and collecting data for long time horizons.
 
-It's unlikely that this will be sustainable if it requires manually paying for data and a continuous stream of capital. Current robotics companies are collecting data by paying for it with venture capital, but to achieve the necessary data scale, it will require a revenue generating data collection mechanism.
+It's unlikely that this will be sustainable if it requires manually paying for data and a continuous stream of capital.
 
-**Picking the right market & problem to start with here is essential.**
+Current robotics companies are collecting data by paying for it with venture capital, but to achieve the necessary data scale, it will require a revenue generating data collection strategy.
 
-To sustainably collect data, robots need to be doing tasks that robotics are currently useful for. One path to accomplish this is labor arbitrage with tele-operation, where cheap labor from overseas can now be used domestically via tele-operation.
+**As a result, picking the right market & problem to start with here is essential.**
 
-Cheaper labor alone may not be enough to convince customers of utility, in which case it may make the most sense for humanoids to take over jobs that humans also can't or won't do.
+<br />
+
+### Labor Arbitrage
+
+To sustainably collect data, robots need to be performing tasks that robotic systems are currently useful for.
+
+One path to accomplish this is **labor arbitrage** with tele-operation, where cheap labor from overseas can now be used domestically via tele-operation.
+
+Cheaper labor alone may not be enough to convince customers of utility, in which case it may make the most sense for humanoids to take over jobs that humans can't or won't do.
+
+<br />
+
+### Data Signal
 
 The other limitation to this approach is that **the data must actually have enough signal to enable general purpose robotics.**
 
-Even if robotics are successfully deployed, they have to be deployed in scenarios that collect data with useful variability. Deploying robots into a factory where they do the same task repeatedly in a controlled environment is unlikely to produce new data useful for generalization.
+Even if robotics are successfully deployed, they have to be deployed in scenarios that collect data with useful variability.
 
-There has already been a wave of industrial automation companies a decade ago that went with the thesis of starting with a niche and generalizing after, and these companies all failed to collect sufficient data to generalize.
+Deploying robots into a factory where they do the same task repeatedly in a controlled environment is unlikely to produce new data useful for generalization.
 
-So we actually need high quality deployments to get data: deployments in the real world that have sufficient variance in the collected data.
+There has already been a wave of industrial automation companies a decade ago that went with the thesis of starting with a niche automation task and generalizing after. These companies all failed to collect sufficient data to generalize, and most of them have failed altogether.
+
+<br />
+
+So we actually need high quality deployments to get data: deployments in the real world that have sufficient variance in the collected datasets.
 
 What gets us to this point?
 
@@ -816,24 +920,34 @@ There are a few viable strategies:
 2. **Robotics in the outside world** could collect data from a variety of scenarios, but it's unlikely that there are economically valuable use cases here currently.
 3. **Humanoids for industrial automation**
 
-Consumer robotics would be great for collecting data, but it seems unlikely that humanoids will be ready for consumers any time soon. In fact, consumers are likely the last robotics use case - deploying robots in the home requires the highest safety constraints, consumers are likely less tolerable to error, and it seems unlikely that tele-operation will be a desirable setup for most consumers.
+Consumer robotics would be great for collecting data, but it seems unlikely that humanoids will be ready for consumers any time soon.
 
-For this reason, it makes the most sense to keep manually training robots for individual industrial and commercial automation tasks slowly, channeling this data to improve autonomy and get more deployments, and get to a point where the diversity of tasks and observed environments provides enough data for broad generalization.
+In fact, **consumers are likely to be the last robotics use case** - deploying robots in the home requires the highest safety constraints, consumers likely have less tolerance for system error, and it seems unlikely that tele-operation will be a desirable setup for most consumers.
 
-This is exactly the strategy that Optimus and Figure have taken.
+> [!IMPORTANT]
+>
+> For all these reasons, it makes the most sense to keep manually training robots for individual industrial and commercial automation tasks slowly, channeling this data to improve autonomy and get more deployments, and get to a point where the diversity of tasks and observed environments provides enough data for broad generalization.
+>
+> This is exactly the strategy that Optimus and Figure have taken.
 
-This process will be slow, given the scale of data required and the rate of deployments, and likely very capital intensive to fund the initial robots before they become an economic no-brainer for customers.
+<br />
+
+### What Will It Take?
+
+This process will be slow, given the scale of data required and the rate of deployments, and likely very capital intensive to fund the deployment of initial robots before they become an economic no-brainer for customers.
 
 It will require:
 
-- Constructing entire hardware supply chains and manufacturing processes
-- Collecting large amounts of data
-- Likely burning through capital for a long time (maybe more than 5-10 years)
-  before really good autonomous robots are ready for the world
+1. Constructing entire hardware supply chains and manufacturing processes
+2. Collecting large amounts of data
+3. Likely burning through capital for a long time (maybe more than 5-10 years)
+   before really good autonomous robots are ready for the world
 
-Given this timeline, only a company with the backing of a large revenue generator will be able to sustain this cost of development. This resembles how the AI industry has restructured itself with every large AI lab getting a large stake bought out by a big tech company that can guarantee them capital and compute.
+Given this timeline, only a company with the backing of a large revenue generator will be able to sustain this cost of development.
 
-I would bet that Figure and 1x will end up getting significant portions bought by big tech companies as their robotics bets.
+This resembles how the AI industry has restructured itself with every large AI lab getting a large stake bought out by a big-tech company that can guarantee them capital and compute.
+
+I would bet that Figure and 1x will end up getting significant portions bought out by big tech companies as their humanoid robotics bets.
 
 With all this context, it appears that **robotics may not be a space primed for startups to win.**
 
@@ -843,10 +957,25 @@ In fact, given everything, it seems almost inevitable (to me) that **Tesla will 
 - Their vehicles all have advanced perception, planning, and control systems. - They have their own proprietary SLAM algorithms, have trained large neural networks and vision systems for actuator control, and have custom chips for robotic inference.
 - They have all the internal engineering expertise to develop these systems.
 - They have expertise building large-scale hardware and manufacturing supply chains.
+- In this sense, they have a 20-year head start building organizational competence with the robotics problem.
 - It seems that Elon tends to win at traditionally hard engineering problems, as he has built personal operational expertise, engineering judgement, and organizational talent around solving such problems. Of course, it's hard to quantify the extent to which this is true.
 - Importantly, Optimus will have access to the revenue stream being generated by Tesla indefinitely, which may prove valuable as humanoid robotics timelines start to extend. This is not something any other general-purpose robotics companies have yet.
 
-Building humanoid robotics is a natural extension to their company's most core skills already, which is also why they have been so fast to catch up to the frontier of humanoid robotics with Optimus 2.
+Building humanoid robotics is a natural extension to Tesla's core skills already, which is also why they have been so fast to catch up to the frontier of humanoid robotics with Optimus 2.
+
+> [!IMPORTANT]
+>
+> **Outlook on General Purpose Robotics**
+>
+> With all this in mind, we have arrived at a final outlook on the general-purpose robotics space today.
+>
+> It appears that timelines are far longer than expected, perhaps closer to 5-10+ years to get the necessary amounts of data for sufficient generalization.
+>
+> The most sensible strategy seems to be to develop some form of general-purpose robotics that can be deployed into economically valuable industrial and commercial use cases where initial tele-operation can enable task-specific autonomous robots, and these robots can slowly collect high signal data over time to create datasets good enough for full autonomy and broad generalization.
+>
+> In light of this, robotics companies may quickly be strapped for capital, and will have to rely on burning large amounts of venture capital for a long-time, or will get bought out by revenue generating big-tech companies to access sufficient capital.
+>
+> Finally, the humanoid robotics arms race may turn out to be yet another example of the accuracy of Peter Thiel's famous investing rule: **never bet against Elon.**
 
 <br />
 
@@ -862,7 +991,7 @@ The deep learning industry progressed almost entirely in public through publishe
 
 Meanwhile, robotics has developed almost entirely in secrecy for the past few decades, with companies like [Boston Dynamics](https://bostondynamics.com/) and Chinese companies achieving [impressive results](https://www.youtube.com/watch?v=29ECwExc-_M) with no published paper trail.
 
-In fact, in almost every area of robotics, including SLAM algorithms, locomotion, dexterous manipulation, path planning, and more are almost entirely proprietary.
+In fact, in almost every area of robotics, including SLAM algorithms, locomotion, dexterous manipulation, path planning, and more, the frontier techniques are almost entirely proprietary.
 
 This made it more difficult to infer where the current state-of-the-art is, though the few people publishing public research like Physical Intelligence help to make educated guesses about it.
 
@@ -870,9 +999,11 @@ This made it more difficult to infer where the current state-of-the-art is, thou
 
 ### 4.2 Nature's Engineering
 
-Studying robotics gives grounds for an appreciation of the complexity of the real world and the impressive capabilities of human motor control that's difficult to get anywhere else.
+Studying robotics gives grounds for a new appreciation of the complexity of the real world and the impressive capabilities of human motor control that's difficult to get anywhere else.
 
-It highlights the fact that the human body and brain is really a solution to the exact same reinforcement learning problem that robots are trying to solve: goal-oriented action in the real world.
+It highlights the fact that the human body and brain is really a solution to the exact same reinforcement learning problem that robots are trying to solve: **goal-oriented action in the real world.**
+
+<br />
 
 Our software and hardware were optimized by the natural selection process.
 
@@ -880,13 +1011,19 @@ A similar process is occurring in robotics research today.
 
 Humans often have pre-conceived notions about what type of systems ought to work (nicely organized symbolic systems with understandable components integrated in a hierarchical structure). But the selection criteria of good research filters out these ideas and reveals what actually works.
 
-And in this process, we are starting to see that the correct approach to robotics is quickly converging closer to re-engineering the human brain.
+And in this process, **we are starting to see that the correct approach to robotics is quickly converging closer to re-engineering the human brain.**
 
-To create robotics systems, we are now moving toward creating a single end-to-end system, optimized together, with different components offering different inductive bias via varying architectures and serving a purpose for specific sub-problems within perception, planning, and control. This is exactly how the human brain is architected.
+<br />
 
-We will likely need to construct other functions of the brain within deep learning systems like long-term memory to improve our robotic systems.
+To create robotics systems, we are now moving toward creating a single end-to-end system, optimized together, with different components offering different inductive bias via varying architectures, and serving a purpose for specific sub-problems within perception, planning, and control.
 
-As we get closer to general-purpose humanoid robotics, we get closer to re-engineering the entire human.
+This is exactly how the human brain is architected.
+
+Additionally, we are starting to move toward curiosity based learning and the pre-training and fine-tuning training approach (which the brain constantly does in real-time).
+
+We will eventually need to construct other functions of the brain within deep learning systems like long-term memory to improve our robotic systems.
+
+**As we get closer to general-purpose humanoid robotics, we get closer to re-engineering the entire human.**
 
 <br />
 
