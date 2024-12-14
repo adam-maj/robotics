@@ -1,6 +1,6 @@
 # robotics [WIP]
 
-A deep-dive on the entire history of robotics, highlighting the series of innovations that enabled general-purpose humanoids like Optimus and Figure.
+A deep-dive on the entire history of robotics, highlighting the series of innovations that have enabled general-purpose humanoids like Optimus and Figure.
 
 For each key milestone, I've included the critical papers in this repository, along with my notes and high-level explanations where relevant.
 
@@ -49,7 +49,7 @@ Riding the tailwinds of recent progress in deep learning, robotics has again reg
 
 Given recent hype, twitter sentiment, venture narratives, and recent demos (see: [Tesla Optimus](https://www.youtube.com/watch?v=cpraXaw7dyc), [Figure 02](https://www.youtube.com/watch?v=0SRVJaOg9Co), [Figure 02 + OpenAI](https://www.youtube.com/watch?v=Sq1QZB5baNw), [1x NEO](https://www.youtube.com/watch?v=bUrLuUxv9gE)), it may seem like fully autonomous humanoids are right around the corner. I originally anticipated that they might arrive within the next 2-3 years.
 
-However, as I went farther into my deep dive, I noticed that the technical realities of current robotics progress point to a very different future than what current narratives suggest.
+However, as I went farther into my deep dive, I noticed that **the technical realities of current robotics progress point to a very different future than what current narratives suggest.**
 
 To see this realistic future of the robotics industry, we'll first need to understand the series of innovations that have gotten the industry to where it is today.
 
@@ -158,7 +158,7 @@ This is why developing cheaper, lighter, safer actuators is an important focus f
 
 In addition to these trade-offs, selecting a specific robotic form factor has important downstream consequences on future improvements.
 
-We will see that robotic software is heavily dependent on data collected from exactly the same robot that is meant to be deployed on. Robotic software learns to take actions based on the exact joints, sensors, and actuators it is trained with data from.
+We will see that robotic software is heavily dependent on data collected from exactly the same robot that it's meant to be deployed on. Robotic software learns to take actions based on the exact joints, sensors, and actuators it is trained with data from.
 
 Significantly changing the robot's hardware often means prior software becomes obsolete.
 
@@ -277,7 +277,7 @@ SLAM solutions all solve this problem in the same way:
 
 Early SLAM solutions like [EKF-SLAM and FastSLAM](./1-perception/1-slam/1-slam.pdf) used purely algorithmic methods like particle filters to construct a map of the environment.
 
-However, these solutions often depended on expensive LiDAR sensors. Due to hardware cost concerns, this dependence was infeasible for affordable mass-produced robotics, so the industry turned to SLAM solutions that only required visual data from cameras.
+However, these solutions often depended on expensive LiDAR sensors. Due to hardware cost concerns, this dependence was not feasible for affordable mass-produced robotics, so the industry turned to SLAM solutions that only required visual data from cameras.
 
 <br />
 
@@ -350,7 +350,7 @@ This requires an understanding of the robot's environment and the objects within
 
 Until a few years ago, task planning systems all used hierarchical symbolic approaches to task planning like hierarchical task networks (HTN), [STRIPS](./2-planning/2-task-planning/1-strips/strips.pdf) and [Planning Domain Definition Language (PDDL)](./2-planning/2-task-planning/3-pddl/pddl.pdf) which allow roboticists to manually define the domain of valid concepts to reason about.
 
-This worked for simple environments where robots had a limited set of problems to consider (like in industrial cases where robots have a very limited task space) but is infeasible for any general-purpose robotics system where the complexity of environments quickly explodes.
+This worked for simple environments where robots had a limited set of problems to consider (like in industrial cases where robots have a very limited task space) but is not feasible for any general-purpose robotics system where the complexity of environments quickly explodes.
 
 This problem remained unsolved until the recent success of multi-modal LLMs provided access to models with advanced visual and semantic reasoning capabilities.
 
@@ -384,7 +384,7 @@ Robotic control deals with converting task and action plans from the robot's pla
 Our approach to robotic control has gone through 3 major shifts over the past 3 decades:
 
 1. **Classical Control** - We initially tried to manually design robotic control policies with our own manually programmed physics models, resembling early efforts in deep learning to accomplish manual feature engineering.
-2. **Deep Reinforcement Learning** - Driven by progress in deep reinforcement learning in the 2010s after AI systems got good at games like Atari, Go, and Dota, reinforcement learning algorithms were successfully applied to learn robotic control policies, especially in simulation.
+2. **Deep Reinforcement Learning** - Driven by progress in deep reinforcement learning in the 2010s after AI systems became adept at games like Atari, Go, and Dota, reinforcement learning algorithms were successfully applied to learn robotic control policies, especially in simulation.
 3. **Robotic Transformers** - Driven by recent progress in generative models, transformers trained on internet scale data have now been successfully re-purposed for robotics.
 
 Let's take a look at these major transitions, along with the other important breakthroughs in robotic control that have gotten us to current capabilities.
@@ -418,7 +418,7 @@ In the early 2010s, progress in deep reinforcement learning quickly exploded aft
 
 This progress provided a new direction for improvement for robotics control systems, since robotic control is essentially a reinforcement learning problem: the robot (agent) needs to learn to take actions in an environment (to control its actuators) to maximize reward (effectively executing planned actions).
 
-Because of this relevant, roboticists tried to apply the progress in deep reinforcement learning toward robotic control.
+Because of this, roboticists tried to apply the progress in deep reinforcement learning toward robotic control.
 
 This came with several challenges on-top of just naively applying the same DRL algorithms to robotics: while games have explicitly defined rules and discrete state spaces, robotics deal with continuous configuration spaces (robot joints can in one of a near infinite number of specific positions) and highly complex environments where achieving training convergence is challenging.
 
@@ -519,7 +519,7 @@ Then, the [Action Chunking Transformer (ACT)](./4-generalization/5-act/1-act.pdf
 
 This use of pre-trained open-source VLMs in robotics is one of the largest contributions to robotics from the recent progress in deep learning, and arguably one of the major reasons that robotics has re-entered the spotlight.
 
-It's hard to overestimate how much value VLMs have brought to robotic planning and reasoning capabilities; this has been a major unlock on the path toward general-purpose robotics.
+**It's hard to overestimate how much value VLMs have brought to robotic planning and reasoning capabilities; this has been a major unlock on the path toward general-purpose robotics.**
 
 <br />
 
@@ -586,7 +586,7 @@ Robots still struggle with unfamiliar objects, new environments, and unknown con
 
 With this context, we can now try to understand how the robotics industry will develop from here.
 
-Over the past few years, billions of dollars of capital has been deployed across companies like [Tesla Optimus](https://www.youtube.com/watch?v=cpraXaw7dyc), [Figure](https://www.figure.ai/), [1x](https://www.1x.tech/), [Physical Intelligence](https://www.physicalintelligence.company/), [Skild](https://www.skild.ai/) and a variety of Chinese companies to achieve the promise of general-purpose robotics.
+Over the past few years, billions of dollars of capital have been deployed across companies like [Tesla Optimus](https://www.youtube.com/watch?v=cpraXaw7dyc), [Figure](https://www.figure.ai/), [1x](https://www.1x.tech/), [Physical Intelligence](https://www.physicalintelligence.company/), [Skild](https://www.skild.ai/) and a variety of Chinese companies to achieve the promise of general-purpose robotics.
 
 In this section, we'll look at how this arms race will play out by answering the following questions:
 
@@ -716,7 +716,7 @@ Though it's impossible to predict exactly how much data will be required to solv
 
 At this rate, it may 100s of trillions of tokens or more to start to get toward the generalization we need for general-purpose humanoids.
 
-Everyone in the robotics industry understands that data is the current bottleneck to progress, and that we are going to need way more data to get to generalization - so the question is: how will we generate this data?
+Everyone in the robotics industry understands that data is the current bottleneck to progress, and that we are going to need orders of magnitude more data to get to generalization - so the question is: how will we generate this data?
 
 <br />
 
@@ -837,14 +837,16 @@ I would bet that Figure and 1x will end up getting significant portions bought b
 
 With all this context, it appears that **robotics may not be a space primed for startups to win.**
 
-In fact, given everything, it seems almost inevitable that **Tesla will win the humanoid robotics arms race with Optimus:**
+In fact, given everything, it seems almost inevitable (to me) that **Tesla will win the humanoid robotics arms race with Optimus:**
 
-- Tesla is really a robotics company, not just a car copmany.
+- Tesla is really a robotics company, not just a car company.
 - Their vehicles all have advanced perception, planning, and control systems. - They have their own proprietary SLAM algorithms, have trained large neural networks and vision systems for actuator control, and have custom chips for robotic inference.
 - They have all the internal engineering expertise to develop these systems.
 - They have expertise building large-scale hardware and manufacturing supply chains.
 
-Building humanoid robotics is a natural extension to their companies most core skills already, which is also why they have been so fast to catch up to the frontier of humanoid robotics with Optimus 2.
+Building humanoid robotics is a natural extension to their company's most core skills already, which is also why they have been so fast to catch up to the frontier of humanoid robotics with Optimus 2.
+
+That being said
 
 <br />
 
@@ -862,7 +864,7 @@ Meanwhile, robotics has developed almost entirely in secrecy for the past few de
 
 In fact, in almost every area of robotics, including SLAM algorithms, locomotion, dexterous manipulation, path planning, and more are almost entirely proprietary.
 
-This made it more difficult to infer where the current state-of-the-art is, though the few people publishing public research like Physical Intelligence help to make educated guessed about it.
+This made it more difficult to infer where the current state-of-the-art is, though the few people publishing public research like Physical Intelligence help to make educated guesses about it.
 
 <br />
 
