@@ -1,4 +1,4 @@
-# robotics [WIP]
+# robotics
 
 A deep-dive on the entire history of robotics, highlighting the series of innovations that have enabled general-purpose humanoids like Optimus and Figure.
 
@@ -302,7 +302,7 @@ They use a technique called **sensor fusion** to synthesize all this data so it 
 
 > [!IMPORTANT]
 >
-> **If sensors were perfectly accurate, we would have no need for SLAM** - the robot would be able to understand its exact trajectory and could perfectly construct a map of its environment with point-wise depth data using LiDAR.
+> **If sensors were perfectly accurate, SLAM could be trivially solved** - the robot would be able to understand its exact trajectory and could perfectly construct a map of its environment with point-wise depth data using LiDAR.
 >
 > **The challenge with SLAM comes in the fact that sensors have some error.**
 
@@ -333,7 +333,7 @@ However, these solutions often relied on LiDAR sensors. This expensive dependenc
 
 Because monocular systems don't have access to point-wise depth data from LiDAR that makes SLAM much easier, they have to estimate relative camera and point positions from visual data alone.
 
-Earlier monocular SLAM solutions like [ORB-SLAM](./1-perception/4-orb-slam/1-orb-slam.pdf) accomplish this by detecting image features (like [ORB](./1-perception/3-orb/orb.pdf) features which pickup on corners), and then triangulating these image features across key-frames using strategies like **bundle adjustment** and **pose graph optimization**.
+Monocular SLAM solutions accomplish this by detecting image features (like [ORB](./1-perception/3-orb/orb.pdf) features which pickup on corners), and then triangulating these image features across key-frames using strategies like **bundle adjustment** and **pose graph optimization**.
 
 These solutions also started to integrate **loop closures** where a robot could perform many error corrections and map readjustments every time it returned to the same location (since errors in relative positions between points of interest become obvious).
 
@@ -497,7 +497,7 @@ These algorithms allowed the training of reinforcement learning control policies
 
 Progress in deep reinforcement learning for robotics was also driven by the improved usability of simulation software that occurred at the same time.
 
-Training robotic control policies in simulation offers the advantage of parallelization and scale that far exceeds what's possible in reality, due to the ability to scale up training by just increasing the amount of compute dedicated to it (in contrast to reality, where training is constrained by expensive hardware and the rate limits of physics).
+Training robotic control policies in simulation offers the advantage of parallelization and scale that far exceeds what's possible in reality, due to the ability to scale up training by just increasing the amount of compute dedicated to it (in contrast to reality, where training is constrained by expensive hardware and the speed of real-world interactions).
 
 However, early simulation software was not designed specifically for robotics, and did not have enough accuracy in its contact and rigid body dynamics to generate policies that work in the real world.
 
@@ -840,13 +840,19 @@ It's unlikely that this approach has sufficient signal for robotics generalizati
 
 ### 2. Simulation
 
-Training in simulation offers near unlimited data scale since we can parallelize training with more compute.
+Training in simulation offers near unlimited data scale since we can parallelize training with more compute. It also offers more reproducible results, and allows us to use more time efficient but less sample efficient training algorithms since simulation data is easier to generate, so we don't have to extract maximum signal from every data point.
 
 However, as we've covered, simulation can be useful to learn specific control policies, but it doesn't offer us the complexity of the real world required for true generalization to new environments, objects, and skills.
 
-**Achieving sufficient complexity in simulation would require constructing simulated worlds just as complex as the real world**, which is clearly intractable.
+**Achieving sufficient complexity in simulation would require constructing simulated worlds that approach the complexity of the real world.**
 
-Because of this, simulation is unlikely to be the path forward.
+This problem may not be impossible. For example, some people have considered using world models learned by generative AI to extract regularities from the real-world and construct simulations with more valuable complexity for robotics systems to train in.
+
+However, we have already seen that current state-of-the-art models like Sora learn world models that still don't understand physical interactions, which brings into question how useful they will really be for robotic simulation.
+
+It may be possible to create more complex simulation software in the future that can allow us to reap the many benefits of training robots in simulation (Eric Jang, the CTO of 1x believes this is will be necessary to achieve general-purpose robotics, and wrote [this great blog post on the need to do more robotics training in simulation](https://evjang.com/2021/09/20/ephemeralization.html)).
+
+However, the reality is that current simulation software lacks the real-world data necessary to train general-purpose robotics in simulation alone. Because of this, simulation is unlikely to be the path forward in the near future.
 
 <br />
 
@@ -954,7 +960,7 @@ With all this context, it appears that **robotics may not be a space primed for 
 In fact, given everything, it seems almost inevitable (to me) that **Tesla will win the humanoid robotics arms race with Optimus:**
 
 - Tesla is really a robotics company, not just a car company.
-- Their vehicles all have advanced perception, planning, and control systems. - They have their own proprietary SLAM algorithms, have trained large neural networks and vision systems for actuator control, and have custom chips for robotic inference.
+- Their vehicles all have advanced perception and planning capabilities. They have their own proprietary SLAM algorithms, have trained large neural networks and vision systems for actuator control, and have custom chips for robotic inference.
 - They have all the internal engineering expertise to develop these systems.
 - They have expertise building large-scale hardware and manufacturing supply chains.
 - In this sense, they have a 20-year head start building organizational competence with the robotics problem.
@@ -962,6 +968,8 @@ In fact, given everything, it seems almost inevitable (to me) that **Tesla will 
 - Importantly, Optimus will have access to the revenue stream being generated by Tesla indefinitely, which may prove valuable as humanoid robotics timelines start to extend. This is not something any other general-purpose robotics companies have yet.
 
 Building humanoid robotics is a natural extension to Tesla's core skills already, which is also why they have been so fast to catch up to the frontier of humanoid robotics with Optimus 2.
+
+The most important point here is not that Tesla has a technological moat around robotics technology, but that they have the organizational DNA built around 20 years of experience working on the exact type of engineering challenge that the general-purpose robotics problem poses, and the world is likely underestimating how valuable of an asset this will be in the humanoid arms race.
 
 > [!IMPORTANT]
 >
