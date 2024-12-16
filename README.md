@@ -40,6 +40,8 @@ We will see that fully autonomous humanoids may be much farther away than expect
   - [4.1. Secrecy](#)
   - [4.2. Nature's Engineering](#)
 - [Resources](#)
+  - [Topics](#)
+  - [Papers](#)
 
 <br />
 
@@ -956,6 +958,8 @@ This resembles how the AI industry has restructured itself with every large AI l
 I would bet that Figure and 1x will end up getting significant portions bought out by big tech companies as their humanoid robotics bets.
 
 With all this context, it appears that **robotics may not be a space primed for startups to win.**
+
+<br />
 
 In fact, given everything, it seems almost inevitable (to me) that **Tesla will win the humanoid robotics arms race with Optimus:**
 
